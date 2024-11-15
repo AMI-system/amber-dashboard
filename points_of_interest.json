@@ -1,0 +1,209 @@
+[
+    {
+        "country": "United Kingdom", "deployment_id": "dep000041", "name": "SWT_Pirbright_1", "deployment_key": "SWT_Pirbright_1 - 4OC5E892", "location_id": "loc000041", "latitute": 51.325934, "longitute": -0.688145, "camera_id": "4OC5E892", "system_id": "sys000041", "status": "active", "image_count": "37215"
+        },
+        {
+        "country": "United Kingdom", "deployment_id": "dep000042", "name": "SWT_Pirbright_2", "deployment_key": "SWT_Pirbright_2 - 6EBOD8C9", "location_id": "loc000042", "latitute": 51.339009, "longitute": -0.670517, "camera_id": "6EBOD8C9", "system_id": "sys000042", "status": "active", "image_count": "43347"
+        },
+        {
+        "country": "United Kingdom", "deployment_id": "dep000043", "name": "SWT_PondFarm", "deployment_key": "SWT_PondFarm - AD864B3E", "location_id": "loc000043", "latitute": 51.322871, "longitute": -0.461434, "camera_id": "AD864B3E", "system_id": "sys000043", "status": "active", "image_count": "1811"
+        },
+        {
+        "country": "United Kingdom", "deployment_id": "dep000044", "name": "SWT_NowerWood", "deployment_key": "SWT_NowerWood - 2DA5E31F", "location_id": "loc000044", "latitute": 51.276195, "longitute": -0.293615, "camera_id": "2DA5E31F", "system_id": "sys000044", "status": "active", "image_count": "55216"
+        },
+        {
+        "country": "United Kingdom", "deployment_id": "dep000055", "name": " Pymoor_Baseline", "deployment_key": " Pymoor_Baseline -  EF9OA6B1", "location_id": "", "latitute":  52.475035, "longitute":  0.224349, "camera_id": " EF9OA6B1", "system_id": "sys000055", "status": "active", "image_count": "0"
+        },
+        {
+        "country": "United Kingdom", "deployment_id": "dep000056", "name": "Gloucester_middle", "deployment_key": "Gloucester_middle - DAE09C74", "location_id": "", "latitute": 52.0245874, "longitute": -2.0702536, "camera_id": "DAE09C74", "system_id": "sys000056", "status": "active", "image_count": "0"
+        },
+        {
+        "country": "United Kingdom", "deployment_id": "dep000057", "name": "Thame_reddings", "deployment_key": "Thame_reddings - OBA2D87E", "location_id": "", "latitute": 51.7734931, "longitute":  -1.0068506, "camera_id": "OBA2D87E", "system_id": "sys000057", "status": "active", "image_count": "0"
+        },
+        {
+        "country": "United Kingdom", "deployment_id": "dep000058", "name": "Wiltshire_manor", "deployment_key": "Wiltshire_manor - 54AC983D", "location_id": "", "latitute": 51.3595367, "longitute":  -1.9172299, "camera_id": "54AC983D", "system_id": "sys000008", "status": "active", "image_count": "0"
+        },
+        {
+        "country": "United Kingdom", "deployment_id": "dep000059", "name": "Parsonage", "deployment_key": "Parsonage - 413609F5", "location_id": "", "latitute": 51.15212, "longitute": -1.961218, "camera_id": "413609F5", "system_id": "sys000058", "status": "active", "image_count": "0"
+        },
+        {
+        "country": "United Kingdom", "deployment_id": "dep000060", "name": " Thame_lopemede", "deployment_key": " Thame_lopemede - 0B9CD574", "location_id": "", "latitute":  51.7620183, "longitute": -0.9901411, "camera_id": "0B9CD574", "system_id": "sys000015", "status": "active", "image_count": "0"
+        },
+        {
+        "country": "United Kingdom", "deployment_id": "dep000061", "name": "Monkswood", "deployment_key": "Monkswood - 34EB87CA", "location_id": "", "latitute": 52.398828, "longitute": -0.2434390, "camera_id": "34EB87CA", "system_id": "sys000010", "status": "active", "image_count": "0"
+        },
+        {
+        "country": "United Kingdom", "deployment_id": "dep000062", "name": "Dorset_lalea", "deployment_key": "Dorset_lalea - D6F5A928", "location_id": "", "latitute": 50.8151378, "longitute": -2.2104393, "camera_id": "D6F5A928", "system_id": "sys000059", "status": "active", "image_count": "0"
+        },
+        {
+        "country": "United Kingdom", "deployment_id": "dep000063", "name": "Dorset_bagber", "deployment_key": "Dorset_bagber - FA4C9783", "location_id": "", "latitute": 50.7951021, "longitute": -2.2636915, "camera_id": "FA4C9783", "system_id": "sys000004", "status": "active", "image_count": "0"
+        },
+        {
+        "country": "United Kingdom", "deployment_id": "dep000064", "name": "Easthendred", "deployment_key": "Easthendred - 06C5AB38", "location_id": "", "latitute": 51.589716, "longitute": -1.317683, "camera_id": "06C5AB38", "system_id": "sys000060", "status": "active", "image_count": "0"
+        },
+        {
+        "country": "United Kingdom", "deployment_id": "dep000065", "name": "North_grange", "deployment_key": "North_grange - F597AD38", "location_id": "", "latitute": 52.3436743, "longitute": -0.4998390, "camera_id": "F597AD38", "system_id": "sys000014", "status": "active", "image_count": "1370"
+        },
+        {
+        "country": "United Kingdom", "deployment_id": "dep000066", "name": "Gloucester_cullabine", "deployment_key": "Gloucester_cullabine - BC5O6DF8", "location_id": "", "latitute": 52.0279956, "longitute": -1.9674932, "camera_id": "BC5O6DF8", "system_id": "sys000012", "status": "active", "image_count": "0"
+        },
+        {
+        "country": "United Kingdom", "deployment_id": "dep000067", "name": "Pymoor_BNG", "deployment_key": "Pymoor_BNG - 2AD053B8", "location_id": "", "latitute": 52.451581, "longitute": 0.194265, "camera_id": "2AD053B8", "system_id": "sys000013", "status": "active", "image_count": "0"
+        },
+        {
+        "country": "United Kingdom", "deployment_id": "dep000068", "name": "North_bottom", "deployment_key": "North_bottom - DC78624B", "location_id": "", "latitute": 52.3342023, "longitute": -0.4713614, "camera_id": "DC78624B", "system_id": "sys000006", "status": "active", "image_count": "1820"
+        },
+        {
+        "country": "United Kingdom", "deployment_id": "dep000069", "name": "Wiltshire_horton", "deployment_key": "Wiltshire_horton - 742D5CE6", "location_id": "", "latitute": 51.3859859, "longitute": -1.9137229, "camera_id": "742D5CE6", "system_id": "sys000007", "status": "active", "image_count": "0"
+        },
+        {
+        "country": "United Kingdom", "deployment_id": "dep000070", "name": "Ewhurst", "deployment_key": "Ewhurst - 561AEFB3", "location_id": "", "latitute": 51.589716, "longitute": -1.31763, "camera_id": "561AEFB3", "system_id": "sys000005", "status": "active", "image_count": "0"
+        },
+        {
+        "country": "United Kingdom", "deployment_id": "dep000071", "name": "UCL_PNL409", "deployment_key": "UCL_PNL409 - 6BA21D9C", "location_id": "loc000055", "latitute": 51.538493321188334, "longitute": -0.009050510420643556, "camera_id": "6BA21D9C", "system_id": "sys000061", "status": "active", "image_count": "0"
+        },
+        {
+        "country": "United Kingdom", "deployment_id": "dep000072", "name": "Solar_1_Panels", "deployment_key": "Solar_1_Panels - D7C49A5F", "location_id": "loc000056", "latitute": 51.6171655, "longitute": -1.6448439, "camera_id": "D7C49A5F", "system_id": "sys000062", "status": "active", "image_count": "106226"
+        },
+        {
+        "country": "United Kingdom", "deployment_id": "dep000073", "name": "Solar_2_Field", "deployment_key": "Solar_2_Field - 9C2D5EOA", "location_id": "loc000057", "latitute": 51.6182651, "longitute": -1.6432497, "camera_id": "9C2D5EOA", "system_id": "sys000063", "status": "active", "image_count": "106560"
+        },
+        {
+        "country": "United Kingdom", "deployment_id": "dep000079", "name": "ECN Cairngorm", "deployment_key": "ECN Cairngorm - string", "location_id": "loc000063", "latitute": 57.1181609, "longitute": -3.8508089, "camera_id": "string", "system_id": "sys000069", "status": "active", "image_count": "83466"
+        },
+        {
+        "country": "United Kingdom", "deployment_id": "dep000080", "name": "Far Ralia", "deployment_key": "Far Ralia - string", "location_id": "loc000064", "latitute": 57.019091, "longitute": -4.0855023, "camera_id": "string", "system_id": "sys000070", "status": "active", "image_count": "80773"
+        },
+        {
+        "country": "United Kingdom", "deployment_id": "dep000081", "name": "Wiltshire_firs", "deployment_key": "Wiltshire_firs - 13DCA4E9", "location_id": "loc000065", "latitute": 51.4029876, "longitute": -1.89354, "camera_id": "13DCA4E9", "system_id": "sys000071", "status": "active", "image_count": "0"
+        },
+        {
+        "country": "United Kingdom", "deployment_id": "dep000082", "name": "Nettlebed", "deployment_key": "Nettlebed - EO4531A2", "location_id": "loc000066", "latitute": 51.561228, "longitute": -1.030872, "camera_id": "EO4531A2", "system_id": "sys000072", "status": "active", "image_count": "0"
+        },
+        {
+        "country": "United Kingdom", "deployment_id": "dep000093", "name": "British Rototherm – Kenfig", "deployment_key": "British Rototherm – Kenfig - 680E195D", "location_id": "loc000077", "latitute": 51.535893, "longitute": -3.731561, "camera_id": "680E195D", "system_id": "sys000083", "status": "active", "image_count": "960"
+        },
+        {
+        "country": "Singapore", "deployment_id": "dep000045", "name": "NTU", "deployment_key": "NTU - 7125ED6F", "location_id": "loc000045", "latitute": 1.3559088, "longitute": 103.6850555, "camera_id": "7125ED6F", "system_id": "sys000045", "status": "active", "image_count": "106936"
+        },
+        {
+        "country": "Singapore", "deployment_id": "dep000046", "name": "BTNR", "deployment_key": "BTNR - 43C751ED", "location_id": "loc000046", "latitute": 1.3533835, "longitute": 103.7789017, "camera_id": "43C751ED", "system_id": "sys000046", "status": "active", "image_count": "53608"
+        },
+        {
+        "country": "Singapore", "deployment_id": "dep000047", "name": "W47", "deployment_key": "W47 - 63B4271", "location_id": "loc000047", "latitute": 1.3987403, "longitute": 103.8062226, "camera_id": "63B4271", "system_id": "sys000047", "status": "active", "image_count": "50389"
+        },
+        {
+        "country": "Singapore", "deployment_id": "dep000048", "name": "SBWR", "deployment_key": "SBWR - 2F13EC40", "location_id": "loc000048", "latitute": 1.4456029, "longitute": 103.7308777, "camera_id": "2F13EC40", "system_id": "sys000048", "status": "active", "image_count": "75816"
+        },
+        {
+        "country": "Singapore", "deployment_id": "dep000049", "name": "ECOLINK", "deployment_key": "ECOLINK - EF724A93", "location_id": "loc000049", "latitute": 1.357151, "longitute": 103.7835583, "camera_id": "EF724A93", "system_id": "sys000049", "status": "active", "image_count": "223540"
+        },
+        {
+        "country": "Singapore", "deployment_id": "dep000050", "name": "BAMK", "deployment_key": "BAMK - E1CDFB43", "location_id": "loc000050", "latitute": 1.3657524, "longitute": 103.834879, "camera_id": "E1CDFB43", "system_id": "sys000050", "status": "active", "image_count": "220397"
+        },
+        {
+        "country": "Singapore", "deployment_id": "dep000051", "name": "W02", "deployment_key": "W02 - 7EF106BD", "location_id": "loc000051", "latitute": 1.352084, "longitute": 103.829215, "camera_id": "7EF106BD", "system_id": "sys000051", "status": "active", "image_count": "111405"
+        },
+        {
+        "country": "Singapore", "deployment_id": "dep000052", "name": "JLG", "deployment_key": "JLG - C30D1F29", "location_id": "loc000052", "latitute": 1.33158, "longitute": 103.727561, "camera_id": "C30D1F29", "system_id": "sys000052", "status": "active", "image_count": "223633"
+        },
+        {
+        "country": "Singapore", "deployment_id": "dep000053", "name": "SBG", "deployment_key": "SBG - 68739DF0", "location_id": "loc000053", "latitute": 1.3108860, "longitute": 103.8174034, "camera_id": "68739DF0", "system_id": "sys000053", "status": "active", "image_count": "133837"
+        },
+        {
+        "country": "Singapore", "deployment_id": "dep000054", "name": "RCHG", "deployment_key": "RCHG - 34F0B1E9", "location_id": "loc000054", "latitute": 1.3282655, "longitute": 103.7815148, "camera_id": "34F0B1E9", "system_id": "sys000054", "status": "active", "image_count": "145841"
+        },
+        {
+        "country": "Kenya", "deployment_id": "dep000094", "name": "AmiKenyaMuseums", "deployment_key": "AmiKenyaMuseums - C60F4B58", "location_id": "loc000078", "latitute": -1.27406730, "longitute": 36.81648399, "camera_id": "C60F4B58", "system_id": "sys000084", "status": "active", "image_count": "0"
+        },
+        {
+        "country": "Kenya", "deployment_id": "dep000095", "name": "AMI-Kenya-DeKUT", "deployment_key": "AMI-Kenya-DeKUT - DA5BE238", "location_id": "loc000079", "latitute": -0.389105, "longitute": 36.958624, "camera_id": "DA5BE238", "system_id": "sys000085", "status": "active", "image_count": "0"
+        },
+        {
+        "country": "Thailand", "deployment_id": "dep000074", "name": "RAMA 9", "deployment_key": "RAMA 9 - AED93410", "location_id": "loc000058", "latitute": 14.04786, "longitute": 100.72023, "camera_id": "AED93410", "system_id": "sys000064", "status": "active", "image_count": "102715"
+        },
+        {
+        "country": "Thailand", "deployment_id": "dep000075", "name": "Puang Thong (hill)", "deployment_key": "Puang Thong (hill) - 17EF46D3", "location_id": "loc000059", "latitute": 13.18876, "longitute": 101.63671, "camera_id": "17EF46D3", "system_id": "sys000065", "status": "active", "image_count": "140224"
+        },
+        {
+        "country": "Thailand", "deployment_id": "dep000076", "name": "Puang Thong 2 (lake)", "deployment_key": "Puang Thong 2 (lake) - 35F7C429", "location_id": "loc000060", "latitute": 13.18896, "longitute": 101.63569, "camera_id": "35F7C429", "system_id": "sys000066", "status": "active", "image_count": "95078"
+        },
+        {
+        "country": "Thailand", "deployment_id": "dep000077", "name": "Sakaerat (car graveyard)", "deployment_key": "Sakaerat (car graveyard) - B625F173", "location_id": "loc000061", "latitute": 14.50943, "longitute": 101.92925, "camera_id": "B625F173", "system_id": "sys000067", "status": "active", "image_count": "96684"
+        },
+        {
+        "country": "Thailand", "deployment_id": "dep000078", "name": "Sakaerat 2 (dam)", "deployment_key": "Sakaerat 2 (dam) - 2CBE05F9", "location_id": "loc000062", "latitute": 14.4973, "longitute": 101.91551, "camera_id": "2CBE05F9", "system_id": "sys000068", "status": "active", "image_count": "95706"
+        },
+        {
+        "country": "Costa Rica", "deployment_id": "dep000031", "name": "Butterfly", "deployment_key": "Butterfly - 4C2B89AF", "location_id": "loc000031", "latitute": 9.937355, "longitute": -84.050435, "camera_id": "4C2B89AF", "system_id": "sys000031", "status": "active", "image_count": "105608"
+        },
+        {
+        "country": "Costa Rica", "deployment_id": "dep000032", "name": "Forest Edge", "deployment_key": "Forest Edge - EC4AB109", "location_id": "loc000032", "latitute": 10.43034, "longitute": -84.007262, "camera_id": "EC4AB109", "system_id": "sys000032", "status": "active", "image_count": "373904"
+        },
+        {
+        "country": "Costa Rica", "deployment_id": "dep000033", "name": "Swamp", "deployment_key": "Swamp - 5794FB2E", "location_id": "loc000033", "latitute": 10.432685, "longitute": -84.008057, "camera_id": "5794FB2E", "system_id": "sys000033", "status": "active", "image_count": "378013"
+        },
+        {
+        "country": "Costa Rica", "deployment_id": "dep000034", "name": "Old Growth", "deployment_key": "Old Growth - E601A49B", "location_id": "loc000034", "latitute": 10.432295, "longitute": -84.010643, "camera_id": "E601A49B", "system_id": "sys000034", "status": "active", "image_count": "92367"
+        },
+        {
+        "country": "Costa Rica", "deployment_id": "dep000035", "name": "Dry Forest", "deployment_key": "Dry Forest - 1C5084E2", "location_id": "loc000035", "latitute": 10.34498, "longitute": -85.339332, "camera_id": "1C5084E2", "system_id": "sys000035", "status": "active", "image_count": "4152"
+        },
+        {
+        "country": "Costa Rica", "deployment_id": "dep000036", "name": "Wetland", "deployment_key": "Wetland - DC049A28", "location_id": "loc000036", "latitute": 10.34384, "longitute": -85.33845, "camera_id": "DC049A28", "system_id": "sys000036", "status": "active", "image_count": "4327"
+        },
+        {
+        "country": "Costa Rica", "deployment_id": "dep000037", "name": "Garden", "deployment_key": "Garden - 3F1C4908", "location_id": "loc000037", "latitute": 8.78514, "longitute": -82.960373, "camera_id": "3F1C4908", "system_id": "sys000037", "status": "active", "image_count": "287366"
+        },
+        {
+        "country": "Costa Rica", "deployment_id": "dep000038", "name": "Pre-montane forest", "deployment_key": "Pre-montane forest - 961AC5EB", "location_id": "loc000038", "latitute": 8.783784, "longitute": -82.960928, "camera_id": "961AC5EB", "system_id": "sys000038", "status": "active", "image_count": "257508"
+        },
+        {
+        "country": "Costa Rica", "deployment_id": "dep000039", "name": "Station", "deployment_key": "Station - 04EC1D6F", "location_id": "loc000039", "latitute": 8.404135, "longitute": -83.336879, "camera_id": "04EC1D6F", "system_id": "sys000039", "status": "active", "image_count": "6719"
+        },
+        {
+        "country": "Costa Rica", "deployment_id": "dep000040", "name": "Restoration", "deployment_key": "Restoration - D23BAE61", "location_id": "loc000040", "latitute": 8.409125, "longitute": -83.349612, "camera_id": "D23BAE61", "system_id": "sys000040", "status": "active", "image_count": "3419"
+        },
+        {
+        "country": "Panama", "deployment_id": "dep000017", "name": "trap_1", "deployment_key": "trap_1 - E43B615A", "location_id": "loc000017", "latitute": 9.163544, "longitute": -79.8378812, "camera_id": "E43B615A", "system_id": "sys000017", "status": "active", "image_count": "47740"
+        },
+        {
+        "country": "Panama", "deployment_id": "dep000018", "name": "trap_2", "deployment_key": "trap_2 - BEF510C3", "location_id": "loc000018", "latitute": 9.1619212, "longitute": -79.8388263, "camera_id": "BEF510C3", "system_id": "sys000018", "status": "active", "image_count": "32104"
+        },
+        {
+        "country": "Panama", "deployment_id": "dep000020", "name": "trap_4", "deployment_key": "trap_4 - 2867OE4D", "location_id": "loc000020", "latitute": 9.1665498, "longitute": -79.8370742, "camera_id": "2867OE4D", "system_id": "sys000020", "status": "active", "image_count": "88683"
+        },
+        {
+        "country": "Panama", "deployment_id": "dep000021", "name": "trap_5", "deployment_key": "trap_5 - 94CDAF87", "location_id": "loc000021", "latitute": 9.156513, "longitute": -79.8482278, "camera_id": "94CDAF87", "system_id": "sys000021", "status": "active", "image_count": "77763"
+        },
+        {
+        "country": "Panama", "deployment_id": "dep000022", "name": "trap_6", "deployment_key": "trap_6 - OF58CB93", "location_id": "loc000022", "latitute": 9.1581468, "longitute": -79.8473376, "camera_id": "OF58CB93", "system_id": "sys000022", "status": "active", "image_count": "126952"
+        },
+        {
+        "country": "Panama", "deployment_id": "dep000083", "name": "trap_1_UPDATED", "deployment_key": "trap_1_UPDATED - E43B615A", "location_id": "loc000067", "latitute": 9.157266, "longitute": -79.84427, "camera_id": "E43B615A", "system_id": "sys000073", "status": "active", "image_count": "36774"
+        },
+        {
+        "country": "Panama", "deployment_id": "dep000084", "name": "trap_2_UPDATED", "deployment_key": "trap_2_UPDATED - BEF510C3", "location_id": "loc000068", "latitute": 9.153848, "longitute": -79.84919, "camera_id": "BEF510C3", "system_id": "sys000074", "status": "active", "image_count": "23578"
+        },
+        {
+        "country": "Panama", "deployment_id": "dep000086", "name": "trap_4_UPDATED", "deployment_key": "trap_4_UPDATED - 2867OE4D", "location_id": "loc000070", "latitute": 9.155734, "longitute": -79.848962, "camera_id": "2867OE4D", "system_id": "sys000076", "status": "active", "image_count": "28543"
+        },
+        {
+        "country": "Panama", "deployment_id": "dep000087", "name": "trap_5_UPDATED", "deployment_key": "trap_5_UPDATED - 94CDAF87", "location_id": "loc000071", "latitute": 9.154962, "longitute": -79.84753, "camera_id": "94CDAF87", "system_id": "sys000077", "status": "active", "image_count": "16804"
+        },
+        {
+        "country": "Panama", "deployment_id": "dep000088", "name": "trap_6_UPDATED", "deployment_key": "trap_6_UPDATED - OF58CB93", "location_id": "loc000072", "latitute": 9.152816, "longitute": -79.846083, "camera_id": "OF58CB93", "system_id": "sys000078", "status": "active", "image_count": "6467"
+        },
+        {
+        "country": "Panama", "deployment_id": "dep000089", "name": "trap_7", "deployment_key": "trap_7 - E146AO58", "location_id": "loc000073", "latitute": 9.152852, "longitute": -79.852696, "camera_id": "E146AO58", "system_id": "sys000079", "status": "active", "image_count": "21294"
+        },
+        {
+        "country": "Panama", "deployment_id": "dep000090", "name": "trap_8", "deployment_key": "trap_8 - RW-AMI-0055", "location_id": "loc000074", "latitute": 9.153912, "longitute": -79.856413, "camera_id": "RW-AMI-0055", "system_id": "sys000080", "status": "active", "image_count": "17144"
+        },
+        {
+        "country": "Panama", "deployment_id": "dep000091", "name": "trap_9", "deployment_key": "trap_9 - RW-AMI-0063", "location_id": "loc000075", "latitute": 9.14998, "longitute": -79.855678, "camera_id": "RW-AMI-0063", "system_id": "sys000081", "status": "active", "image_count": "15094"
+        },
+        {
+        "country": "Panama", "deployment_id": "dep000092", "name": "trap_10", "deployment_key": "trap_10 - RW-AMI-0062", "location_id": "loc000076", "latitute": 9.151152, "longitute": -79.846305, "camera_id": "RW-AMI-0062", "system_id": "sys000082", "status": "active", "image_count": "21735"
+        }
+]
