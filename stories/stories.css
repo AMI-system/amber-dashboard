@@ -2,3 +2,32 @@ body {
   margin: 0;
   padding: 0;
 }
+
+/* Ensure each story occupies equal space within a row */
+.carousel-item .row {
+  display: flex;
+  justify-content: space-around; /* Ensures equal spacing */
+  align-items: stretch;         /* Aligns items properly */
+  flex-wrap: nowrap;            /* Prevents wrapping */
+  height: 100%;                 /* Ensures all stories align */
+}
+
+.carousel-item .col-4 {
+  flex: 0 0 33.3333%; /* Each story occupies one-third of the slide */
+  max-width: 33.3333%;
+  box-sizing: border-box; /* Prevents padding/margin overflow */
+  padding: 10px;          /* Optional padding for spacing */
+}
+
+.carousel-inner {
+  width: 100%;
+  overflow: hidden; /* Prevents overlap issues */
+}
+
+/* Story content styling */
+.carousel-item .col-4 > * {
+  width: 100%; /* Ensures the story content scales correctly */
+  height: 100%;
+  display: block;
+}
+
