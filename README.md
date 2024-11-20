@@ -10,3 +10,32 @@ To view the dashboard on [http://localhost:8000](http://localhost:8000), run the
 python -m http.server 8000
 ```
 
+## Repository structure
+
+```
+ami-dashboard/
+├── index.html          # Main file containing the tab layout
+├── map/
+│   ├── map.html        # Map-specific HTML
+│   ├── map.js          # JavaScript for map rendering
+│   ├── points_of_interest.json # Data for map markers
+│   └── map.css         # CSS for map styling (optional)
+├── stories/
+│   ├── stories.html    # Stories-specific HTML
+│   ├── stories.js      # JavaScript for carousel logic (if needed)
+│   ├── stories.css     # CSS for carousel styling
+│   ├── story1/
+│   │   ├── index.html  # HTML for Story 1 content
+│   │   └── story1.jpg  # Images for Story 1
+│   ├── story2/
+│   │   ├── index.html  # HTML for Story 2 content
+│   │   └── story2.jpg  # Images for Story 2
+│   └── ...             # Add more stories as needed
+├── css/
+│   └── styles.css      # Shared styles for the entire site
+├── js/
+│   └── main.js         # Shared scripts for the entire site
+└── assets/
+    ├── favicon.ico     # Favicon
+    └── logo.png        # Shared images or assets
+```
