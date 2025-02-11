@@ -8,21 +8,40 @@
   <link rel="stylesheet" href="stories.css">
 </head>
 <body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="../index.html">AMBER</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="../map/map.html">Map</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="../stories/stories.html">Stories</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../about/about.html">About</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- STORY CAROUSEL -->
   <div id="dataStoriesCarousel" class="carousel slide" data-bs-ride="carousel">
-    <!-- Indicators -->
-    <div class="carousel-indicators"></div>
-
-    <!-- Carousel slides -->
-    <div class="carousel-inner"></div>
-
-    <!-- Controls -->
+    <div class="carousel-inner">
+      <!-- Stories will be dynamically inserted here -->
+    </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#dataStoriesCarousel" data-bs-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
     </button>
     <button class="carousel-control-next" type="button" data-bs-target="#dataStoriesCarousel" data-bs-slide="next">
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
     </button>
   </div>
 
