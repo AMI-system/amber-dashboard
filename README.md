@@ -1,6 +1,6 @@
 # Ami Dashboard
 
-Dashboard for AMBER project currently hosted [here](https://ami-system.github.io/ami-dashboard/).
+Dashboard for AMBER project currently hosted [here](https://ami-system.github.io/amber-dashboard/).
 
 ## Running locally
 
@@ -31,6 +31,9 @@ ami-dashboard/
 │   │   ├── index.html  # HTML for Story 2 content
 │   │   └── story2.jpg  # Images for Story 2
 │   └── ...             # Add more stories as needed
+├── about
+│   ├── about.css
+│   └── about.html
 ├── css/
 │   └── styles.css      # Shared styles for the entire site
 ├── js/
