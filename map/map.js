@@ -1,5 +1,14 @@
 // Initialize the map and fit it to the entire world
-const map = L.map('map').fitWorld(); // Automatically sets the view to fit the world
+const map = L.map('map');
+// .fitWorld(); // add this tp the previous line to fit the map to the entire world
+
+// Define world-spanning bounds (full width, limited height)
+const bounds = [
+  [-30, -180], // Bottom-left (latitude limited to -30)
+  [70, 180]    // Top-right (latitude limited to 70)
+];
+
+map.fitBounds(bounds); // Fit the map to the bounds
 
 // Add OpenStreetMap tiles
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
