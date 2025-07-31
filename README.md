@@ -32,6 +32,7 @@ ami-dashboard/
 │   │   └── story2.jpg  # Images for Story 2
 │   └── ...             # Add more stories as needed
 ├── about
+│   ├── partner_logos/
 │   ├── about.css
 │   └── about.html
 ├── css/
