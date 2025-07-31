@@ -1,0 +1,38 @@
+[
+  {
+    "title": "Automated Monitoring Infrastructure (AMI)",
+    "text": "AMI systems are smart camera traps built for remote and off-grid biodiversity monitoring. Designed by ecologists and engineers, these devices capture images in the field and run machine learning models directly on-device, with no internet required.",
+    "image": "ami-system.gif",
+    "alt_text": "AMI system GIF"
+  },
+  {
+    "title": "Why Machine Learning at the Edge?",
+    "text": "Each AMI system can capture thousands of images per week, often in places with no power or connectivity. We use machine learning at the edge to process data locally, filtering noise, flagging wildlife, and saving only the most relevant images.",
+    "image": "ami-system.gif",
+    "alt_text": "AMI system GIF"
+  },
+  {
+    "title": "Detecting Wildlife in the Wild",
+    "text": "Our models first locate animals in the images using object detection. This step filters out empty frames and crops detected regions, preparing data for downstream classification tasks, all on a low-power device.",
+    "image": "ami-system.gif",
+    "alt_text": "AMI system GIF"
+  },
+  {
+    "title": "Sorting Life into Orders",
+    "text": "Once objects are detected, we classify them into broad taxonomic groups like spiders, flies, or moths (Lepidoptera). This coarse classification helps prioritise images and balance accuracy with computational efficiency.",
+    "image": "ami-system.gif",
+    "alt_text": "AMI system GIF"
+  },
+  {
+    "title": "Recognising Species in Seconds",
+    "text": "Using compact neural networks, we classify species directly from cropped detections. Our models are small enough to run on solar-powered hardware, yet accurate enough to distinguish between similar-looking species.",
+    "image": "ami-system.gif",
+    "alt_text": "AMI system GIF"
+  },
+  {
+    "title": "Tracking Unique Individuals",
+    "text": "We’re exploring methods to track the same individual across multiple frames or camera sites. This helps us study behaviour, movement, and population size, pushing the boundaries of what's possible with remote sensing and AI.",
+    "image": "ami-system.gif",
+    "alt_text": "AMI system GIF"
+  }
+]

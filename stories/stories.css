@@ -1,10 +1,11 @@
+/* Modern homepage styles */
 body {
-  font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
+  padding-top: 76px; /* Increased to ensure header is fully visible */
   text-align: center;
   scroll-snap-type: y mandatory;
-  padding-top: 56px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 }
 
 body, html {
@@ -15,57 +16,160 @@ body, html {
 }
 
 header {
-  background-color: #970b9c;
+  background-color: #667eea;
   color: white;
-  padding: 20px;
+  padding: 70px;
   font-size: 24px;
+  padding-top: 76px; /* Account for fixed navbar */
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  font-family: 'Arial', sans-serif;
 }
 
 .navbar {
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 1000; /* high enough to appear above background elements */
+  z-index: 1000;
 }
 
+.container {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 15px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
 
-/* Story page set up */
-.story-list {
+h1 {
+  color: #2c3e50;
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 3rem;
+  font-weight: bold;
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.intro-text {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 40px;
+  line-height: 1.6;
+}
+
+.story-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  padding: 20px;
-  justify-content: center;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
 }
 
-.story-item {
+.story-card {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
   text-decoration: none;
   color: inherit;
-  background: #f8f8f8;
-  padding: 15px;
-  border-radius: 10px;
-  transition: transform 0.2s;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
-.story-item:hover {
-  transform: scale(1.05);
+.story-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  text-decoration: none;
+  color: inherit;
 }
 
-.story-item img {
-  width: 100%;
-  max-width: 300px;
+.story-image {
   height: 200px;
+  overflow: hidden;
+}
+
+.story-image img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  border-radius: 10px;
+  transition: transform 0.3s ease;
 }
 
-.story-item h2, .story-item p {
-  margin: 10px 0;
+.story-card:hover .story-image img {
+  transform: scale(1.1);
+}
+
+.story-content {
+  padding: 25px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.story-content h3 {
+  color: #2c3e50;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  line-height: 1.3;
+}
+
+.story-content p {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+.read-more {
+  color: #667eea;
+  font-weight: 600;
+  font-size: 1rem;
+  margin-top: auto;
+  transition: color 0.3s ease;
+}
+
+.story-card:hover .read-more {
+  color: #764ba2;
 }
 
 
-/* Scrollytelling elements */
+/* Responsive design for homepage */
+@media (max-width: 768px) {
+  .container {
+    margin: 20px 10px;
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  .intro-text {
+    font-size: 1.1rem;
+  }
+
+  .story-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .story-content {
+    padding: 20px;
+  }
+
+  .story-content h3 {
+    font-size: 1.3rem;
+  }
+}
+
+/* Scrollytelling elements for individual story pages */
 #scrollytelling-container {
   position: relative;
   width: 100%;
