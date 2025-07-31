@@ -66,3 +66,20 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
   }
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  fetch("story_text.json")
+    .then(response => response.json())
+    .then(data => {
+      data.forEach((section, index) => {
+        const el = document.querySelector(`.scrolly-text[data-index="${index}"]`);
+        if (el) {
+          el.innerHTML = `
+            <h2>${section.title}</h2>
+            <p>${section.text}</p>
+          `;
+        }
+      });
+    })
+    .catch(err => console.error("Failed to load story text:", err));
+});
