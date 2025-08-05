@@ -2,10 +2,10 @@
 body {
   margin: 0;
   padding: 0;
-  padding-top: 76px; /* Increased to ensure header is fully visible */
-  text-align: center;
-  scroll-snap-type: y mandatory;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding-top: 76px; /* Account for fixed navbar */
+  background-color: #f8f9fa;
+  min-height: 100vh;
+  font-family: 'Arial', sans-serif;
 }
 
 body, html {
@@ -13,17 +13,6 @@ body, html {
   padding: 0;
   height: 100%;
   overflow-y: scroll;
-}
-
-header {
-  background-color: #667eea;
-  color: white;
-  padding: 70px;
-  font-size: 24px;
-  padding-top: 76px; /* Account for fixed navbar */
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  min-height: 100vh;
-  font-family: 'Arial', sans-serif;
 }
 
 .navbar {
@@ -34,30 +23,27 @@ header {
 }
 
 .container {
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.98);
   border-radius: 15px;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
   padding: 40px;
   margin-top: 20px;
   margin-bottom: 40px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 h1 {
-  color: #2c3e50;
+  color: #212529;
   text-align: center;
   margin-bottom: 30px;
   font-size: 3rem;
   font-weight: bold;
-  background: linear-gradient(45deg, #667eea, #764ba2);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
 }
 
 .intro-text {
   text-align: center;
   font-size: 1.2rem;
-  color: #555;
+  color: #495057;
   margin-bottom: 40px;
   line-height: 1.6;
 }
@@ -113,7 +99,7 @@ h1 {
 }
 
 .story-content h3 {
-  color: #2c3e50;
+  color: #212529;
   font-size: 1.5rem;
   font-weight: 600;
   margin-bottom: 15px;
@@ -121,14 +107,14 @@ h1 {
 }
 
 .story-content p {
-  color: #666;
+  color: #495057;
   line-height: 1.6;
   margin-bottom: 20px;
   flex-grow: 1;
 }
 
 .read-more {
-  color: #667eea;
+  color: #dc3545;
   font-weight: 600;
   font-size: 1rem;
   margin-top: auto;
@@ -136,7 +122,7 @@ h1 {
 }
 
 .story-card:hover .read-more {
-  color: #764ba2;
+  color: #c82333;
 }
 
 
@@ -261,7 +247,7 @@ h1 {
 
 /* accordion headers */
 .accordion-header {
-  background-color: #970b9c;
+  background-color: #343a40;
   color: white;
   padding: 10px;
   border-radius: 5px;
