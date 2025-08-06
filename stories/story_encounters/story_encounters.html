@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wildlife Encounters - AMBER Stories</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../stories.css">
+  <style>
+    .wildlife-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin: 40px 0;
+    }
+
+    .wildlife-card {
+      background: white;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .wildlife-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    }
+
+    .wildlife-card img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+    }
+
+    .wildlife-card .card-body {
+      padding: 20px;
+    }
+
+    .wildlife-card h4 {
+      color: #dc3545;
+      margin-bottom: 15px;
+      font-weight: bold;
+    }
+
+    .location-badge {
+      background: linear-gradient(135deg, #dc3545, #c82333);
+      color: white;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+      display: inline-block;
+    }
+
+    .hero-section {
+      background: linear-gradient(135deg, rgba(220, 53, 69, 0.1), rgba(248, 249, 250, 0.3));
+      padding: 60px 40px;
+      border-radius: 15px;
+      margin-bottom: 40px;
+      text-align: center;
+      border: 1px solid rgba(220, 53, 69, 0.2);
+    }
+
+    .timelapse-section {
+      background: #f8f9fa;
+      padding: 40px;
+      border-radius: 15px;
+      margin: 40px 0;
+      text-align: center;
+    }
+
+    .timelapse-section img {
+      max-width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin: 30px 0;
+    }
+
+    .stat-card {
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      text-align: center;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    }
+
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: #dc3545;
+      margin-bottom: 10px;
+    }
+
+    .stat-label {
+      color: #495057;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="../../index.html">AMBER</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="../stories.html">Stories</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../../about/about.html">About</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+</nav>
+
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-12">
+      <!-- Hero Section -->
+      <div class="hero-section">
+        <h1 class="display-3 fw-bold mb-4">Wildlife Encounters</h1>
+        <p class="lead mb-4">
+          Our AMBER camera traps capture, more than just moths, also
+          the incredible diversity of wildlife across different ecosystems. Discover the fascinating
+          creatures that trigger our AI-powered monitoring systems.</br></br>
+
+          Beyond moths, our cameras reveal the complete ecosystem story. Every frog strike,
+              gecko interaction, and curious cat investigation captured contributes to our understanding
+              of wildlife behavior, habitat preferences, and ecosystem health. These unexpected
+              non-moth encounters provide crucial insights into biodiversity patterns and
+              ecological relationships that directly support conservation efforts and policy decisions.
+
+        </p>
+        <p class="text-muted">
+          <em>Every snapshot tells a story of biodiversity in action</em>
+        </p>
+      </div>
+
+
+      <!-- Wildlife Gallery -->
+      <div class="wildlife-gallery">
+        <div class="wildlife-card">
+          <img src="thailand/20240808001029-snapshot.jpg" alt="Thailand Wildlife">
+          <div class="card-body">
+            <span class="location-badge">🇹🇭 Thailand</span>
+            <h4>Lightning-Fast Hunter</h4>
+            <p>Caught in the act! This Thailand frog demonstrates some of local predators, seen here
+            extending its sticky tongue in a lightning-fast strike to snag unsuspecting insects.
+            A perfect example of predator-prey dynamics captured by our motion sensors.</p>
+            <small class="text-muted">Captured: August 8, 2024</small>
+          </div>
+        </div>
+
+        <div class="wildlife-card">
+          <img src="singapore/01-20240611010749-snapshot.jpg" alt="Singapore Urban Wildlife">
+          <div class="card-body">
+            <span class="location-badge">🇸🇬 Singapore</span>
+            <h4>City Survivor</h4>
+            <p>This resourceful rat showcases remarkable
+            adaptability, thriving in the concrete jungle where few wild mammals dare to venture.
+            Our cameras reveal how these clever creatures navigate the challenges of city life.</p>
+            <small class="text-muted">Captured: June 11, 2024</small>
+          </div>
+        </div>
+
+        <div class="wildlife-card">
+          <img src="thailand/20240924000920-snapshot.jpg" alt="Thailand Forest Wildlife">
+          <div class="card-body">
+            <span class="location-badge">🇹🇭 Thailand</span>
+            <h4>The Moth Inspector</h4>
+            <p>Meet Thailand's most curious repeat visitor! This determined cat has become a regular
+            night investigator, returning multiple evenings to study our moth activity with scientific
+            precision. Who's monitoring who? Our cameras capture this feline researcher at work!</p>
+            <small class="text-muted">Captured: September 24, 2024</small>
+          </div>
+        </div>
+
+        <div class="wildlife-card">
+          <img src="singapore/20240907011729-snapshot.jpg" alt="Singapore Night Wildlife">
+          <div class="card-body">
+            <span class="location-badge">🇸🇬 Singapore</span>
+            <h4>Gecko Social Hour</h4>
+            <p>Date night in the city! These Singapore geckos prove that even in the urban jungle,
+            there's time for socialising. Our cameras capture these charming reptilian
+            interactions - who knew geckos had such active social lives after dark?</p>
+            <small class="text-muted">Captured: September 7, 2024</small>
+          </div>
+        </div>
+
+
+        <div class="wildlife-card">
+            <img src="thailand/thailand_20240813030540_dep000077_timelapse.gif" alt="Potential possum">
+            <div class="card-body">
+              <span class="location-badge">🇹🇭 Thailand, deployment 77</span>
+              <h4>Unknown Mammal</h4>
+              <p> This timelapse from our Thailand deployment shows what looks like a possum-like creature.</p>
+              <small class="text-muted">Captured: August 13, 2024</small>
+            </div>
+        </div>
+
+      </div>
+
+
+
+
+
+      <!-- Back to Stories -->
+      <div class="text-center mt-5 mb-4">
+        <a href="../stories.html" class="btn btn-outline-primary btn-lg me-3">
+          ← Back to All Stories
+        </a>
+        <a href="../story_ml/story_ml.html" class="btn btn-primary btn-lg">
+          Explore AI Technology →
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

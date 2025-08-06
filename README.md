@@ -27,9 +27,9 @@ ami-dashboard/
 │   ├── story_ml/
 │   │   ├── story_ml.html  # HTML for Story ML content
 │   │   └── story_ml.jpg  # Images for Story ML
-│   ├── story2/
-│   │   ├── index.html  # HTML for Story 2 content
-│   │   └── story2.jpg  # Images for Story 2
+│   ├── story_encounters/
+│   │   ├── story_encounters.html  # HTML for Wildlife Encounters content
+│   │   └── story_encounters.jpg  # Images for Wildlife Encounters
 │   ├── story_map/
 │   │   ├── story_map.html  # HTML for Story Map content
 │   │   └── story_map.jpg  # Images for Story Map
