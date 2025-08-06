@@ -1,268 +1,174 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>AMBER</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="css/styles.css"/>
 </head>
 <body>
 
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="index.html">AMBER</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" href="stories/stories.html">Stories</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="about/about.html">About</a>
-          </li>
-        </ul>
-      </div>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="index.html">AMBER</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="stories/stories.html">Stories</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="about/about.html">About</a>
+        </li>
+      </ul>
     </div>
-  </nav>
+  </div>
+</nav>
 
-  <!-- Main Content -->
-  <div class="container text-center mt-5">
-    <h1>Welcome to AMBER</h1>
-    <p class="intro-text">Automated Monitoring of Biodiversity with Edge Processing and Remote Sensing: A cutting-edge collaboration between UKCEH and The Alan Turing Institute, exploring wildlife conservation through AI-powered camera trap networks.</p>
+<!-- Main Content -->
+<div class="container text-center mt-5">
+  <h1>Welcome to AMBER</h1>
+  <p class="intro-text">
+    Automated Monitoring of Biodiversity with Edge Processing and Remote Sensing: A cutting-edge collaboration between UKCEH and The Alan Turing Institute, exploring wildlife conservation through AI-powered camera trap networks.
+  </p>
 
-    <div class="landing-container">
-      <div class="image-grid">
-        <img src="assets/ami_system.png" alt="AMI system deployed in the field">
-        <img src="assets/example.jpg" alt="Wildlife captured by AMI system in Costa Rica">
-        <img src="assets/ami_system.png" alt="Camera trap technology in action">
-        <img src="assets/example.jpg" alt="Biodiversity monitoring results">
-      </div>
-      <div class="text-content">
-        <p>The AMBER project represents a novel approach to biodiversity monitoring, combining advanced camera trap technology with machine learning algorithms to automatically identify and track wildlife populations across diverse ecosystems.</p>
-
-        <p>Our intelligent monitoring systems are deployed worldwide, from the rainforests of Costa Rica to the deserts of Namibia, providing unprecedented insights into ecosystem health and wildlife behavior patterns.</p>
-
-        <div class="mt-4">
-          <a href="stories/story5/story5.html" class="btn btn-primary">Explore Deployments</a>
-          <a href="stories/stories.html" class="btn btn-outline-primary">Read Our Stories</a>
-          <a href="about/about.html" class="btn btn-outline-primary">Find out more about AMBER</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Stories Carousel Section -->
-    <div class="stories-section mt-5">
-      <h2 class="text-center mb-4">Featured Stories</h2>
-      <div id="storiesCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
-        <div class="carousel-indicators">
-          <button type="button" data-bs-target="#storiesCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-          <button type="button" data-bs-target="#storiesCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-          <button type="button" data-bs-target="#storiesCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-          <button type="button" data-bs-target="#storiesCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
-          <button type="button" data-bs-target="#storiesCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
-        </div>
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <div class="stories-viewport">
-              <div class="stories-row" style="transform: translateX(0%);">
-                <div class="story-carousel-card">
-                  <img src="stories/story1/ml_snapshot.jpg" class="story-carousel-img" alt="Machine Learning Analysis">
-                  <div class="story-carousel-content">
-                    <h3>Unlocking Biodiversity Insights with Machine Learning</h3>
-                    <p>Discover how AI is transforming biodiversity research through the AMBER project.</p>
-                    <a href="stories/story1/story1.html" class="btn btn-outline-primary btn-sm">Read Story</a>
-                  </div>
-                </div>
-                <div class="story-carousel-card">
-                  <img src="stories/story5/story5.jpg" class="story-carousel-img" alt="Global Deployment Map">
-                  <div class="story-carousel-content">
-                    <h3>Global AMBER Deployment Network</h3>
-                    <p>Explore our worldwide network of AI-powered camera trap deployments across six continents.</p>
-                    <a href="stories/story5/story5.html" class="btn btn-outline-primary btn-sm">Read Story</a>
-                  </div>
-                </div>
-                <div class="story-carousel-card">
-                  <img src="stories/story2/story2.jpg" class="story-carousel-img" alt="Lorem Ipsum Story">
-                  <div class="story-carousel-content">
-                    <h3>Lorem Ipsum Dolor Sit Amet</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt.</p>
-                    <a href="stories/story2/story2.html" class="btn btn-outline-primary btn-sm">Read Story</a>
-                  </div>
-                </div>
-                <div class="story-carousel-card">
-                  <img src="stories/story3/story3.png" class="story-carousel-img" alt="Consectetur Adipiscing">
-                  <div class="story-carousel-content">
-                    <h3>Consectetur Adipiscing Elit</h3>
-                    <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae.</p>
-                    <a href="stories/story3/story3.html" class="btn btn-outline-primary btn-sm">Read Story</a>
-                  </div>
-                </div>
-                <div class="story-carousel-card">
-                  <img src="stories/story4/story4.png" class="story-carousel-img" alt="Tempor Incididunt">
-                  <div class="story-carousel-content">
-                    <h3>Tempor Incididunt Labore</h3>
-                    <p>Nulla facilisi morbi tempus iaculis urna id volutpat lacus. Praesent elementum facilisis leo.</p>
-                    <a href="stories/story4/story4.html" class="btn btn-outline-primary btn-sm">Read Story</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="stories-viewport">
-              <div class="stories-row" style="transform: translateX(-25%);">
-                <div class="story-carousel-card">
-                  <img src="stories/story1/ml_snapshot.jpg" class="story-carousel-img" alt="Machine Learning Analysis">
-                  <div class="story-carousel-content">
-                    <h3>Unlocking Biodiversity Insights with Machine Learning</h3>
-                    <p>Discover how AI is transforming biodiversity research through the AMBER project.</p>
-                    <a href="stories/story1/story1.html" class="btn btn-outline-primary btn-sm">Read Story</a>
-                  </div>
-                </div>
-                <div class="story-carousel-card">
-                  <img src="stories/story5/story5.jpg" class="story-carousel-img" alt="Global Deployment Map">
-                  <div class="story-carousel-content">
-                    <h3>Global AMBER Deployment Network</h3>
-                    <p>Explore our worldwide network of AI-powered camera trap deployments across six continents.</p>
-                    <a href="stories/story5/story5.html" class="btn btn-outline-primary btn-sm">Read Story</a>
-                  </div>
-                </div>
-                <div class="story-carousel-card">
-                  <img src="stories/story2/story2.jpg" class="story-carousel-img" alt="Lorem Ipsum Story">
-                  <div class="story-carousel-content">
-                    <h3>Lorem Ipsum Dolor Sit Amet</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt.</p>
-                    <a href="stories/story2/story2.html" class="btn btn-outline-primary btn-sm">Read Story</a>
-                  </div>
-                </div>
-                <div class="story-carousel-card">
-                  <img src="stories/story3/story3.png" class="story-carousel-img" alt="Consectetur Adipiscing">
-                  <div class="story-carousel-content">
-                    <h3>Consectetur Adipiscing Elit</h3>
-                    <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae.</p>
-                    <a href="stories/story3/story3.html" class="btn btn-outline-primary btn-sm">Read Story</a>
-                  </div>
-                </div>
-                <div class="story-carousel-card">
-                  <img src="stories/story4/story4.png" class="story-carousel-img" alt="Tempor Incididunt">
-                  <div class="story-carousel-content">
-                    <h3>Tempor Incididunt Labore</h3>
-                    <p>Nulla facilisi morbi tempus iaculis urna id volutpat lacus. Praesent elementum facilisis leo.</p>
-                    <a href="stories/story4/story4.html" class="btn btn-outline-primary btn-sm">Read Story</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="stories-viewport">
-              <div class="stories-row" style="transform: translateX(-50%);">
-                <div class="story-carousel-card">
-                  <img src="stories/story1/ml_snapshot.jpg" class="story-carousel-img" alt="Machine Learning Analysis">
-                  <div class="story-carousel-content">
-                    <h3>Unlocking Biodiversity Insights with Machine Learning</h3>
-                    <p>Discover how AI is transforming biodiversity research through the AMBER project.</p>
-                    <a href="stories/story1/story1.html" class="btn btn-outline-primary btn-sm">Read Story</a>
-                  </div>
-                </div>
-                <div class="story-carousel-card">
-                  <img src="stories/story5/story5.jpg" class="story-carousel-img" alt="Global Deployment Map">
-                  <div class="story-carousel-content">
-                    <h3>Global AMBER Deployment Network</h3>
-                    <p>Explore our worldwide network of AI-powered camera trap deployments across six continents.</p>
-                    <a href="stories/story5/story5.html" class="btn btn-outline-primary btn-sm">Read Story</a>
-                  </div>
-                </div>
-                <div class="story-carousel-card">
-                  <img src="stories/story2/story2.jpg" class="story-carousel-img" alt="Lorem Ipsum Story">
-                  <div class="story-carousel-content">
-                    <h3>Lorem Ipsum Dolor Sit Amet</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt.</p>
-                    <a href="stories/story2/story2.html" class="btn btn-outline-primary btn-sm">Read Story</a>
-                  </div>
-                </div>
-                <div class="story-carousel-card">
-                  <img src="stories/story3/story3.png" class="story-carousel-img" alt="Consectetur Adipiscing">
-                  <div class="story-carousel-content">
-                    <h3>Consectetur Adipiscing Elit</h3>
-                    <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae.</p>
-                    <a href="stories/story3/story3.html" class="btn btn-outline-primary btn-sm">Read Story</a>
-                  </div>
-                </div>
-                <div class="story-carousel-card">
-                  <img src="stories/story4/story4.png" class="story-carousel-img" alt="Tempor Incididunt">
-                  <div class="story-carousel-content">
-                    <h3>Tempor Incididunt Labore</h3>
-                    <p>Nulla facilisi morbi tempus iaculis urna id volutpat lacus. Praesent elementum facilisis leo.</p>
-                    <a href="stories/story4/story4.html" class="btn btn-outline-primary btn-sm">Read Story</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="stories-viewport">
-              <div class="stories-row" style="transform: translateX(-75%);">
-                <div class="story-carousel-card">
-                  <img src="stories/story1/ml_snapshot.jpg" class="story-carousel-img" alt="Machine Learning Analysis">
-                  <div class="story-carousel-content">
-                    <h3>Unlocking Biodiversity Insights with Machine Learning</h3>
-                    <p>Discover how AI is transforming biodiversity research through the AMBER project.</p>
-                    <a href="stories/story1/story1.html" class="btn btn-outline-primary btn-sm">Read Story</a>
-                  </div>
-                </div>
-                <div class="story-carousel-card">
-                  <img src="stories/story5/story5.jpg" class="story-carousel-img" alt="Global Deployment Map">
-                  <div class="story-carousel-content">
-                    <h3>Global AMBER Deployment Network</h3>
-                    <p>Explore our worldwide network of AI-powered camera trap deployments across six continents.</p>
-                    <a href="stories/story5/story5.html" class="btn btn-outline-primary btn-sm">Read Story</a>
-                  </div>
-                </div>
-                <div class="story-carousel-card">
-                  <img src="stories/story2/story2.jpg" class="story-carousel-img" alt="Lorem Ipsum Story">
-                  <div class="story-carousel-content">
-                    <h3>Lorem Ipsum Dolor Sit Amet</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt.</p>
-                    <a href="stories/story2/story2.html" class="btn btn-outline-primary btn-sm">Read Story</a>
-                  </div>
-                </div>
-                <div class="story-carousel-card">
-                  <img src="stories/story3/story3.png" class="story-carousel-img" alt="Consectetur Adipiscing">
-                  <div class="story-carousel-content">
-                    <h3>Consectetur Adipiscing Elit</h3>
-                    <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae.</p>
-                    <a href="stories/story3/story3.html" class="btn btn-outline-primary btn-sm">Read Story</a>
-                  </div>
-                </div>
-                <div class="story-carousel-card">
-                  <img src="stories/story4/story4.png" class="story-carousel-img" alt="Tempor Incididunt">
-                  <div class="story-carousel-content">
-                    <h3>Tempor Incididunt Labore</h3>
-                    <p>Nulla facilisi morbi tempus iaculis urna id volutpat lacus. Praesent elementum facilisis leo.</p>
-                    <a href="stories/story4/story4.html" class="btn btn-outline-primary btn-sm">Read Story</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#storiesCarousel" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#storiesCarousel" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
+  <div class="landing-container">
+    <img src="stories/story_ml/ami-system.gif" alt="AMI system deployed in the field" style="border-radius: 25px;" />
+    <div class="text-content">
+      <p>The AMBER project represents a novel approach to biodiversity monitoring, combining advanced camera trap technology with machine learning algorithms to automatically identify and track wildlife populations across diverse ecosystems.</p>
+      <p>Our intelligent monitoring systems are deployed worldwide, from the rainforests of Costa Rica to the deserts of Namibia, providing unprecedented insights into ecosystem health and wildlife behavior patterns.</p>
+      <div class="mt-4">
+        <a href="stories/story_map/story_map.html" class="btn btn-primary">Explore Deployments</a>
+        <a href="stories/stories.html" class="btn btn-outline-primary">Read Our Stories</a>
+        <a href="about/about.html" class="btn btn-outline-primary">Find out more about AMBER</a>
       </div>
     </div>
   </div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+  <!-- Stories Carousel Section -->
+  <div class="stories-section mt-5">
+    <h2 class="text-center mb-4">Featured Stories</h2>
+    <div id="storiesCarousel" class="carousel slide" data-bs-ride="false">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="stories-viewport overflow-hidden" id="carouselViewport">
+            <div class="stories-row d-flex flex-nowrap" id="storiesRow">
+              <!-- Story cards (unchanged) -->
+              <div class="story-carousel-card">
+                <img src="stories/story_ml/ml_snapshot.jpg" class="story-carousel-img" alt="Machine Learning Analysis" />
+                <div class="story-carousel-content">
+                  <h3>Unlocking Biodiversity Insights with Machine Learning</h3>
+                  <p>Discover how AI is transforming biodiversity research through the AMBER project.</p>
+                  <a href="stories/story_ml/story_ml.html" class="btn btn-outline-primary btn-sm">Read Story</a>
+                </div>
+              </div>
+              <div class="story-carousel-card">
+                <img src="stories/story_map/story_map.jpg" class="story-carousel-img" alt="Global Deployment Map" />
+                <div class="story-carousel-content">
+                  <h3>Global AMBER Deployment Network</h3>
+                  <p>Explore our worldwide network of AI-powered camera trap deployments across six continents.</p>
+                  <a href="stories/story_map/story_map.html" class="btn btn-outline-primary btn-sm">Read Story</a>
+                </div>
+              </div>
+              <div class="story-carousel-card">
+                <img src="stories/story2/story2.jpg" class="story-carousel-img" alt="Lorem Ipsum Story" />
+                <div class="story-carousel-content">
+                  <h3>Lorem Ipsum Dolor Sit Amet</h3>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt.</p>
+                  <a href="stories/story2/story2.html" class="btn btn-outline-primary btn-sm">Read Story</a>
+                </div>
+              </div>
+              <div class="story-carousel-card">
+                <img src="stories/story3/story3.png" class="story-carousel-img" alt="Consectetur Adipiscing" />
+                <div class="story-carousel-content">
+                  <h3>Consectetur Adipiscing Elit</h3>
+                  <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae.</p>
+                  <a href="stories/story3/story3.html" class="btn btn-outline-primary btn-sm">Read Story</a>
+                </div>
+              </div>
+              <div class="story-carousel-card">
+                <img src="stories/story4/story4.png" class="story-carousel-img" alt="Tempor Incididunt" />
+                <div class="story-carousel-content">
+                  <h3>Tempor Incididunt Labore</h3>
+                  <p>Nulla facilisi morbi tempus iaculis urna id volutpat lacus. Praesent elementum facilisis leo.</p>
+                  <a href="stories/story4/story4.html" class="btn btn-outline-primary btn-sm">Read Story</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" onclick="shiftCarousel(-1)">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" onclick="shiftCarousel(1)">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- JS dependencies -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+
+<!-- Carousel JS -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const viewport = document.getElementById('carouselViewport');
+  const row = document.getElementById('storiesRow');
+  const originalCards = Array.from(row.children);
+  const visibleCards = 3;
+  let currentIndex = visibleCards; // Start after prepended clones
+
+  // Clone first and last few cards
+  const cloneStart = originalCards.slice(-visibleCards).map(card => card.cloneNode(true));
+  const cloneEnd = originalCards.slice(0, visibleCards).map(card => card.cloneNode(true));
+
+  // Prepend and append clones
+  cloneStart.forEach(clone => row.insertBefore(clone, row.firstChild));
+  cloneEnd.forEach(clone => row.appendChild(clone));
+
+  const allCards = row.children;
+  const card = allCards[0];
+  const cardStyle = getComputedStyle(card);
+  const cardWidth = card.offsetWidth + parseInt(cardStyle.marginRight || 20);
+
+  // Set initial scroll position to the first real card
+  viewport.scrollLeft = cardWidth * currentIndex;
+
+  function shiftCarousel(direction = 1) {
+    currentIndex += direction;
+
+    // Smooth scroll
+    viewport.scrollTo({
+      left: cardWidth * currentIndex,
+      behavior: 'smooth'
+    });
+
+    // Reset scroll position instantly after transition ends (without visible jump)
+    setTimeout(() => {
+      if (currentIndex >= allCards.length - visibleCards) {
+        currentIndex = visibleCards;
+        viewport.scrollLeft = cardWidth * currentIndex;
+      } else if (currentIndex < visibleCards) {
+        currentIndex = allCards.length - (2 * visibleCards);
+        viewport.scrollLeft = cardWidth * currentIndex;
+      }
+    }, 350); // match scroll duration
+  }
+
+  window.shiftCarousel = shiftCarousel;
+  setInterval(() => shiftCarousel(1), 3000);
+});
+</script>
+
+
+
 </body>
 </html>
