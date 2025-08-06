@@ -30,77 +30,73 @@
 </nav>
 
 <!-- Main Content -->
-<div class="container text-center mt-5">
-      <h1>Welcome to AMBER</h1>
-      <h3>
+<div class="container text-center mt-4">
+      <h1 style="padding-bottom: 0px;">Welcome to AMBER</h1>
+      <h5 class="mb-3" style="color: #6c757d; padding-top: 0px;">
         Automated Monitoring of Biodiversity with Edge Processing and Remote Sensing.
-      </h3>
+      </h5>
   <div class="landing-container">
-    <img src="stories/story_ml/ami-system.gif" alt="AMI system deployed in the field" style="border-radius: 25px;" />
+    <img src="stories/story_ml/ami-system.gif" alt="AMI system deployed in the field" style="border-radius: 15px; max-height: 300px;" />
     <div class="text-content">
 
-      <p>AMBER is a cutting-edge collaboration between UKCEH and The Alan Turing Institute, exploring wildlife conservation through AI-powered camera trap networks. The project represents a novel approach to biodiversity monitoring, combining advanced camera trap technology with machine learning algorithms to automatically identify and track wildlife populations across diverse ecosystems.</p>
-      <p>Our intelligent monitoring systems are deployed worldwide, from the rainforests of Costa Rica to the deserts of Namibia, providing unprecedented insights into ecosystem health and wildlife behavior patterns.</p>
+      <p>AMBER is a cutting-edge collaboration between UKCEH and The Alan Turing Institute, exploring wildlife conservation through AI-powered camera trap networks. Our intelligent monitoring systems are deployed worldwide, from the rainforests of Costa Rica to the deserts of Namibia, providing unprecedented insights into ecosystem health and wildlife behavior patterns.</p>
 
     </div>
 
-    <div>
-      <a href="stories/story_map/story_map.html" class="btn btn-primary">Explore Deployments</a>
-      <a href="stories/stories.html" class="btn btn-outline-primary">Read Our Stories</a>
-      <a href="about/about.html" class="btn btn-outline-primary">Find out more about AMBER</a>
-    </div>
+
 
   </div>
+  <div class="mb-3" style="padding-top: 25px;">
+    <a href="stories/story_map/story_map.html" class="btn btn-primary btn-sm me-2">Explore Deployments</a>
+    <a href="stories/stories.html" class="btn btn-outline-primary btn-sm me-2">Read Stories</a>
+    <a href="about/about.html" class="btn btn-outline-primary btn-sm">About AMBER</a>
+  </div>
+
 
   <!-- Stories Carousel Section -->
-  <div class="stories-section mt-5">
-    <h2 class="text-center mb-4">Featured Stories</h2>
+  <div class="stories-section mt-3">
+    <h2 class="text-center mb-3">Featured Stories</h2>
     <div id="storiesCarousel" class="carousel slide" data-bs-ride="false">
       <div class="carousel-inner">
         <div class="carousel-item active">
           <div class="stories-viewport overflow-hidden" id="carouselViewport">
             <div class="stories-row d-flex flex-nowrap" id="storiesRow">
               <!-- Story cards (unchanged) -->
-              <div class="story-carousel-card">
+              <a href="stories/story_ml/story_ml.html" class="story-carousel-card text-decoration-none">
                 <img src="stories/story_ml/ml_snapshot.jpg" class="story-carousel-img" alt="Machine Learning Analysis" />
                 <div class="story-carousel-content">
                   <h3>Unlocking Biodiversity Insights with Machine Learning</h3>
                   <p>Discover how AI is transforming biodiversity research through the AMBER project.</p>
-                  <a href="stories/story_ml/story_ml.html" class="btn btn-outline-primary btn-sm">Read Story</a>
                 </div>
-              </div>
-              <div class="story-carousel-card">
+              </a>
+              <a href="stories/story_map/story_map.html" class="story-carousel-card text-decoration-none">
                 <img src="stories/story_map/story_map.jpg" class="story-carousel-img" alt="Global Deployment Map" />
                 <div class="story-carousel-content">
                   <h3>Global AMBER Deployment Network</h3>
                   <p>Explore our worldwide network of AI-powered camera trap deployments across six continents.</p>
-                  <a href="stories/story_map/story_map.html" class="btn btn-outline-primary btn-sm">Read Story</a>
                 </div>
-              </div>
-              <div class="story-carousel-card">
+              </a>
+              <a href="stories/story_encounters/story_encounters.html" class="story-carousel-card text-decoration-none">
                 <img src="stories/story_encounters/thailand/20240924000920-snapshot.jpg" class="story-carousel-img" alt="Wildlife Encounters" />
                 <div class="story-carousel-content">
                   <h3>Wildlife Encounters</h3>
                   <p>The systems captured more than just moths. From nocturnal predators to other creepy crawlies, discover incredible wildlife diversity.</p>
-                  <a href="stories/story_encounters/story_encounters.html" class="btn btn-outline-primary btn-sm">Read Story</a>
                 </div>
-              </div>
-              <div class="story-carousel-card">
+              </a>
+              <a href="stories/story_big/story_big.html" class="story-carousel-card text-decoration-none">
                 <img src="stories/story_big/story_big.png" class="story-carousel-img" alt="Big Beautiful Moths" />
                 <div class="story-carousel-content">
                   <h3>Big Beautiful Moths</h3>
                   <p>Meet some of our largest and most impressive moths captured on the cameras.</p>
-                  <a href="stories/story_big/story_big.html" class="btn btn-outline-primary btn-sm">Read Story</a>
                 </div>
-              </div>
-              <div class="story-carousel-card">
-                <img src="stories/story4/story4.png" class="story-carousel-img" alt="Tempor Incididunt" />
+              </a>
+              <a href="stories/story4/story4.html" class="story-carousel-card text-decoration-none">
+                <img src="stories/story4/story4.jpg" class="story-carousel-img" alt="Tempor Incididunt" />
                 <div class="story-carousel-content">
-                  <h3>Tempor Incididunt Labore</h3>
-                  <p>Nulla facilisi morbi tempus iaculis urna id volutpat lacus. Praesent elementum facilisis leo.</p>
-                  <a href="stories/story4/story4.html" class="btn btn-outline-primary btn-sm">Read Story</a>
+                  <h3>Interesting Species</h3>
+                  <p>Find out more about some notable species captured in the AMBER project.</p>
                 </div>
-              </div>
+              </a>
             </div>
           </div>
         </div>
