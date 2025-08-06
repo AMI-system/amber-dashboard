@@ -228,7 +228,7 @@ h1 {
   display: flex;
   gap: 20px;
   transition: transform 0.6s ease;
-  width: calc(133.33% + 40px); /* Show 3 out of 4 stories, plus gaps */
+  width: calc(166.67% + 80px); /* Show 3 out of 5 stories, plus gaps */
 }
 
 .story-carousel-card {

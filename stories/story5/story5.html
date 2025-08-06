@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AMBER Deployment Map - Interactive Global Monitoring Network</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css">
+  <link rel="stylesheet" href="../stories.css">
+  <link rel="stylesheet" href="../../map/map.css">
+  <style>
+    /* Custom styles for the story page map */
+    #map {
+      height: 100vh;
+      width: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1;
+    }
+
+    #image-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      z-index: 1;
+    }
+
+    #text-container {
+      position: relative;
+      z-index: 2;
+      padding-top: 100vh; /* Push content down so first text appears over map */
+    }
+
+    .text-step {
+      min-height: 100vh;
+      padding: 60px 40px;
+      margin-bottom: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .text-step .content {
+      max-width: 800px;
+      background: rgba(0, 0, 0, 0.8);
+      padding: 40px;
+      border-radius: 15px;
+      color: white;
+      backdrop-filter: blur(10px);
+    }
+
+    .deployment-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin: 30px 0;
+    }
+
+    .stat-item {
+      text-align: center;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 20px;
+      border-radius: 10px;
+      backdrop-filter: blur(5px);
+    }
+
+    .stat-number {
+      font-size: 3rem;
+      font-weight: bold;
+      color: #dc3545;
+      margin-bottom: 10px;
+    }
+
+    .stat-label {
+      color: white;
+      font-size: 1.1rem;
+      font-weight: 500;
+    }
+
+    .final-section {
+      background: linear-gradient(to bottom, rgba(0,0,0,0.8), rgba(0,0,0,0.9));
+      color: white;
+      padding: 100px 40px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="z-index: 1000;">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="../../index.html">AMBER</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="../stories.html">Stories</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../../about/about.html">About</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+</nav>
+
+<div id="scrollytelling-container">
+  <!-- Fixed background map -->
+  <div id="image-container">
+    <div id="map"></div>
+  </div>
+
+  <!-- Scrollable text content -->
+  <div id="text-container">
+    <!-- Introduction Section -->
+    <div class="text-step visible">
+      <div class="content">
+        <h1 class="display-3 fw-bold text-center mb-4">Global AMBER Deployment Network</h1>
+        <p class="lead text-center mb-4">
+          Explore our worldwide network of AI-powered camera trap deployments across six continents,
+          monitoring biodiversity and wildlife in some of the world's most important ecosystems.
+        </p>
+        <p class="text-center">
+          <em>Scroll down to discover our global impact and explore the interactive map...</em>
+        </p>
+      </div>
+    </div>
+
+    <!-- Statistics Section -->
+    <div class="text-step">
+      <div class="content">
+        <h2 class="text-center mb-4">Global Impact</h2>
+        <div class="deployment-stats">
+          <div class="stat-item">
+            <div class="stat-number">6</div>
+            <div class="stat-label">Countries</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">15+</div>
+            <div class="stat-label">Partner Organisations</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">80+</div>
+            <div class="stat-label">Camera Traps</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">24/7</div>
+            <div class="stat-label">Monitoring</div>
+          </div>
+        </div>
+        <p class="text-center mt-4">
+          Our deployment network spans diverse ecosystems from tropical rainforests to arid rangelands,
+          providing unprecedented insights into global biodiversity patterns.
+        </p>
+      </div>
+    </div>
+
+    <!-- Interactive Instructions -->
+    <div class="text-step">
+      <div class="content">
+        <h2 class="text-center mb-4">Explore the Map</h2>
+        <p class="text-center mb-4">
+          Click on the country markers to explore detailed information about each deployment site,
+          including partner organisations, research objectives, and key species being monitored.
+        </p>
+        <div class="text-center">
+          <div class="alert alert-info" style="background: rgba(13, 202, 240, 0.2); border: 1px solid rgba(13, 202, 240, 0.5); color: white;">
+            <strong>💡 Tip:</strong> Each marker is color-coded based on the number of images collected - 
+            darker colors indicate higher activity levels!
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Partnership Section -->
+    <div class="text-step">
+      <div class="content">
+        <h2 class="text-center mb-4">Global Collaboration</h2>
+        <div class="row">
+          <div class="col-md-6">
+            <h4>Remote Biodiversity Monitoring</h4>
+            <p>
+              Our global network provides insights into wildlife behavior and population dynamics
+              across diverse ecosystems. From tropical rainforests to arid rangelands, AMBER's AI-powered
+              camera traps are revolutionising how we understand and protect biodiversity.
+            </p>
+          </div>
+          <div class="col-md-6">
+            <h4>Collaborative Research</h4>
+            <p>
+              Each deployment site represents a unique collaboration between local institutions, researchers,
+              and conservation organisations. This partnership model ensures that our technology serves local
+              conservation needs while contributing to global scientific understanding.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Final section with solid background -->
+    <div class="final-section">
+      <div class="container">
+        <div class="text-center">
+          <h2 class="mb-4">Join the Global Monitoring Revolution</h2>
+          <p class="lead mb-4">
+            The AMBER project represents the future of biodiversity monitoring - automated, intelligent, 
+            and globally connected. Together, we're building a comprehensive picture of our planet's wildlife.
+          </p>
+          <a href="../stories.html" class="btn btn-outline-light btn-lg me-3">
+            ← Back to All Stories
+          </a>
+          <a href="../../about/about.html" class="btn btn-light btn-lg">
+            Learn More About AMBER
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+<script src="story5-map.js"></script>
+<script>
+// Scrollytelling functionality
+function handleScroll() {
+  const textSteps = document.querySelectorAll('.text-step');
+  const scrollTop = window.pageYOffset;
+  const windowHeight = window.innerHeight;
+
+  textSteps.forEach((step, index) => {
+    const stepTop = step.offsetTop;
+    const stepHeight = step.offsetHeight;
+    
+    // Calculate if step is in view
+    const stepCenter = stepTop + stepHeight / 2;
+    const isVisible = scrollTop + windowHeight / 2 > stepTop && 
+                     scrollTop + windowHeight / 2 < stepTop + stepHeight;
+    
+    if (isVisible) {
+      step.classList.add('visible');
+    } else {
+      step.classList.remove('visible');
+    }
+  });
+}
+
+// Initialize scroll handling
+window.addEventListener('scroll', handleScroll);
+window.addEventListener('load', handleScroll);
+</script>
+</body>
+</html>
