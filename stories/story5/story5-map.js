@@ -168,7 +168,7 @@ fetch('../../map/points_of_interest.json')
   .then(data => {
     // Group deployments by country
     const countryGroups = {};
-    
+
     data.forEach(point => {
       const country = point.country;
       if (!countryGroups[country]) {
@@ -177,7 +177,7 @@ fetch('../../map/points_of_interest.json')
           totalImages: 0
         };
       }
-      
+
       const imageCount = parseInt(point.image_count) || 0;
       countryGroups[country].deployments.push({
         ...point,

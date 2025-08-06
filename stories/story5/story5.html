@@ -174,7 +174,7 @@
         </p>
         <div class="text-center">
           <div class="alert alert-info" style="background: rgba(13, 202, 240, 0.2); border: 1px solid rgba(13, 202, 240, 0.5); color: white;">
-            <strong>💡 Tip:</strong> Each marker is color-coded based on the number of images collected - 
+            <strong>💡 Tip:</strong> Each marker is color-coded based on the number of images collected -
             darker colors indicate higher activity levels!
           </div>
         </div>
@@ -212,7 +212,7 @@
         <div class="text-center">
           <h2 class="mb-4">Join the Global Monitoring Revolution</h2>
           <p class="lead mb-4">
-            The AMBER project represents the future of biodiversity monitoring - automated, intelligent, 
+            The AMBER project represents the future of biodiversity monitoring - automated, intelligent,
             and globally connected. Together, we're building a comprehensive picture of our planet's wildlife.
           </p>
           <a href="../stories.html" class="btn btn-outline-light btn-lg me-3">
@@ -240,12 +240,12 @@ function handleScroll() {
   textSteps.forEach((step, index) => {
     const stepTop = step.offsetTop;
     const stepHeight = step.offsetHeight;
-    
+
     // Calculate if step is in view
     const stepCenter = stepTop + stepHeight / 2;
-    const isVisible = scrollTop + windowHeight / 2 > stepTop && 
+    const isVisible = scrollTop + windowHeight / 2 > stepTop &&
                      scrollTop + windowHeight / 2 < stepTop + stepHeight;
-    
+
     if (isVisible) {
       step.classList.add('visible');
     } else {

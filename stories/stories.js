@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', async () => {
   const stories = [
-    { file: './story1/story1.html', title: 'Story 1: The Beauty of Data' },
+    { file: './story_ml/story_ml.html', title: 'Story ML: The Beauty of Data' },
     { file: './story2/story2.html', title: 'Story 2: Hidden Patterns' },
     { file: './story3/story3.html', title: 'Story 3: Unlocking Insights' },
     { file: './story4/story4.html', title: 'Story 4: Data in Action' }, // Added 4th story

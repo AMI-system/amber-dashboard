@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AMBER Deployment Map - Interactive Global Monitoring Network</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css">
+  <link rel="stylesheet" href="../stories.css">
+  <link rel="stylesheet" href="../../map/map.css">
+  <style>
+    /* Custom styles for the story page map */
+    #map {
+      height: 600px;
+      width: 100%;
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      margin: 30px 0;
+    }
+
+    .story-intro {
+      background: linear-gradient(135deg, rgba(220, 53, 69, 0.1), rgba(248, 249, 250, 0.3));
+      padding: 40px;
+      border-radius: 15px;
+      margin-bottom: 30px;
+      border: 1px solid rgba(220, 53, 69, 0.2);
+    }
+
+    .deployment-stats {
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+      margin: 30px 0;
+    }
+
+    .stat-item {
+      text-align: center;
+      padding: 20px;
+    }
+
+    .stat-number {
+      font-size: 3rem;
+      font-weight: bold;
+      color: #dc3545;
+      margin-bottom: 10px;
+    }
+
+    .stat-label {
+      color: #495057;
+      font-size: 1.1rem;
+      font-weight: 500;
+    }
+
+    .info-card {
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+      margin-bottom: 30px;
+      height: 100%;
+    }
+
+    .info-card h3 {
+      color: #dc3545;
+      margin-bottom: 20px;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .map-section {
+      background: white;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+      margin: 30px 0;
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="../../index.html">AMBER</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="../stories.html">Stories</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../../about/about.html">About</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+</nav>
+
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-12">
+      <!-- Story Header -->
+      <div class="story-intro">
+        <h1 class="display-3 fw-bold text-center mb-3">Global AMBER Deployment Network</h1>
+        <p class="lead text-center">
+          Explore our worldwide network of AI-powered camera trap deployments across six continents,
+          monitoring biodiversity and wildlife in some of the world's most important ecosystems.
+        </p>
+      </div>
+
+      <!-- Deployment Statistics -->
+      <div class="deployment-stats">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="stat-item">
+              <div class="stat-number">6</div>
+              <div class="stat-label">Countries</div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="stat-item">ß
+              <div class="stat-number">15+</div>
+              <div class="stat-label">Partner Organisations</div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="stat-item">
+              <div class="stat-number">80+</div>
+              <div class="stat-label">Camera Traps</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Interactive Map -->
+      <div class="map-section">
+        <h2 class="text-center mb-4">Interactive Deployment Map</h2>
+        <p class="text-center text-muted mb-4">
+          Click on the country markers below to explore detailed information about each deployment site,
+          including partner organisations, research objectives, and key species being monitored.
+        </p>
+        <div id="map"></div>
+      </div>
+
+      <!-- Additional Information -->
+      <div class="row mt-5">
+        <div class="col-md-6">
+          <div class="info-card">
+            <h3>Global Remote Biodiversity Monitoring</h3>
+            <p>
+              Our global network provides insights into wildlife behavior and population dynamics
+              across diverse ecosystems. From tropical rainforests to arid rangelands, AMBER's AI-powered
+              camera traps are revolutionising how we understand and protect biodiversity.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="info-card">
+            <h3>Collaborative Research</h3>
+            <p>
+              Each deployment site represents a unique collaboration between local institutions, researchers,
+              and conservation organisations. This partnership model ensures that our technology serves local
+              conservation needs while contributing to global scientific understanding.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Back to Stories -->
+      <div class="text-center mt-5 mb-4">
+        <a href="../stories.html" class="btn btn-outline-primary btn-lg">
+          ← Back to All Stories
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+<script src="story_map-map.js"></script>
+</body>
+</html>
