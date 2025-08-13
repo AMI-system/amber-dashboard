@@ -6,6 +6,18 @@
   <title>Wildlife Encounters - AMBER Stories</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="../stories.css">
+
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YXQJJLD55E"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-YXQJJLD55E');
+  </script>
+
+  <!-- AMBER Analytics -->
+  <script src="../../js/analytics.js"></script>
   <style>
     .wildlife-gallery {
       display: grid;
@@ -205,7 +217,7 @@
             <div class="card-body">
               <span class="location-badge">🇹🇭 Thailand, deployment 77</span>
               <h4>Unknown Mammal</h4>
-              <p> This timelapse from our Thailand deployment shows what looks like a possum-like creature.</p>
+              <p> This timelapse from our Thailand deployment shows what looks like a civet cat, raccoon or opossum-like creature.</p>
               <small class="text-muted">Captured: August 13, 2024</small>
             </div>
         </div>
@@ -230,5 +242,105 @@
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+
+<!-- Visitor Metrics Tracking -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Initialize analytics
+  window.amberAnalytics.trackPageView();
+
+  // Track time on page
+  setInterval(function() {
+    window.amberAnalytics.timeOnPage = Math.floor((Date.now() - window.amberAnalytics.startTime) / 1000);
+  }, 1000);
+
+  // Track scroll depth
+  let maxScrollDepth = 0;
+  window.addEventListener('scroll', function() {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    const documentHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrollPercent = Math.round((scrollTop / documentHeight) * 100);
+
+    if (scrollPercent > maxScrollDepth) {
+      maxScrollDepth = scrollPercent;
+      if (scrollPercent >= 25 && scrollPercent < 50) {
+        window.amberAnalytics.trackInteraction('scroll_depth', '25%');
+      } else if (scrollPercent >= 50 && scrollPercent < 75) {
+        window.amberAnalytics.trackInteraction('scroll_depth', '50%');
+      } else if (scrollPercent >= 75 && scrollPercent < 90) {
+        window.amberAnalytics.trackInteraction('scroll_depth', '75%');
+      } else if (scrollPercent >= 90) {
+        window.amberAnalytics.trackInteraction('scroll_depth', '90%');
+      }
+    }
+  });
+
+  // Track clicks on wildlife cards
+  document.querySelectorAll('.wildlife-card').forEach(function(card, index) {
+    card.addEventListener('click', function() {
+      const title = card.querySelector('h4') ? card.querySelector('h4').textContent : 'Unknown';
+      window.amberAnalytics.trackInteraction('wildlife_card_click', {
+        card_index: index,
+        card_title: title
+      });
+    });
+  });
+
+  // Track navigation clicks
+  document.querySelectorAll('a').forEach(function(link) {
+    link.addEventListener('click', function() {
+      const href = link.getAttribute('href');
+      const text = link.textContent.trim();
+      window.amberAnalytics.trackInteraction('navigation_click', {
+        href: href,
+        text: text
+      });
+    });
+  });
+
+  // Track page exit
+  window.addEventListener('beforeunload', function() {
+    const timeOnPage = Math.floor((Date.now() - window.amberAnalytics.startTime) / 1000);
+    window.amberAnalytics.sendEvent('page_exit', {
+      page: 'wildlife_encounters',
+      time_on_page: timeOnPage,
+      interactions: window.amberAnalytics.interactions,
+      max_scroll_depth: maxScrollDepth,
+      timestamp: new Date().toISOString()
+    });
+  });
+
+  // Track visibility changes (tab switching)
+  document.addEventListener('visibilitychange', function() {
+    if (document.hidden) {
+      window.amberAnalytics.trackInteraction('tab_hidden', 'user_switched_tab');
+    } else {
+      window.amberAnalytics.trackInteraction('tab_visible', 'user_returned_to_tab');
+    }
+  });
+
+  // Display metrics in console for debugging (remove in production)
+  setTimeout(function() {
+    console.log('Page Analytics:', {
+      timeOnPage: window.amberAnalytics.timeOnPage,
+      interactions: window.amberAnalytics.interactions,
+      maxScrollDepth: maxScrollDepth
+    });
+  }, 10000); // After 10 seconds
+});
+
+// Function to get current analytics data (for admin/debugging)
+function getAnalyticsData() {
+  return {
+    currentSession: {
+      timeOnPage: window.amberAnalytics.timeOnPage,
+      interactions: window.amberAnalytics.interactions,
+      startTime: new Date(window.amberAnalytics.startTime).toISOString()
+    },
+    storedData: JSON.parse(localStorage.getItem('amberAnalytics') || '[]')
+  };
+}
+</script>
+
 </body>
 </html>
