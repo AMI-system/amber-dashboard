@@ -168,7 +168,7 @@ fetch('../../map/points_of_interest.json')
   .then(data => {
     // Group deployments by country
     const countryGroups = {};
-    
+
     data.forEach(point => {
       const country = point.country;
       if (!countryGroups[country]) {
@@ -177,7 +177,7 @@ fetch('../../map/points_of_interest.json')
           totalImages: 0
         };
       }
-      
+
       const imageCount = parseInt(point.image_count) || 0;
       countryGroups[country].deployments.push({
         ...point,
@@ -209,29 +209,45 @@ fetch('../../map/points_of_interest.json')
       // Create popup content with all deployments
       let deploymentsHTML = '';
       countryData.deployments.forEach(deployment => {
+        const thumbnailPath = deployment.thumbnail_path || '../../assets/deployments/RCH.jpg';
+        const description = deployment.description || 'AMBER deployment monitoring local biodiversity and wildlife communities.';
+
         deploymentsHTML += `
-          <div style="border-bottom: 1px solid #555; padding: 12px 0; margin-bottom: 12px; display: flex; align-items: center; gap: 15px;">
-            <img src="../../assets/deployments/RCH.jpg" alt="${deployment.name}" style="width: 80px; height: 60px; object-fit: cover; border-radius: 6px; flex-shrink: 0;" onerror="this.style.display='none'">
+          <div style="border-bottom: 1px solid #555; padding: 15px 0; margin-bottom: 15px; display: flex; align-items: flex-start; gap: 15px;">
+            <img src="${thumbnailPath}" alt="${deployment.name}" style="width: 100px; height: 75px; object-fit: cover; border-radius: 8px; flex-shrink: 0;">
             <div style="flex: 1;">
-              <div style="font-weight: bold; color: #f8f9fa; font-size: 16px; margin-bottom: 4px;">${deployment.name}</div>
-              <div style="font-size: 13px; color: #adb5bd;">
+              <div style="font-weight: bold; color: #f8f9fa; font-size: 17px; margin-bottom: 6px;">${deployment.name}</div>
+              <div style="font-size: 13px; color: #adb5bd; margin-bottom: 8px;">
                 <strong>ID:</strong> ${deployment.deployment_id}<br>
-                <strong>Images:</strong> ${deployment.imageCount.toLocaleString()}
+                <strong>Images:</strong> ${deployment.imageCount.toLocaleString()}<br>
+              </div>
+              <div style="font-size: 12px; color: #ced4da; line-height: 1.4; font-style: italic;">
+                ${description}
               </div>
             </div>
           </div>
         `;
       });
 
-      const popupContent = `
-        <div style="width: 450px; max-height: 400px; overflow-y: auto; background-color: #2c3e50; border-radius: 10px; padding: 15px; position: relative;">
-          <h2 style="margin: 0 0 15px 0; color: white; text-align: center; font-size: 22px; font-weight: bold;">${country}</h2>
-          <img src="../../assets/deployments/RCH.jpg" alt="${country}" style="width: 100%; height: 120px; object-fit: cover; border-radius: 8px; margin-bottom: 15px;" onerror="this.style.display='none'">
-          <div style="text-align: center; margin-bottom: 20px; padding: 12px; background-color: #dc3545; border-radius: 8px; color: white;">
-            <strong style="font-size: 16px;">Total Deployments:</strong> ${countryData.deployments.length}<br>
-            <strong style="font-size: 16px;">Total Images:</strong> ${countryData.totalImages.toLocaleString()}
+      const countryImage = '../../assets/deployments/RCH.jpg';      const popupContent = `
+        <div style="width: 500px; max-height: 450px; overflow-y: auto; background-color: #2c3e50; border-radius: 12px; padding: 20px; position: relative;">
+          <h2 style="margin: 0 0 15px 0; color: white; text-align: center; font-size: 24px; font-weight: bold;">${country}</h2>
+          <img src="${countryImage}" alt="${country}" style="width: 100%; height: 140px; object-fit: cover; border-radius: 10px; margin-bottom: 20px;">
+          <div style="text-align: center; margin-bottom: 25px; padding: 15px; background: linear-gradient(135deg, #dc3545, #c82333); border-radius: 10px; color: white; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
+            <div style="font-size: 18px; font-weight: bold; margin-bottom: 5px;">Network Overview</div>
+            <div style="display: flex; justify-content: space-around; margin-top: 10px;">
+              <div style="text-align: center;">
+                <div style="font-size: 20px; font-weight: bold;">${countryData.deployments.length}</div>
+                <div style="font-size: 12px; opacity: 0.9;">Deployments</div>
+              </div>
+              <div style="text-align: center;">
+                <div style="font-size: 20px; font-weight: bold;">${countryData.totalImages.toLocaleString()}</div>
+                <div style="font-size: 12px; opacity: 0.9;">Total Images</div>
+              </div>
+            </div>
           </div>
           <div style="font-size: 15px; color: white;">
+            <h3 style="color: #f8f9fa; margin-bottom: 15px; font-size: 18px; border-bottom: 2px solid #dc3545; padding-bottom: 5px;">Deployment Sites</h3>
             ${deploymentsHTML}
           </div>
         </div>
