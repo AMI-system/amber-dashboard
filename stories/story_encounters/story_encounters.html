@@ -16,6 +16,9 @@
     gtag('config', 'G-YXQJJLD55E');
   </script>
 
+
+
+
   <!-- AMBER Analytics -->
   <script src="../../js/analytics.js"></script>
   <style>
@@ -43,6 +46,49 @@
       width: 100%;
       height: 250px;
       object-fit: cover;
+    }
+
+    .wildlife-card video,
+    .wildlife-card .wildlife-video {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      cursor: pointer;
+    }
+
+    .video-container {
+      position: relative;
+      display: inline-block;
+      width: 100%;
+    }
+
+    .play-button {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(220, 53, 69, 0.9);
+      border: none;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      color: white;
+      font-size: 24px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+    }
+
+    .play-button:hover {
+      background: rgba(220, 53, 69, 1);
+      transform: translate(-50%, -50%) scale(1.1);
+    }
+
+    .play-button.hidden {
+      display: none;
     }
 
     .wildlife-card .card-body {
@@ -131,6 +177,7 @@
     }
   </style>
 </head>
+
 <body>
 
 <!-- NAVBAR -->
@@ -161,18 +208,13 @@
         <h1 class="display-3 fw-bold mb-4">Wildlife Encounters</h1>
         <p class="lead mb-4">
           Our AMBER camera traps capture, more than just moths, also
-          the incredible diversity of wildlife across different ecosystems. Discover the fascinating
-          creatures that trigger our AI-powered monitoring systems.</br></br>
-
-          Beyond moths, our cameras reveal the complete ecosystem story. Every frog strike,
-              gecko interaction, and curious cat investigation captured contributes to our understanding
-              of wildlife behavior, habitat preferences, and ecosystem health. These unexpected
-              non-moth encounters provide crucial insights into biodiversity patterns and
-              ecological relationships that directly support conservation efforts and policy decisions.
-
+          the incredible diversity of wildlife across different ecosystems from mammals to gastropods to amphibians.
+          These unexpected non-moth encounters provide additional insights into biodiversity patterns.
         </p>
-        <p class="text-muted">
-          <em>Every snapshot tells a story of biodiversity in action</em>
+        <p>
+          <b>
+          <em>Click on a snapshot to see a timelapse, and the subject in action</em>
+          </b>
         </p>
       </div>
 
@@ -182,56 +224,87 @@
 
         <h2 class="country-header">🇹🇭 Thailand Highlights</h2>
 
+
         <div class="wildlife-card">
-          <img src="thailand/cat_on_06-09_20240906225129_timelapse.gif" alt="Cat sitting on device">
+          <div class="video-container">
+            <video muted loop preload="metadata" class="wildlife-video">
+              <source src="thailand/cat_on_06-09_20240906225129_timelapse.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <button class="play-button">▶</button>
+          </div>
           <div class="card-body">
             <span class="location-badge">Deployment: Puang Thong (hill)</span>
-          <h4>The Moth Inspector</h4>
+            <h4>The Moth Inspector</h4>
             <p>Meet Thailand's most curious repeat visitor! This determined cat has become a regular
             night investigator, returning multiple evenings to study our moth activity. Who's monitoring who? Our cameras capture this feline researcher at work!</p>
+            <small class="text-muted">Captured: September 6, 2024</small>
+          </div>
+        </div>
+
+        <div class="wildlife-card">
+          <div class="video-container">
+            <video muted loop preload="metadata" class="wildlife-video">
+              <source src="thailand/cat_on_03-10_20241003033409_timelapse.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <button class="play-button">▶</button>
+          </div>
+          <div class="card-body">
+            <span class="location-badge">Deployment: Puang Thong (hill)</span>
+            <h4>Repeat Offender</h4>
+            <p>Our friend is back again! Sadly this time it looks like they might have enjoyed a moth-shaped night time snack.</p>
             <small class="text-muted">Captured: October 3, 2024</small>
           </div>
         </div>
 
+
         <div class="wildlife-card">
-          <img src="thailand/cat_on_03-10_20241003033409_timelapse.gif" alt="Thailand Forest Wildlife">
+          <div class="video-container">
+            <video muted loop preload="metadata" class="wildlife-video">
+              <source src="thailand/civet_cat_20240813030400_timelapse.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <button class="play-button">▶</button>
+          </div>
           <div class="card-body">
-            <span class="location-badge">Deployment: Puang Thong (hill)</span>
-            <h4>Repeat Offender</h4>
-            <p>Our friend is back again! Sadly this time it looks like they might have enjoyed a night time moth snack.</p>
-            <small class="text-muted">Captured: September 24, 2024</small>
+            <span class="location-badge">Deployment: Sakaerat (car graveyard)</span>
+            <h4>Furry friend</h4>
+            <p>This system has also been visited by a furry friend. This time we suspect it could be a <a href="https://www.gbif.org/occurrence/gallery?country=TH&taxon_key=2434708" target="_blank" style="color: #dc3545; text-decoration: none;">civet cat</a>, or some raccoon- or opossum-like creature.</p>
+            <small class="text-muted">Captured: August 13, 2024</small>
           </div>
         </div>
 
-
         <div class="wildlife-card">
-            <img src="thailand/civet_cat_20240813030400_timelapse.gif" alt="Potential civet cat">
-            <div class="card-body">
-              <span class="location-badge">Deployment: Sakaerat (car graveyard)</span>
-              <h4>Furry friend</h4>
-              <p>This system has also been visited by a furry friend. This time we suspect it could be a civet cat, or some raccoon- or opossum-like creature.</p>
-              <small class="text-muted">Captured: August 13, 2024</small>
-            </div>
-        </div>
-
-                <div class="wildlife-card">
-          <img src="thailand/frog_hunting_20240808001029_timelapse.gif" alt="Frog catching a fly with its tongue">
+          <div class="video-container">
+            <video muted loop preload="metadata" class="wildlife-video">
+              <source src="thailand/frog_hunting_20240808001029_timelapse.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <button class="play-button">▶</button>
+          </div>
           <div class="card-body">
             <span class="location-badge">Deployment: (King) Rama IX Park</span>
             <h4>Lightning-Fast Hunter</h4>
             <p>Caught in the act! This Thailand frog demonstrates the presence of insect predators, seen here
             extending its sticky tongue in a lightning-fast strike to snag unsuspecting flies.
-            A perfect example of predator-prey dynamics captured by our motion sensors.</p>
+            A great example of predator-prey dynamics captured by our motion sensors.</p>
             <small class="text-muted">Captured: August 8, 2024</small>
           </div>
         </div>
 
         <div class="wildlife-card">
-          <img src="thailand/frog_jumping_20241122232709_timelapse.gif" alt="Frog jumping">
+          <div class="video-container">
+            <video muted loop preload="metadata" class="wildlife-video">
+              <source src="thailand/frog_jumping_20241122232709_timelapse.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <button class="play-button">▶</button>
+          </div>
           <div class="card-body">
             <span class="location-badge">Deployment:  (King) Rama IX Park</span>
-            <h4>Jumping Champion</h4>
-            <p>This Thailand frog showcases its incredible jumping ability, a key adaptation for escaping predators and catching prey. Captured mid-leap, this footage highlights the dynamic movements of amphibians in their natural habitat.</p>
+            <h4>Flying Frog</h4>
+            <p>Again, this Thailand frog showcases its incredible jumping ability, throwing itself at a moth. Captured mid-leap, this series of images suggests this frog was successful in its hunt. </p>
             <small class="text-muted">Captured: November 22, 2024</small>
           </div>
         </div>
@@ -239,31 +312,47 @@
         <h2 class="country-header">🇸🇬 Singapore Highlights</h2>
 
         <div class="wildlife-card">
-          <img src="singapore/rat_01-20240611010749_timelapse.gif" alt="Rat popping up on screen">
+          <div class="video-container">
+            <video muted loop preload="metadata" class="wildlife-video">
+              <source src="singapore/rat_01-20240611010749_timelapse.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <button class="play-button">▶</button>
+          </div>
           <div class="card-body">
             <span class="location-badge">Deployment: Jurong Lake Gardens</span>
-            <h4>City Survivor</h4>
-            <p>This resourceful rat showcases remarkable
-            adaptability, thriving in the concrete jungle where few wild mammals dare to venture.</p>
+            <h4>Resourceful Rat</h4>
+            <p>This rodent pokes its nose up to investigate if there is anything noteworthy on the system.</p>
             <small class="text-muted">Captured: June 11, 2024</small>
           </div>
         </div>
 
 
         <div class="wildlife-card">
-          <img src="singapore/four_geckos_20250219224710_timelapse.gif" alt="Four Geckos Interacting in a timelapse">
+          <div class="video-container">
+            <video muted loop preload="metadata" class="wildlife-video">
+              <source src="singapore/four_geckos_20250219224710_timelapse.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <button class="play-button">▶</button>
+          </div>
           <div class="card-body">
             <span class="location-badge">🇸🇬 Deployment: Bishan-Ang Mo Kio Park</span>
             <h4>Gecko Social Hour</h4>
-            <p> These Singapore geckos prove that even in the urban jungle,
-            there's time for socialising. Our cameras capture these charming reptilian
+            <p>These Singapore geckos look like they are having a party. Our cameras capture these charming reptilian
             interactions - who knew geckos had such active social lives after dark?</p>
             <small class="text-muted">Captured: February 19, 2025</small>
           </div>
         </div>
 
         <div class="wildlife-card">
-          <img src="singapore/snail_01-20241128031900_timelapse.gif" alt="Snail slowly moving across the camera">
+          <div class="video-container">
+            <video muted loop preload="metadata" class="wildlife-video">
+              <source src="singapore/snail_01-20241128031900_timelapse.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <button class="play-button">▶</button>
+          </div>
           <div class="card-body">
             <span class="location-badge">🇸🇬 Deployment: Nanyang Technological University</span>
             <h4>Slow Snail</h4>
@@ -274,7 +363,13 @@
 
         <h2 class="country-header">🇨🇷 Costa Rica Highlights</h2>
         <div class="wildlife-card">
-          <img src="costarica/cricket_01-20241121000230_timelapse.gif" alt="Cricket chirping">
+          <div class="video-container">
+            <video muted loop preload="metadata" class="wildlife-video">
+              <source src="costarica/cricket_01-20241121000230_timelapse.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <button class="play-button">▶</button>
+          </div>
           <div class="card-body">
             <span class="location-badge">Deployment: Forest Edge</span>
             <h4>Chirping Cricket</h4>
@@ -309,6 +404,39 @@
 document.addEventListener('DOMContentLoaded', function() {
   // Initialize analytics
   window.amberAnalytics.trackPageView();
+
+  // Initialize click-to-play functionality for wildlife videos and play buttons
+  document.querySelectorAll('.video-container').forEach(container => {
+    const video = container.querySelector('.wildlife-video');
+    const playButton = container.querySelector('.play-button');
+
+    // Handle video click
+    video.addEventListener('click', () => {
+      if (video.paused) {
+        video.play();
+        playButton.classList.add('hidden');
+      } else {
+        video.pause();
+        video.currentTime = 0; // reset to first frame
+        playButton.classList.remove('hidden');
+      }
+    });
+
+    // Handle play button click
+    playButton.addEventListener('click', () => {
+      video.play();
+      playButton.classList.add('hidden');
+    });
+
+    // Show play button when video ends or is paused
+    video.addEventListener('ended', () => {
+      playButton.classList.remove('hidden');
+    });
+
+    video.addEventListener('pause', () => {
+      playButton.classList.remove('hidden');
+    });
+  });
 
   // Track time on page
   setInterval(function() {
