@@ -6,253 +6,7 @@
   <title>Fieldwork Diaries - AMBER</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="../stories.css">
-
-  <style>
-    body {
-      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-    }
-
-    .video-carousel {
-      width: 100%;
-      max-width: 350px;
-      margin: 0 auto 40px auto;
-      position: relative;
-    }
-
-    .video-carousel iframe,
-    .video-carousel video {
-      width: 100%;
-      height: 600px;
-      border-radius: 15px;
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-      aspect-ratio: 9/16;
-    }
-
-    .content-panel {
-      /* max-width: 800px; */
-      margin: 0 auto;
-    }
-
-    .jenna-photo {
-      width: 120px;
-      height: 120px;
-      min-width: 120px;
-      min-height: 120px;
-      object-fit: cover;
-      border: 4px solid #dc3545;
-      border-radius: 50%;
-      flex-shrink: 0;
-      aspect-ratio: 1/1;
-    }
-
-    /* Video Series Indicators */
-    .video-series-indicator {
-      margin-top: 10px;
-    }
-
-    .carousel-caption {
-      background: linear-gradient(transparent, rgba(0,0,0,0.9));
-      border-radius: 0 0 20px 20px;
-      padding: 25px 20px 20px 20px;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      right: 0;
-      bottom: auto;
-      margin-top: 10px;
-    }
-
-    .carousel-caption h5 {
-      font-size: 1.3rem;
-      margin-bottom: 8px;
-      font-weight: 700;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
-    }
-
-    .carousel-caption p {
-      font-size: 0.95rem;
-      margin-bottom: 0;
-      line-height: 1.4;
-      text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
-      opacity: 0.9;
-    }
-
-    .carousel-control-prev,
-    .carousel-control-next {
-      width: 10%;
-      opacity: 0.8;
-      top: 50%;
-      height: 80px;
-      margin-top: -40px;
-    }
-
-    .carousel-control-prev-icon,
-    .carousel-control-next-icon {
-      background-color: rgba(220, 53, 69, 0.9);
-      border-radius: 50%;
-      padding: 20px;
-      width: 50px;
-      height: 50px;
-      border: 3px solid rgba(255,255,255,0.3);
-    }
-
-    .carousel-indicators {
-      bottom: -60px;
-      margin-bottom: 0;
-    }
-
-    .carousel-indicators button {
-      background-color: #650812;
-      width: 15px;
-      height: 15px;
-      border-radius: 50%;
-      margin: 0 6px;
-      opacity: 0.4;
-      border: 2px solid #650812;
-    }
-
-    .carousel-indicators button.active {
-      opacity: 1;
-      transform: scale(1.3);
-      background-color: #650812;
-      border-color: #5a4849;
-    }
-
-    .story-intro {
-      background: rgba(255,255,255,0.9);
-      border-radius: 15px;
-      padding: 25px;
-      margin: 20px 0;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-      backdrop-filter: blur(10px);
-    }
-
-    .engagement-stats {
-      display: flex;
-      justify-content: space-around;
-      margin: 25px 0;
-      padding: 20px;
-      background: rgba(255,255,255,0.8);
-      border-radius: 15px;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-    }
-
-    .stat-item {
-      text-align: center;
-    }
-
-    .stat-number {
-      font-size: 1.8rem;
-      font-weight: bold;
-      color: #dc3545;
-      display: block;
-    }
-
-    .stat-label {
-      font-size: 0.8rem;
-      color: #666;
-      margin-top: 5px;
-    }
-
-    /* Video Guide */
-    .video-guide {
-      background: rgba(255, 255, 255, 0.7);
-      border-radius: 12px;
-      padding: 50px;
-      border-left: 4px solid #dc3545;
-      width: 100%;
-    }
-
-    .video-list {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .video-item {
-      display: flex;
-      align-items: center;
-      padding: 10px 12px;
-      background: rgba(255, 255, 255, 0.8);
-      border-radius: 8px;
-      transition: all 0.3s ease;
-      cursor: pointer;
-      border: 2px solid transparent;
-    }
-
-    .video-item:hover {
-      background: rgba(220, 53, 69, 0.1);
-      border-color: rgba(220, 53, 69, 0.3);
-      transform: translateX(5px);
-    }
-
-    .video-item.active {
-      background: rgba(220, 53, 69, 0.15);
-      border-color: #dc3545;
-      box-shadow: 0 2px 8px rgba(220, 53, 69, 0.2);
-    }
-
-    .video-number {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 28px;
-      height: 28px;
-      background: #dc3545;
-      color: white;
-      border-radius: 50%;
-      font-weight: bold;
-      font-size: 0.85rem;
-      margin-right: 12px;
-      flex-shrink: 0;
-    }
-
-    .video-info {
-      flex: 1;
-    }
-
-    .video-info strong {
-      color: #dc3545;
-      font-size: 0.95rem;
-    }
-
-    /* Auto-start animation */
-    .carousel-item.active .progress-bar {
-      width: 100%;
-    }
-
-    @keyframes slideUp {
-      from { transform: translateY(30px); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
-    }
-
-    .carousel-item.active .carousel-caption {
-      animation: slideUp 0.6s ease-out;
-    }
-
-    /* Mobile optimizations */
-    @media (max-width: 768px) {
-      .video-carousel {
-        max-width: 280px;
-        margin: 20px auto 30px auto;
-      }
-
-      .carousel-item video,
-      .carousel-item iframe {
-        height: 500px;
-        aspect-ratio: 9/16;
-      }
-
-      .carousel-caption {
-        margin-top: 5px;
-        padding: 15px 10px;
-      }
-
-      .carousel-indicators {
-        bottom: -50px;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="story_fieldwork.css">
 
   <!-- Google Analytics 4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-YXQJJLD55E"></script>
@@ -266,7 +20,7 @@
   <!-- AMBER Analytics -->
   <script src="../../js/analytics.js"></script>
 </head>
-<body>
+<body class="fieldwork-page">
 
   <!-- NAVBAR -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -309,7 +63,7 @@
 
             <!-- Video 1: Meet Jenna -->
             <div class="carousel-item active">
-              <iframe id="video1" src="https://www.facebook.com/plugins/video.php?height=700&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F372569165407367%2F&show_text=false&width=400&t=0&autoplay=true&muted=true"
+              <iframe id="video1" src="https://www.facebook.com/plugins/video.php?height=700&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F372569165407367%2F&show_text=false&width=400&t=0&autoplay=true&muted=false"
                       scrolling="no"
                       frameborder="0"
                       allowfullscreen="true"
@@ -320,7 +74,7 @@
 
             <!-- Video 2: Debugging -->
             <div class="carousel-item">
-              <iframe id="video2" src="https://www.facebook.com/plugins/video.php?height=700&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F3847526982191358%2F&show_text=false&width=400&t=0&autoplay=true&muted=true"
+              <iframe id="video2" src="https://www.facebook.com/plugins/video.php?height=700&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F3847526982191358%2F&show_text=false&width=400&t=0&autoplay=true&muted=false"
                       scrolling="no"
                       frameborder="0"
                       allowfullscreen="true"
@@ -331,7 +85,7 @@
 
             <!-- Video 3: La Selva -->
             <div class="carousel-item">
-              <iframe id="video3" src="https://www.facebook.com/plugins/video.php?height=700&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F365220733115951%2F&show_text=false&width=400&t=0&autoplay=true&muted=true"
+              <iframe id="video3" src="https://www.facebook.com/plugins/video.php?height=700&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F365220733115951%2F&show_text=false&width=400&t=0&autoplay=true&muted=false"
                       scrolling="no"
                       frameborder="0"
                       allowfullscreen="true"
@@ -342,7 +96,7 @@
 
             <!-- Video 4: Bullet Ants -->
             <div class="carousel-item">
-              <iframe id="video4" src="https://www.youtube.com/embed/e5_BV_tp7tg?si=y2HakXadNQhq0qln&autoplay=1&mute=1"
+              <iframe id="video4" src="https://www.youtube.com/embed/e5_BV_tp7tg?si=y2HakXadNQhq0qln&autoplay=1&mute=0"
                       title="YouTube video player"
                       frameborder="0"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -353,7 +107,7 @@
 
             <!-- Video 5: Night Check -->
             <div class="carousel-item">
-              <video id="video5" autoplay muted>
+              <video id="video5" autoplay>
                 <source src="episode4.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
@@ -384,7 +138,7 @@
                 Costa Rica Fieldwork Diaries
               </h1>
               <p class="lead mb-0" style="color: #6c757d; font-size: 1rem;">
-                Join Dr. Jenna Lawson, our Ecological Network Coordinator at the UKCEH, as she works from the Costa Rican wilderness to deploy the AMBER systems on site.
+                Join Dr. Jenna Lawson, our Ecological Network Coordinator, as she works from the Costa Rican wilderness to deploy the AMBER systems on site.
               </p>
             </div>
             <div class="ms-3">
@@ -393,41 +147,30 @@
             </div>
           </div>
 
-          <!-- Dynamic Story Content -->
-          <!-- <div id="storyContent" class="story-intro"> -->
-            <!-- <p class="mb-4 text-start">
-              Setting up AI-powered camera traps in remote wilderness areas is no simple task.
-              Follow Jenna's incredible journey as she navigates challenging terrain, overcomes technical obstacles, and deploys cutting-edge biodiversity monitoring systems.
-            </p> -->
+          <!-- Video Series Navigation -->
+          <div class="mb-4 text-start">
+            <p class="mb-3">
+              Use the arrows, or click any episode description below to navigate through Jenna's 5-part fieldwork series:
+            </p>
 
-            <!-- Video Series Information -->
-            <div class="mb-4 text-start">
-              <p class="mb-3">
-                <strong>Use the arrows, or click any episode description below to navigate through Jenna's 5-part fieldwork series:</strong>
-              </p>
-
-              <ul class="list-unstyled">
-                <li class="mb-2 video-item" data-video="1" style="cursor: pointer; padding: 8px; border-radius: 5px; transition: background-color 0.2s;">
-                  <strong>1. 👋 Meet Jenna</strong>: An introduction to our Ecological Network Coordinator
-                </li>
-                <li class="mb-2 video-item" data-video="2" style="cursor: pointer; padding: 8px; border-radius: 5px; transition: background-color 0.2s;">
-                  <strong>2. 🔧 Lab Debugging</strong>: Troubleshooting the AI systems before deployment in the field
-                </li>
-                <li class="mb-2 video-item" data-video="3" style="cursor: pointer; padding: 8px; border-radius: 5px; transition: background-color 0.2s;">
-                  <strong>3. 🌳 La Selva Station</strong>: Arriving at Costa Rica's research hub
-                </li>
-                <li class="mb-2 video-item" data-video="4" style="cursor: pointer; padding: 8px; border-radius: 5px; transition: background-color 0.2s;">
-                  <strong>4. 🐜 Bullet Ant Encounter</strong>: What happens when wildlife investigates our equipment
-                </li>
-                <li class="mb-2 video-item" data-video="5" style="cursor: pointer; padding: 8px; border-radius: 5px; transition: background-color 0.2s;">
-                  <strong>5. 🌙 Night System Check</strong>: Ensuring the nocturnal monitoring works in the field
-                </li>
-              </ul>
-            </div>
-
-
-          <!-- </div> -->
-
+            <ul class="list-unstyled">
+              <li class="mb-2 video-item" data-video="1">
+                <strong>1. 👋 Meet Jenna</strong>: An introduction to our Ecological Network Coordinator
+              </li>
+              <li class="mb-2 video-item" data-video="2">
+                <strong>2. 🔧 Lab Debugging</strong>: Troubleshooting the AI systems before deployment in the field
+              </li>
+              <li class="mb-2 video-item" data-video="3">
+                <strong>3. 🌳 La Selva Station</strong>: Arriving at Costa Rica's research hub
+              </li>
+              <li class="mb-2 video-item" data-video="4">
+                <strong>4. 🐜 Bullet Ant Encounter</strong>: What happens when wildlife investigates our equipment
+              </li>
+              <li class="mb-2 video-item" data-video="5">
+                <strong>5. 🌙 Night System Check</strong>: Ensuring the nocturnal monitoring works in the field
+              </li>
+            </ul>
+          </div>
 
         </div>
       </div>
@@ -470,7 +213,6 @@
               item.style.backgroundColor = 'rgba(220, 53, 69, 0.05)';
             }
           });
-
           item.addEventListener('mouseleave', () => {
             if (!item.classList.contains('active')) {
               item.style.backgroundColor = '';
@@ -485,11 +227,39 @@
         }
       }
 
+      function stopCurrentVideo() {
+        // Find the currently active video and stop it
+        const activeCarouselItem = document.querySelector('#fieldworkCarousel .carousel-item.active');
+        if (!activeCarouselItem) return;
+
+        // Handle HTML5 video (Video 5)
+        const video = activeCarouselItem.querySelector('video');
+        if (video) {
+          video.pause();
+          video.currentTime = 0;
+          return;
+        }
+
+        // Handle iframes (Facebook and YouTube videos)
+        const iframe = activeCarouselItem.querySelector('iframe');
+        if (iframe) {
+          // For iframes, we need to reload the src to stop the video
+          // This is the only reliable way to stop embedded videos
+          const currentSrc = iframe.src;
+          iframe.src = 'about:blank'; // Temporarily clear
+          setTimeout(() => {
+            iframe.src = currentSrc; // Reload with original source
+          }, 100);
+        }
+      }
+
       // Initialize
       setupVideoEvents();
       updateVideoIndicators(0);
 
       carousel.addEventListener('slide.bs.carousel', function(event) {
+        // Stop the current video before transitioning
+        stopCurrentVideo();
         currentVideoIndex = event.to;
         updateVideoIndicators(currentVideoIndex);
       });

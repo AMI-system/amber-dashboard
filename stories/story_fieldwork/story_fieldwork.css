@@ -1,0 +1,242 @@
+/*
+ * Fieldwork Story Specific Styles
+ *
+ * This file contains all the styling specific to the Costa Rica Fieldwork Diaries page.
+ * Includes styles for:
+ * - Video carousel with portrait aspect ratio
+ * - Profile photo styling
+ * - Video navigation controls and indicators
+ * - Mobile responsive design
+ * - Interactive video selection elements
+ */
+
+/* Override body background for fieldwork page */
+body.fieldwork-page {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+/* Video Carousel Styles */
+.video-carousel {
+  width: 100%;
+  max-width: 350px;
+  margin: 0 auto 40px auto;
+  position: relative;
+}
+
+.video-carousel iframe,
+.video-carousel video {
+  width: 100%;
+  height: 600px;
+  border-radius: 15px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  aspect-ratio: 9/16;
+}
+
+/* Content Panel */
+.content-panel {
+  margin: 0 auto;
+}
+
+/* Volume Control Button */
+.volume-control {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 2px solid rgba(220, 53, 69, 0.6);
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 20;
+  transition: all 0.3s ease;
+  font-size: 18px;
+}
+
+.volume-control:hover {
+  background: rgba(255, 255, 255, 1);
+  border-color: rgba(220, 53, 69, 0.8);
+  transform: scale(1.1);
+}
+
+.volume-control:active {
+  transform: scale(0.95);
+}
+
+/* Profile Photo */
+.jenna-photo {
+  width: 120px;
+  height: 120px;
+  min-width: 120px;
+  min-height: 120px;
+  object-fit: cover;
+  border: 4px solid #dc3545;
+  border-radius: 50%;
+  flex-shrink: 0;
+  aspect-ratio: 1/1;
+}
+
+/* Carousel Controls */
+.carousel-control-prev,
+.carousel-control-next {
+  width: 15%;
+  opacity: 0.7;
+  top: 50%;
+  height: 100px;
+  margin-top: -50px;
+  z-index: 10;
+}
+
+.carousel-control-prev {
+  left: -15%;
+}
+
+.carousel-control-next {
+  right: -15%;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  padding: 15px;
+  width: 40px;
+  height: 40px;
+  border: 2px solid rgba(220, 53, 69, 0.4);
+  background-image: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-control-prev-icon::before {
+  content: '‹';
+  font-size: 20px;
+  color: rgba(91, 21, 28, 0.8);
+  font-weight: bold;
+}
+
+.carousel-control-next-icon::before {
+  content: '›';
+  font-size: 20px;
+  color: rgba(91, 21, 28, 0.8);
+  font-weight: bold;
+}
+
+.carousel-control-prev:hover .carousel-control-prev-icon,
+.carousel-control-next:hover .carousel-control-next-icon {
+  background-color: rgba(255, 255, 255, 1);
+  border-color: rgba(220, 53, 69, 0.8);
+  transform: scale(1.1);
+  transition: all 0.3s ease;
+}
+
+/* Carousel Indicators */
+.carousel-indicators {
+  bottom: -60px;
+  margin-bottom: 0;
+}
+
+.carousel-indicators button {
+  background-color: #dc3545;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin: 0 6px;
+  opacity: 0.4;
+  border: 2px solid #450f14;
+}
+
+.carousel-indicators button.active {
+  opacity: 1;
+  transform: scale(1.3);
+  background-color: rgba(91, 21, 28, 0.8);
+  border-color: rgba(91, 21, 28, 0.8);
+}
+
+/* Video Navigation Items */
+.video-item {
+  display: flex;
+  align-items: center;
+  padding: 10px 12px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+
+.video-item:hover {
+  background: rgba(220, 53, 69, 0.1);
+  border-color: rgba(220, 53, 69, 0.3);
+  transform: translateX(5px);
+}
+
+.video-item.active {
+  background: rgba(220, 53, 69, 0.15);
+  border-color: #dc3545;
+  box-shadow: 0 2px 8px rgba(220, 53, 69, 0.2);
+}
+
+.video-info strong {
+  color: #dc3545;
+  font-size: 0.95rem;
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+  .video-carousel {
+    max-width: 280px;
+    margin: 20px auto 30px auto;
+  }
+
+  .carousel-item video,
+  .carousel-item iframe {
+    height: 500px;
+    aspect-ratio: 9/16;
+  }
+
+  .carousel-indicators {
+    bottom: -50px;
+  }
+
+  .jenna-photo {
+    width: 100px;
+    height: 100px;
+    min-width: 100px;
+    min-height: 100px;
+  }
+
+  /* Mobile carousel controls */
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 12%;
+  }
+
+  .carousel-control-prev {
+    left: -15%;
+  }
+
+  .carousel-control-next {
+    right: -15%;
+  }
+
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    width: 35px;
+    height: 35px;
+    padding: 12px;
+  }
+
+  /* Mobile volume control */
+  .volume-control {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+    top: 12px;
+    right: 12px;
+  }
+}
