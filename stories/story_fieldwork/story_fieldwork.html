@@ -14,8 +14,8 @@
 
     .video-carousel {
       width: 100%;
-      max-width: 450px;
-      margin: 20px auto 100px auto;
+      max-width: 350px;
+      margin: 0 auto 40px auto;
       position: relative;
     }
 
@@ -25,18 +25,24 @@
       height: 600px;
       border-radius: 15px;
       box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+      aspect-ratio: 9/16;
     }
 
     .content-panel {
-      max-width: 600px;
+      /* max-width: 800px; */
       margin: 0 auto;
     }
 
     .jenna-photo {
-      width: 180px;
-      height: 180px;
+      width: 120px;
+      height: 120px;
+      min-width: 120px;
+      min-height: 120px;
       object-fit: cover;
-      border: 4px solid #20B2AA;
+      border: 4px solid #dc3545;
+      border-radius: 50%;
+      flex-shrink: 0;
+      aspect-ratio: 1/1;
     }
 
     /* Video Series Indicators */
@@ -82,7 +88,7 @@
 
     .carousel-control-prev-icon,
     .carousel-control-next-icon {
-      background-color: rgba(48, 116, 103, 0.9);
+      background-color: rgba(220, 53, 69, 0.9);
       border-radius: 50%;
       padding: 20px;
       width: 50px;
@@ -91,25 +97,25 @@
     }
 
     .carousel-indicators {
-      bottom: -150px;
+      bottom: -60px;
       margin-bottom: 0;
     }
 
     .carousel-indicators button {
-      background-color: #307467;
+      background-color: #650812;
       width: 15px;
       height: 15px;
       border-radius: 50%;
       margin: 0 6px;
       opacity: 0.4;
-      border: 2px solid #307467;
+      border: 2px solid #650812;
     }
 
     .carousel-indicators button.active {
       opacity: 1;
       transform: scale(1.3);
-      background-color: #20B2AA;
-      border-color: #20B2AA;
+      background-color: #650812;
+      border-color: #5a4849;
     }
 
     .story-intro {
@@ -138,7 +144,7 @@
     .stat-number {
       font-size: 1.8rem;
       font-weight: bold;
-      color: #307467;
+      color: #dc3545;
       display: block;
     }
 
@@ -152,8 +158,9 @@
     .video-guide {
       background: rgba(255, 255, 255, 0.7);
       border-radius: 12px;
-      padding: 20px;
+      padding: 50px;
       border-left: 4px solid #dc3545;
+      width: 100%;
     }
 
     .video-list {
@@ -205,7 +212,7 @@
     }
 
     .video-info strong {
-      color: #307467;
+      color: #dc3545;
       font-size: 0.95rem;
     }
 
@@ -226,19 +233,14 @@
     /* Mobile optimizations */
     @media (max-width: 768px) {
       .video-carousel {
-        max-width: 95%;
-        margin: 40px auto 80px auto;
+        max-width: 280px;
+        margin: 20px auto 30px auto;
       }
 
       .carousel-item video,
       .carousel-item iframe {
-        height: 400px;
-      }
-
-      .video-counter {
-        top: -40px;
-        font-size: 0.8rem;
-        padding: 8px 12px;
+        height: 500px;
+        aspect-ratio: 9/16;
       }
 
       .carousel-caption {
@@ -247,7 +249,7 @@
       }
 
       .carousel-indicators {
-        bottom: -120px;
+        bottom: -50px;
       }
     }
   </style>
@@ -288,44 +290,12 @@
 
   <div class="container-fluid mt-2">
 
-    <!-- Main Header - Spans Full Width -->
-    <div class="row mb-4">
-      <div class="col-12 text-center">
-        <h1 class="display-4 mb-2" style="color: #307467; font-weight: 700;">Fieldwork Diaries</h1>
-        <p class="lead mb-3" style="color: #6c757d;">
-          Join Dr. Jenna Lawson, from the UKCEH as she works from the Costa Rican wilderness to deploy the AMBER systems on site.
-        </p>
-        <!-- <div class="engagement-stats">
-              <div class="stat-item">
-                <span class="stat-number">5</span>
-                <div class="stat-label">Video Stories</div>
-              </div>
-              <div class="stat-item">
-                <span class="stat-number">🇨🇷</span>
-                <div class="stat-label">Costa Rica</div>
-              </div>
-              <div class="stat-item">
-                <span class="stat-number">7</span>
-                <div class="stat-label">Days in Field</div>
-              </div>
-              <div class="stat-item">
-                <span class="stat-number">12+</span>
-                <div class="stat-label">Systems Deployed</div>
-              </div>
-            </div> -->
-
-
-      </div>
-    </div>
-
     <!-- Split Layout: Video Left, Content Right -->
-    <div class="row min-vh-75">
+    <div class="row" style="min-height: 75vh;">
 
       <!-- Left Side - Video Carousel -->
-      <div class="col-lg-6 col-md-12 p-0 d-flex align-items-center justify-content-center" style="background: linear-gradient(135deg, #307467, #20B2AA);">
+      <div class="col-lg-5 col-md-12 p-0 d-flex align-items-start justify-content-center" style="background: linear-gradient(135deg, #dc3545, #c82333); padding-top: 100px !important; padding-bottom: 70px !important;">
         <div id="fieldworkCarousel" class="carousel slide video-carousel" data-bs-ride="false">
-
-          <!-- Indicators -->
           <div class="carousel-indicators">
             <button type="button" data-bs-target="#fieldworkCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Meet Jenna"></button>
             <button type="button" data-bs-target="#fieldworkCarousel" data-bs-slide-to="1" aria-label="Debugging"></button>
@@ -346,10 +316,6 @@
                       allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
                       allowFullScreen="true">
               </iframe>
-              <div class="carousel-caption">
-                <h5>👋 Meet Dr. Jenna Lawson</h5>
-                <p>Ecological Network Coordinator sharing her passion for biodiversity monitoring</p>
-              </div>
             </div>
 
             <!-- Video 2: Debugging -->
@@ -361,10 +327,6 @@
                       allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
                       allowFullScreen="true">
               </iframe>
-              <div class="carousel-caption">
-                <h5>🔧 Debugging Sessions in the Lab</h5>
-                <p>Technical challenges - troubleshooting AI systems and sensors</p>
-              </div>
             </div>
 
             <!-- Video 3: La Selva -->
@@ -376,10 +338,6 @@
                       allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
                       allowFullScreen="true">
               </iframe>
-              <div class="carousel-caption">
-                <h5>🌳 La Selva Research Station</h5>
-                <p>Arriving at Costa Rica's premier biological research station</p>
-              </div>
             </div>
 
             <!-- Video 4: Bullet Ants -->
@@ -391,10 +349,6 @@
                       referrerpolicy="strict-origin-when-cross-origin"
                       allowfullscreen>
               </iframe>
-              <div class="carousel-caption">
-                <h5>🐜 Dealing with the Locals</h5>
-                <p>When bullet ants investigate our equipment!</p>
-              </div>
             </div>
 
             <!-- Video 5: Night Check -->
@@ -403,10 +357,6 @@
                 <source src="episode4.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
-              <div class="carousel-caption">
-                <h5>🌙 Night System Check</h5>
-                <p>Ensuring AI systems capture nocturnal wildlife activity</p>
-              </div>
             </div>
 
           </div>
@@ -424,59 +374,55 @@
       </div>
 
       <!-- Right Side - Content -->
-      <div class="col-lg-6 col-md-12 d-flex align-items-center" style="background-color: #f8f9fa;">
-        <div class="content-panel p-5">
+      <div class="col-lg-7 col-md-12 d-flex align-items-center" style="background-color: #f8f9fa;">
+        <div class="content-panel p-4">
 
-          <!-- Jenna's Picture -->
-          <div class="text-center mb-4">
-            <img src="story_fieldwork.jpg" alt="Dr Jenna Lawson explaining AMI device setup"
-                 class="img-fluid rounded-circle shadow-lg jenna-photo">
-            <h2 class="mt-3 mb-2" style="color: #307467;">Dr. Jenna Lawson</h2>
-            <p class="text-muted mb-4">Ecological Network Coordinator at UKCEH</p>
+          <!-- Header Content -->
+          <div class="d-flex align-items-center mb-4">
+            <div class="flex-grow-1">
+              <h1 class="display-5 mb-2" style="color: #dc3545; font-weight: 500;">
+                Costa Rica Fieldwork Diaries
+              </h1>
+              <p class="lead mb-0" style="color: #6c757d; font-size: 1rem;">
+                Join Dr. Jenna Lawson, our Ecological Network Coordinator at the UKCEH, as she works from the Costa Rican wilderness to deploy the AMBER systems on site.
+              </p>
+            </div>
+            <div class="ms-3">
+              <img src="story_fieldwork.jpg" alt="Dr Jenna Lawson explaining AMI device setup"
+                   class="img-fluid rounded-circle shadow-lg jenna-photo">
+            </div>
           </div>
 
           <!-- Dynamic Story Content -->
           <!-- <div id="storyContent" class="story-intro"> -->
-            <p class="mb-3">
+            <!-- <p class="mb-4 text-start">
               Setting up AI-powered camera traps in remote wilderness areas is no simple task.
               Follow Jenna's incredible journey as she navigates challenging terrain, overcomes technical obstacles, and deploys cutting-edge biodiversity monitoring systems.
-            </p>
+            </p> -->
 
-            <!-- Video Guide -->
-            <div class="video-guide mb-4">
-              <h4 class="h6 mb-3" style="color: #6c757d;">📹 Video Series Guide:</h4>
-              <div class="video-list">
-                <div class="video-item" data-video="1">
-                  <span class="video-number">1</span>
-                  <div class="video-info">
-                    <strong>Meet Jenna</strong>: An introduction to our Ecological Network Coordinator
-                  </div>
-                </div>
-                <div class="video-item" data-video="2">
-                  <span class="video-number">2</span>
-                  <div class="video-info">
-                    <strong>Lab Debugging</strong>: Troubleshooting AI systems before deployment
-                  </div>
-                </div>
-                <div class="video-item" data-video="3">
-                  <span class="video-number">3</span>
-                  <div class="video-info">
-                    <strong>La Selva Station</strong>: Arriving at Costa Rica's research hub
-                  </div>
-                </div>
-                <div class="video-item" data-video="4">
-                  <span class="video-number">4</span>
-                  <div class="video-info">
-                    <strong>Bullet Ant Encounter</strong>: When wildlife investigates our equipment.
-                  </div>
-                </div>
-                <div class="video-item" data-video="5">
-                  <span class="video-number">5</span>
-                  <div class="video-info">
-                    <strong>Night System Check</strong>: Ensuring nocturnal monitoring works.
-                  </div>
-                </div>
-              </div>
+            <!-- Video Series Information -->
+            <div class="mb-4 text-start">
+              <p class="mb-3">
+                <strong>Use the arrows, or click any episode description below to navigate through Jenna's 5-part fieldwork series:</strong>
+              </p>
+
+              <ul class="list-unstyled">
+                <li class="mb-2 video-item" data-video="1" style="cursor: pointer; padding: 8px; border-radius: 5px; transition: background-color 0.2s;">
+                  <strong>1. 👋 Meet Jenna</strong>: An introduction to our Ecological Network Coordinator
+                </li>
+                <li class="mb-2 video-item" data-video="2" style="cursor: pointer; padding: 8px; border-radius: 5px; transition: background-color 0.2s;">
+                  <strong>2. 🔧 Lab Debugging</strong>: Troubleshooting the AI systems before deployment in the field
+                </li>
+                <li class="mb-2 video-item" data-video="3" style="cursor: pointer; padding: 8px; border-radius: 5px; transition: background-color 0.2s;">
+                  <strong>3. 🌳 La Selva Station</strong>: Arriving at Costa Rica's research hub
+                </li>
+                <li class="mb-2 video-item" data-video="4" style="cursor: pointer; padding: 8px; border-radius: 5px; transition: background-color 0.2s;">
+                  <strong>4. 🐜 Bullet Ant Encounter</strong>: What happens when wildlife investigates our equipment
+                </li>
+                <li class="mb-2 video-item" data-video="5" style="cursor: pointer; padding: 8px; border-radius: 5px; transition: background-color 0.2s;">
+                  <strong>5. 🌙 Night System Check</strong>: Ensuring the nocturnal monitoring works in the field
+                </li>
+              </ul>
             </div>
 
 
@@ -491,25 +437,23 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
 
   <script>
-    // Simplified video carousel with arrow navigation only
+    // Simplified video carousel with arrow navigation and clickable items
     document.addEventListener('DOMContentLoaded', function() {
       const carousel = document.getElementById('fieldworkCarousel');
       let currentVideoIndex = 0;
       const totalVideos = 5;
 
       function updateVideoIndicators(index) {
-        // Update video guide
+        // Update video guide active state
         const videoItems = document.querySelectorAll('.video-item');
         videoItems.forEach((item, i) => {
           item.classList.remove('active');
+          item.style.backgroundColor = '';
           if (i === index) {
             item.classList.add('active');
+            item.style.backgroundColor = 'rgba(220, 53, 69, 0.1)';
           }
         });
-      }      function goToNextVideo() {
-        if (currentVideoIndex < totalVideos - 1) {
-          bootstrap.Carousel.getInstance(carousel).next();
-        }
       }
 
       function setupVideoEvents() {
@@ -519,7 +463,26 @@
           item.addEventListener('click', () => {
             bootstrap.Carousel.getInstance(carousel).to(index);
           });
+
+          // Add hover effects
+          item.addEventListener('mouseenter', () => {
+            if (!item.classList.contains('active')) {
+              item.style.backgroundColor = 'rgba(220, 53, 69, 0.05)';
+            }
+          });
+
+          item.addEventListener('mouseleave', () => {
+            if (!item.classList.contains('active')) {
+              item.style.backgroundColor = '';
+            }
+          });
         });
+      }
+
+      function goToNextVideo() {
+        if (currentVideoIndex < totalVideos - 1) {
+          bootstrap.Carousel.getInstance(carousel).next();
+        }
       }
 
       // Initialize
