@@ -1,7 +1,557 @@
-<div class="story-content">
-  <img src="./story_big.png" alt="Big Beautiful Moths Image" class="img-fluid">
-  <div class="story-text">
-    <h1>Big Beautiful Moths</h1>
-    <p>Meet some of our largest and most impressive moths captured on the cameras. These magnificent creatures showcase the incredible diversity and beauty of nocturnal lepidoptera in their natural habitats.</p>
-  </div>
-</div>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Big Beautiful Moths — AMBER</title>
+
+  <!-- Bootstrap 5 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" />
+
+  <!-- GLightbox (for lightbox gallery) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+
+  <style>
+    :root {
+      --amber-primary: #dc3545; /* matches your Stories accent */
+      --text-muted: #6c757d;
+    }
+
+    body { background: #fff; }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(135deg, rgba(220,53,69,0.85), rgba(200,35,51,0.85)),
+                  url('images/moths/hero.jpg') center/cover no-repeat;
+      color: #fff;
+      padding: 80px 0;
+    }
+    .hero h1 { font-weight: 600; }
+    .hero p { max-width: 820px; }
+
+    /* Gallery */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .gallery-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 16px;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.08);
+      background: #f8f9fa;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .gallery-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+    }
+    .gallery-card img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      display: block;
+      transition: transform .35s ease;
+    }
+    .gallery-card:hover img { transform: scale(1.04); }
+    .gallery-meta {
+      position: absolute;
+      inset: auto 0 0 0;
+      padding: 15px;
+      background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.75) 90%);
+      color: #fff;
+      font-size: 0.9rem;
+    }
+    .badge-region {
+      background: rgba(220,53,69,0.9);
+      color: white;
+      font-size: 0.75rem;
+    }
+
+    /* Filter Controls */
+    .filter-section {
+      background: #f8f9fa;
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 30px;
+    }
+    .filter-group {
+      margin-bottom: 15px;
+    }
+    .filter-group:last-child {
+      margin-bottom: 0;
+    }
+    .filter-label {
+      font-weight: 600;
+      color: var(--amber-primary);
+      margin-bottom: 8px;
+      display: block;
+    }
+    .filter-checkboxes {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .filter-checkbox {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      background: white;
+      border: 2px solid #e9ecef;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-size: 0.9rem;
+    }
+    .filter-checkbox:hover {
+      border-color: var(--amber-primary);
+      background: rgba(220,53,69,0.05);
+    }
+    .filter-checkbox.active {
+      background: var(--amber-primary);
+      border-color: var(--amber-primary);
+      color: white;
+    }
+    .filter-checkbox input[type="checkbox"] {
+      margin: 0;
+    }
+
+    /* Gallery navigation */
+    .gallery-navigation {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    .results-info {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    /* Section headings */
+    .section-title { color: var(--amber-primary); font-weight: 600; }
+
+    /* Small utility */
+    .muted { color: var(--text-muted); }
+  </style>
+</head>
+<body>
+  <!-- NAVBAR (optional placeholder; hook into your existing navbar include if you have one) -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="../index.html">AMBER</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="../stories/stories.html">Stories</a></li>
+          <li class="nav-item"><a class="nav-link" href="../about/about.html">About</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero text-center">
+    <div class="container">
+      <h1 class="display-5 mb-3">Big Beautiful Moths</h1>
+      <p class="lead mb-0">
+        Explore the dazzling diversity of moths captured by the AMBER network. These nocturnal pollinators reveal
+        patterns, textures, and colors that rival any butterfly — and help us understand ecosystem health across the globe.
+      </p>
+    </div>
+  </header>
+
+  <main class="container my-5">
+    <!-- FILTER SECTION -->
+    <div class="filter-section">
+      <h3 class="section-title mb-3">Filter Gallery</h3>
+
+      <div class="filter-group">
+        <label class="filter-label">Countries</label>
+        <div class="filter-checkboxes" id="countryFilters">
+          <!-- Populated by JavaScript -->
+        </div>
+      </div>
+
+      <div class="filter-group">
+        <label class="filter-label">Deployments</label>
+        <div class="filter-checkboxes" id="deploymentFilters">
+          <!-- Populated by JavaScript -->
+        </div>
+      </div>
+
+      <div class="mt-3">
+        <button class="btn btn-outline-secondary btn-sm" id="clearFilters">Clear All Filters</button>
+      </div>
+    </div>
+
+    <!-- GALLERY SECTION -->
+    <div class="gallery-navigation">
+      <h2 class="section-title mb-0">Moth Gallery</h2>
+      <div class="results-info" id="resultsInfo">
+        <!-- Populated by JavaScript -->
+      </div>
+    </div>
+    <div id="gallery" class="gallery" aria-live="polite"></div>
+  </main>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    // --- Real moth data from AMBER network ---
+    const moths = [
+      // Thailand moths - Deployment 000077
+      {
+        id: 'm1',
+        species: 'Large Moth Species',
+        location: 'Thailand Research Station',
+        region: 'Thailand',
+        deployment: 'dep000077',
+        date: '2024-08-03',
+        lat: 14.0583, lng: 100.6014,
+        image: 'thailand/dep000077/dep000077_crop_1_20240803001209-snapshot.jpg',
+        thumb: 'thailand/dep000077/dep000077_crop_1_20240803001209-snapshot.jpg',
+        credit: 'AMBER Device dep000077'
+      },
+      {
+        id: 'm2',
+        species: 'Nocturnal Moth',
+        location: 'Thailand Research Station',
+        region: 'Thailand',
+        deployment: 'dep000077',
+        date: '2024-08-14',
+        lat: 14.0590, lng: 100.6020,
+        image: 'thailand/dep000077/dep000077_crop_1_20240814221809-snapshot.jpg',
+        thumb: 'thailand/dep000077/dep000077_crop_1_20240814221809-snapshot.jpg',
+        credit: 'AMBER Device dep000077'
+      },
+      {
+        id: 'm3',
+        species: 'Evening Moth',
+        location: 'Thailand Research Station',
+        region: 'Thailand',
+        deployment: 'dep000077',
+        date: '2024-09-11',
+        lat: 14.0575, lng: 100.6025,
+        image: 'thailand/dep000077/dep000077_crop_1_20240911222759-snapshot.jpg',
+        thumb: 'thailand/dep000077/dep000077_crop_1_20240911222759-snapshot.jpg',
+        credit: 'AMBER Device dep000077'
+      },
+      {
+        id: 'm4',
+        species: 'Spring Moth',
+        location: 'Thailand Research Station',
+        region: 'Thailand',
+        deployment: 'dep000077',
+        date: '2025-03-29',
+        lat: 14.0580, lng: 100.6010,
+        image: 'thailand/dep000077/dep000077_crop_1_20250329004340-snapshot.jpg',
+        thumb: 'thailand/dep000077/dep000077_crop_1_20250329004340-snapshot.jpg',
+        credit: 'AMBER Device dep000077'
+      },
+      // Singapore moths - Deployment 000045
+      {
+        id: 'm5',
+        species: 'Singapore Garden Moth',
+        location: 'Singapore Botanical Gardens',
+        region: 'Singapore',
+        deployment: 'dep000045',
+        date: '2024-04-27',
+        lat: 1.3143, lng: 103.8156,
+        image: 'singapore/dep000045/01-20240427021719-snapshot.jpg',
+        thumb: 'singapore/dep000045/01-20240427021719-snapshot.jpg',
+        credit: 'AMBER Device dep000045'
+      },
+      // Singapore moths - Deployment 000046
+      {
+        id: 'm6',
+        species: 'Urban Moth',
+        location: 'Singapore Nature Reserve',
+        region: 'Singapore',
+        deployment: 'dep000046',
+        date: '2024-05-31',
+        lat: 1.3150, lng: 103.8170,
+        image: 'singapore/dep000046/20240531214349-snapshot.jpg',
+        thumb: 'singapore/dep000046/20240531214349-snapshot.jpg',
+        credit: 'AMBER Device dep000046'
+      },
+      // Costa Rica moths - Deployment 000001
+      {
+        id: 'm7',
+        species: 'Late Summer Moth',
+        location: 'La Selva Biological Station, Costa Rica',
+        region: 'Costa Rica',
+        deployment: 'dep000001',
+        date: '2024-08-22',
+        lat: 10.4310, lng: -84.0090,
+        image: 'costa_rica/dep000001/01-20240822033849-snapshot.jpg',
+        thumb: 'costa_rica/dep000001/01-20240822033849-snapshot.jpg',
+        credit: 'AMBER Device dep000001'
+      },
+      {
+        id: 'm8',
+        species: 'Night Forest Moth',
+        location: 'La Selva Biological Station, Costa Rica',
+        region: 'Costa Rica',
+        deployment: 'dep000001',
+        date: '2024-07-27',
+        lat: 10.4290, lng: -84.0120,
+        image: 'costa_rica/dep000001/20240727003709-snapshot.jpg',
+        thumb: 'costa_rica/dep000001/20240727003709-snapshot.jpg',
+        credit: 'AMBER Device dep000001'
+      },
+      // Costa Rica moths - Deployment 000002
+      {
+        id: 'm9',
+        species: 'Tropical Forest Moth',
+        location: 'La Selva Biological Station, Costa Rica',
+        region: 'Costa Rica',
+        deployment: 'dep000002',
+        date: '2024-02-13',
+        lat: 10.4300, lng: -84.0100,
+        image: 'costa_rica/dep000002/01-20240213024750-snapshot(1).jpg',
+        thumb: 'costa_rica/dep000002/01-20240213024750-snapshot(1).jpg',
+        credit: 'AMBER Device dep000002'
+      },
+      {
+        id: 'm10',
+        species: 'Rainforest Moth',
+        location: 'La Selva Biological Station, Costa Rica',
+        region: 'Costa Rica',
+        deployment: 'dep000002',
+        date: '2024-04-11',
+        lat: 10.4320, lng: -84.0110,
+        image: 'costa_rica/dep000002/01-20240411002359-snapshot(1).jpg',
+        thumb: 'costa_rica/dep000002/01-20240411002359-snapshot(1).jpg',
+        credit: 'AMBER Device dep000002'
+      }
+    ];
+
+    // --- Global state ---
+    let filteredMoths = [...moths];
+    let activeFilters = { countries: [], deployments: [] };
+
+    // --- Get unique values for filters ---
+    function getUniqueValues(data, key) {
+      return [...new Set(data.map(item => item[key]))].sort();
+    }
+
+    // --- Build filter controls ---
+    function buildFilterControls() {
+      const countries = getUniqueValues(moths, 'region');
+      
+      // Build country filters
+      const countryContainer = document.getElementById('countryFilters');
+      countryContainer.innerHTML = '';
+      countries.forEach(country => {
+        const label = document.createElement('label');
+        label.className = 'filter-checkbox';
+        label.innerHTML = `
+          <input type="checkbox" value="${country}" data-type="country">
+          <span>${country}</span>
+        `;
+        countryContainer.appendChild(label);
+      });
+
+      // Build initial deployment filters (all deployments)
+      updateDeploymentFilters();
+
+      // Add event listeners
+      document.querySelectorAll('.filter-checkbox input').forEach(checkbox => {
+        checkbox.addEventListener('change', handleFilterChange);
+      });
+
+      // Clear filters button
+      document.getElementById('clearFilters').addEventListener('click', clearAllFilters);
+    }
+
+    // --- Update deployment filters based on selected countries ---
+    function updateDeploymentFilters() {
+      // Get deployments based on selected countries
+      let availableDeployments;
+      if (activeFilters.countries.length === 0) {
+        // No countries selected, show all deployments
+        availableDeployments = getUniqueValues(moths, 'deployment');
+      } else {
+        // Show only deployments from selected countries
+        const mothsFromSelectedCountries = moths.filter(moth => 
+          activeFilters.countries.includes(moth.region)
+        );
+        availableDeployments = getUniqueValues(mothsFromSelectedCountries, 'deployment');
+      }
+
+      // Clear any deployment filters that are no longer available
+      activeFilters.deployments = activeFilters.deployments.filter(deployment =>
+        availableDeployments.includes(deployment)
+      );
+
+      // Rebuild deployment filter UI
+      const deploymentContainer = document.getElementById('deploymentFilters');
+      deploymentContainer.innerHTML = '';
+      
+      availableDeployments.forEach(deployment => {
+        const label = document.createElement('label');
+        label.className = 'filter-checkbox';
+        
+        // Check if this deployment is currently selected
+        const isSelected = activeFilters.deployments.includes(deployment);
+        if (isSelected) {
+          label.classList.add('active');
+        }
+        
+        label.innerHTML = `
+          <input type="checkbox" value="${deployment}" data-type="deployment" ${isSelected ? 'checked' : ''}>
+          <span>${deployment}</span>
+        `;
+        deploymentContainer.appendChild(label);
+      });
+
+      // Add event listeners to new deployment checkboxes
+      deploymentContainer.querySelectorAll('input').forEach(checkbox => {
+        checkbox.addEventListener('change', handleFilterChange);
+      });
+    }
+
+    // --- Handle filter changes ---
+    function handleFilterChange(event) {
+      const checkbox = event.target;
+      const filterType = checkbox.dataset.type;
+      const value = checkbox.value;
+      const label = checkbox.closest('.filter-checkbox');
+
+      if (checkbox.checked) {
+        label.classList.add('active');
+        if (filterType === 'country') {
+          activeFilters.countries.push(value);
+          // Update deployment filters when country selection changes
+          updateDeploymentFilters();
+        } else if (filterType === 'deployment') {
+          activeFilters.deployments.push(value);
+        }
+      } else {
+        label.classList.remove('active');
+        if (filterType === 'country') {
+          activeFilters.countries = activeFilters.countries.filter(c => c !== value);
+          // Update deployment filters when country selection changes
+          updateDeploymentFilters();
+        } else if (filterType === 'deployment') {
+          activeFilters.deployments = activeFilters.deployments.filter(d => d !== value);
+        }
+      }
+
+      applyFilters();
+    }
+
+    // --- Apply filters ---
+    function applyFilters() {
+      filteredMoths = moths.filter(moth => {
+        const countryMatch = activeFilters.countries.length === 0 || activeFilters.countries.includes(moth.region);
+        const deploymentMatch = activeFilters.deployments.length === 0 || activeFilters.deployments.includes(moth.deployment);
+        return countryMatch && deploymentMatch;
+      });
+
+      buildGallery(filteredMoths);
+      updateResultsInfo();
+    }
+
+    // --- Clear all filters ---
+    function clearAllFilters() {
+      activeFilters = { countries: [], deployments: [] };
+      
+      // Clear country filters
+      document.querySelectorAll('#countryFilters .filter-checkbox input').forEach(checkbox => {
+        checkbox.checked = false;
+        checkbox.closest('.filter-checkbox').classList.remove('active');
+      });
+      
+      // Reset deployment filters to show all deployments
+      updateDeploymentFilters();
+      
+      applyFilters();
+    }
+
+    // --- Update results info ---
+    function updateResultsInfo() {
+      const total = filteredMoths.length;
+      const totalMoth = moths.length;
+      const resultsInfo = document.getElementById('resultsInfo');
+
+      if (total === totalMoth) {
+        resultsInfo.textContent = `Showing all ${total} moths`;
+      } else {
+        resultsInfo.textContent = `Showing ${total} of ${totalMoth} moths`;
+      }
+    }
+
+    // --- Build Gallery ---
+    function buildGallery(data) {
+      const gallery = document.getElementById('gallery');
+      gallery.innerHTML = '';
+
+      if (data.length === 0) {
+        gallery.innerHTML = '<div class="col-12 text-center text-muted py-5"><h4>No moths match your filters</h4><p>Try adjusting your filter criteria</p></div>';
+        return;
+      }
+
+      const frag = document.createDocumentFragment();
+
+      data.forEach((m) => {
+        const a = document.createElement('a');
+        a.href = m.image;
+        a.className = 'gallery-card glightbox';
+        a.setAttribute('data-gallery', 'moths');
+        a.setAttribute('data-glightbox', `title: ${m.species}; description: ${m.location} • ${m.date} • ${m.credit}`);
+        a.id = `card-${m.id}`;
+
+        const img = document.createElement('img');
+        img.src = m.thumb || m.image;
+        img.alt = `${m.species} at ${m.location}`;
+        img.loading = 'lazy';
+
+        const meta = document.createElement('div');
+        meta.className = 'gallery-meta';
+        meta.innerHTML = `
+          <div class="d-flex align-items-center justify-content-between mb-2">
+            <strong>${m.species}</strong>
+            <span class="badge rounded-pill badge-region">${m.region}</span>
+          </div>
+          <div class="small mb-1">${m.location}</div>
+          <div class="d-flex justify-content-between align-items-center">
+            <span class="small">${m.date}</span>
+            <span class="small">${m.deployment}</span>
+          </div>
+        `;
+
+        a.appendChild(img);
+        a.appendChild(meta);
+        frag.appendChild(a);
+      });
+
+      gallery.appendChild(frag);
+
+      // init / refresh lightbox
+      if (window.mothLightbox) { window.mothLightbox.destroy(); }
+      window.mothLightbox = GLightbox({
+        selector: '.glightbox',
+        touchNavigation: true,
+        loop: true,
+        autoplayVideos: false
+      });
+    }
+
+    // --- Init ---
+    document.addEventListener('DOMContentLoaded', () => {
+      buildFilterControls();
+      buildGallery(moths);
+      updateResultsInfo();
+    });
+  </script>
+</body>
+</html>
