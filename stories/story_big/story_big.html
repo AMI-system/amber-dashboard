@@ -172,17 +172,24 @@
     <div class="filter-section">
       <h3 class="section-title mb-3">Filter Gallery</h3>
 
+
       <div class="filter-group">
-        <label class="filter-label">Countries</label>
-        <div class="filter-checkboxes" id="countryFilters">
-          <!-- Populated by JavaScript -->
+        <label class="filter-label" for="countryDropdown">Countries</label>
+        <div class="dropdown" id="countryDropdown" style="min-width:200px;">
+          <button class="btn btn-outline-secondary dropdown-toggle w-100 text-start" type="button" id="countryDropdownBtn" data-bs-toggle="dropdown" aria-expanded="false">
+            Select Countries
+          </button>
+          <ul class="dropdown-menu w-100" aria-labelledby="countryDropdownBtn" id="countryDropdownMenu"></ul>
         </div>
       </div>
 
       <div class="filter-group">
-        <label class="filter-label">Deployments</label>
-        <div class="filter-checkboxes" id="deploymentFilters">
-          <!-- Populated by JavaScript -->
+        <label class="filter-label" for="deploymentDropdown">Deployments</label>
+        <div class="dropdown" id="deploymentDropdown" style="min-width:200px;">
+          <button class="btn btn-outline-secondary dropdown-toggle w-100 text-start" type="button" id="deploymentDropdownBtn" data-bs-toggle="dropdown" aria-expanded="false">
+            Select Deployments
+          </button>
+          <ul class="dropdown-menu w-100" aria-labelledby="deploymentDropdownBtn" id="deploymentDropdownMenu"></ul>
         </div>
       </div>
 
@@ -205,138 +212,51 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
 
   <script>
-    // --- Real moth data from AMBER network ---
-    const moths = [
-      // Thailand moths - Deployment 000077
-      {
-        id: 'm1',
-        species: 'Large Moth Species',
-        location: 'Thailand Research Station',
-        region: 'Thailand',
-        deployment: 'dep000077',
-        date: '2024-08-03',
-        lat: 14.0583, lng: 100.6014,
-        image: 'thailand/dep000077/dep000077_crop_1_20240803001209-snapshot.jpg',
-        thumb: 'thailand/dep000077/dep000077_crop_1_20240803001209-snapshot.jpg',
-        credit: 'AMBER Device dep000077'
-      },
-      {
-        id: 'm2',
-        species: 'Nocturnal Moth',
-        location: 'Thailand Research Station',
-        region: 'Thailand',
-        deployment: 'dep000077',
-        date: '2024-08-14',
-        lat: 14.0590, lng: 100.6020,
-        image: 'thailand/dep000077/dep000077_crop_1_20240814221809-snapshot.jpg',
-        thumb: 'thailand/dep000077/dep000077_crop_1_20240814221809-snapshot.jpg',
-        credit: 'AMBER Device dep000077'
-      },
-      {
-        id: 'm3',
-        species: 'Evening Moth',
-        location: 'Thailand Research Station',
-        region: 'Thailand',
-        deployment: 'dep000077',
-        date: '2024-09-11',
-        lat: 14.0575, lng: 100.6025,
-        image: 'thailand/dep000077/dep000077_crop_1_20240911222759-snapshot.jpg',
-        thumb: 'thailand/dep000077/dep000077_crop_1_20240911222759-snapshot.jpg',
-        credit: 'AMBER Device dep000077'
-      },
-      {
-        id: 'm4',
-        species: 'Spring Moth',
-        location: 'Thailand Research Station',
-        region: 'Thailand',
-        deployment: 'dep000077',
-        date: '2025-03-29',
-        lat: 14.0580, lng: 100.6010,
-        image: 'thailand/dep000077/dep000077_crop_1_20250329004340-snapshot.jpg',
-        thumb: 'thailand/dep000077/dep000077_crop_1_20250329004340-snapshot.jpg',
-        credit: 'AMBER Device dep000077'
-      },
-      // Singapore moths - Deployment 000045
-      {
-        id: 'm5',
-        species: 'Singapore Garden Moth',
-        location: 'Singapore Botanical Gardens',
-        region: 'Singapore',
-        deployment: 'dep000045',
-        date: '2024-04-27',
-        lat: 1.3143, lng: 103.8156,
-        image: 'singapore/dep000045/01-20240427021719-snapshot.jpg',
-        thumb: 'singapore/dep000045/01-20240427021719-snapshot.jpg',
-        credit: 'AMBER Device dep000045'
-      },
-      // Singapore moths - Deployment 000046
-      {
-        id: 'm6',
-        species: 'Urban Moth',
-        location: 'Singapore Nature Reserve',
-        region: 'Singapore',
-        deployment: 'dep000046',
-        date: '2024-05-31',
-        lat: 1.3150, lng: 103.8170,
-        image: 'singapore/dep000046/20240531214349-snapshot.jpg',
-        thumb: 'singapore/dep000046/20240531214349-snapshot.jpg',
-        credit: 'AMBER Device dep000046'
-      },
-      // Costa Rica moths - Deployment 000001
-      {
-        id: 'm7',
-        species: 'Late Summer Moth',
-        location: 'La Selva Biological Station, Costa Rica',
-        region: 'Costa Rica',
-        deployment: 'dep000001',
-        date: '2024-08-22',
-        lat: 10.4310, lng: -84.0090,
-        image: 'costa_rica/dep000001/01-20240822033849-snapshot.jpg',
-        thumb: 'costa_rica/dep000001/01-20240822033849-snapshot.jpg',
-        credit: 'AMBER Device dep000001'
-      },
-      {
-        id: 'm8',
-        species: 'Night Forest Moth',
-        location: 'La Selva Biological Station, Costa Rica',
-        region: 'Costa Rica',
-        deployment: 'dep000001',
-        date: '2024-07-27',
-        lat: 10.4290, lng: -84.0120,
-        image: 'costa_rica/dep000001/20240727003709-snapshot.jpg',
-        thumb: 'costa_rica/dep000001/20240727003709-snapshot.jpg',
-        credit: 'AMBER Device dep000001'
-      },
-      // Costa Rica moths - Deployment 000002
-      {
-        id: 'm9',
-        species: 'Tropical Forest Moth',
-        location: 'La Selva Biological Station, Costa Rica',
-        region: 'Costa Rica',
-        deployment: 'dep000002',
-        date: '2024-02-13',
-        lat: 10.4300, lng: -84.0100,
-        image: 'costa_rica/dep000002/01-20240213024750-snapshot(1).jpg',
-        thumb: 'costa_rica/dep000002/01-20240213024750-snapshot(1).jpg',
-        credit: 'AMBER Device dep000002'
-      },
-      {
-        id: 'm10',
-        species: 'Rainforest Moth',
-        location: 'La Selva Biological Station, Costa Rica',
-        region: 'Costa Rica',
-        deployment: 'dep000002',
-        date: '2024-04-11',
-        lat: 10.4320, lng: -84.0110,
-        image: 'costa_rica/dep000002/01-20240411002359-snapshot(1).jpg',
-        thumb: 'costa_rica/dep000002/01-20240411002359-snapshot(1).jpg',
-        credit: 'AMBER Device dep000002'
-      }
-    ];
+    // --- Load moth data from big_moths.json ---
+    let moths = [];
+    fetch('big_moths.json')
+      .then(response => response.json())
+      .then(data => {
+        // Add an id and default fields for each entry
+        moths = data.map((m, i) => ({
+          id: 'bm' + i,
+          species: m.description || 'Big Moth',
+          location: m.deployment || '',
+          region: m.country || '',
+          deployment: m.deployment || '',
+          date: '',
+          lat: null,
+          lng: null,
+          image: convertDriveLink(m.image_path),
+          thumb: convertDriveLink(m.image_path),
+          credit: 'Google Drive'
+        }));
+        filteredMoths = [...moths];
+        buildFilterControls();
+        buildGallery(moths);
+        updateResultsInfo();
+        updateDropdownLabel('country');
+        updateDropdownLabel('deployment');
+      });
 
-    // --- Global state ---
-    let filteredMoths = [...moths];
-    let activeFilters = { countries: [], deployments: [] };
+    // Convert Google Drive share link to direct image link if needed
+    function convertDriveLink(link) {
+      if (typeof link !== 'string') return link;
+      // If already a direct link, return as is
+      if (link.startsWith('http') && link.includes('/uc?')) return link;
+      // If it's a Google Drive share link, convert to direct
+      const match = link.match(/https:\/\/drive\.google\.com\/file\/d\/([\w-]+)\//);
+      if (match) {
+        // return `https://drive.google.com/uc?export=download&id=${match[1]}`;
+        return `https://drive.google.com/file/d/${match[1]}/preview`;
+      }
+      // Otherwise, treat as relative path
+      return link;
+    }
+
+  // --- Global state ---
+  let filteredMoths = [];
+  let activeFilters = { countries: [], deployments: [] };
 
     // --- Get unique values for filters ---
     function getUniqueValues(data, key) {
@@ -346,107 +266,91 @@
     // --- Build filter controls ---
     function buildFilterControls() {
       const countries = getUniqueValues(moths, 'region');
-      
-      // Build country filters
-      const countryContainer = document.getElementById('countryFilters');
-      countryContainer.innerHTML = '';
+      const countryMenu = document.getElementById('countryDropdownMenu');
+      countryMenu.innerHTML = '';
       countries.forEach(country => {
-        const label = document.createElement('label');
-        label.className = 'filter-checkbox';
-        label.innerHTML = `
-          <input type="checkbox" value="${country}" data-type="country">
-          <span>${country}</span>
-        `;
-        countryContainer.appendChild(label);
+        const li = document.createElement('li');
+        li.innerHTML = `<label class="dropdown-item"><input type="checkbox" class="country-checkbox me-2" value="${country}"> ${country}</label>`;
+        countryMenu.appendChild(li);
       });
 
       // Build initial deployment filters (all deployments)
       updateDeploymentFilters();
 
       // Add event listeners
-      document.querySelectorAll('.filter-checkbox input').forEach(checkbox => {
-        checkbox.addEventListener('change', handleFilterChange);
-      });
-
-      // Clear filters button
+      countryMenu.addEventListener('change', handleCountryChange);
+      document.getElementById('deploymentDropdownMenu').addEventListener('change', handleDeploymentChange);
       document.getElementById('clearFilters').addEventListener('click', clearAllFilters);
     }
 
     // --- Update deployment filters based on selected countries ---
     function updateDeploymentFilters() {
-      // Get deployments based on selected countries
-      let availableDeployments;
+      // Group deployments by country
+      let deploymentsByCountry = {};
+      let countriesToShow;
       if (activeFilters.countries.length === 0) {
-        // No countries selected, show all deployments
-        availableDeployments = getUniqueValues(moths, 'deployment');
+        countriesToShow = getUniqueValues(moths, 'region');
       } else {
-        // Show only deployments from selected countries
-        const mothsFromSelectedCountries = moths.filter(moth => 
-          activeFilters.countries.includes(moth.region)
-        );
-        availableDeployments = getUniqueValues(mothsFromSelectedCountries, 'deployment');
+        countriesToShow = activeFilters.countries;
       }
+
+      // Build a mapping: country -> [deployments]
+      countriesToShow.forEach(country => {
+        const deployments = getUniqueValues(
+          moths.filter(m => m.region === country),
+          'deployment'
+        );
+        deploymentsByCountry[country] = deployments;
+      });
+
+      // Flatten all available deployments for filter logic
+      let availableDeployments = Object.values(deploymentsByCountry).flat();
 
       // Clear any deployment filters that are no longer available
       activeFilters.deployments = activeFilters.deployments.filter(deployment =>
         availableDeployments.includes(deployment)
       );
 
-      // Rebuild deployment filter UI
-      const deploymentContainer = document.getElementById('deploymentFilters');
-      deploymentContainer.innerHTML = '';
-      
-      availableDeployments.forEach(deployment => {
-        const label = document.createElement('label');
-        label.className = 'filter-checkbox';
-        
-        // Check if this deployment is currently selected
-        const isSelected = activeFilters.deployments.includes(deployment);
-        if (isSelected) {
-          label.classList.add('active');
-        }
-        
-        label.innerHTML = `
-          <input type="checkbox" value="${deployment}" data-type="deployment" ${isSelected ? 'checked' : ''}>
-          <span>${deployment}</span>
-        `;
-        deploymentContainer.appendChild(label);
+      // Rebuild deployment filter UI as a custom dropdown with checkboxes
+      const deploymentMenu = document.getElementById('deploymentDropdownMenu');
+      deploymentMenu.innerHTML = '';
+      countriesToShow.forEach(country => {
+        const deployments = deploymentsByCountry[country];
+        if (deployments.length === 0) return;
+        const liHeader = document.createElement('li');
+        liHeader.innerHTML = `<h6 class='dropdown-header'>${country}</h6>`;
+        deploymentMenu.appendChild(liHeader);
+        deployments.forEach(deployment => {
+          const li = document.createElement('li');
+          li.innerHTML = `<label class="dropdown-item"><input type="checkbox" class="deployment-checkbox me-2" value="${deployment}"> ${deployment}</label>`;
+          deploymentMenu.appendChild(li);
+        });
       });
 
-      // Add event listeners to new deployment checkboxes
-      deploymentContainer.querySelectorAll('input').forEach(checkbox => {
-        checkbox.addEventListener('change', handleFilterChange);
+      // Set checked state for deployments
+      Array.from(deploymentMenu.querySelectorAll('input[type="checkbox"]')).forEach(cb => {
+        cb.checked = activeFilters.deployments.includes(cb.value);
       });
     }
 
-    // --- Handle filter changes ---
-    function handleFilterChange(event) {
-      const checkbox = event.target;
-      const filterType = checkbox.dataset.type;
-      const value = checkbox.value;
-      const label = checkbox.closest('.filter-checkbox');
 
-      if (checkbox.checked) {
-        label.classList.add('active');
-        if (filterType === 'country') {
-          activeFilters.countries.push(value);
-          // Update deployment filters when country selection changes
-          updateDeploymentFilters();
-        } else if (filterType === 'deployment') {
-          activeFilters.deployments.push(value);
-        }
-      } else {
-        label.classList.remove('active');
-        if (filterType === 'country') {
-          activeFilters.countries = activeFilters.countries.filter(c => c !== value);
-          // Update deployment filters when country selection changes
-          updateDeploymentFilters();
-        } else if (filterType === 'deployment') {
-          activeFilters.deployments = activeFilters.deployments.filter(d => d !== value);
-        }
-      }
-
+    // --- Handle country dropdown changes ---
+    function handleCountryChange(event) {
+      if (!event.target.classList.contains('country-checkbox')) return;
+      const checkboxes = document.querySelectorAll('.country-checkbox');
+      activeFilters.countries = Array.from(checkboxes).filter(cb => cb.checked).map(cb => cb.value);
+      updateDeploymentFilters();
       applyFilters();
+      updateDropdownLabel('country');
+    }
+
+    // --- Handle deployment dropdown changes ---
+    function handleDeploymentChange(event) {
+      if (!event.target.classList.contains('deployment-checkbox')) return;
+      const checkboxes = document.querySelectorAll('.deployment-checkbox');
+      activeFilters.deployments = Array.from(checkboxes).filter(cb => cb.checked).map(cb => cb.value);
+      applyFilters();
+      updateDropdownLabel('deployment');
     }
 
     // --- Apply filters ---
@@ -464,17 +368,31 @@
     // --- Clear all filters ---
     function clearAllFilters() {
       activeFilters = { countries: [], deployments: [] };
-      
-      // Clear country filters
-      document.querySelectorAll('#countryFilters .filter-checkbox input').forEach(checkbox => {
-        checkbox.checked = false;
-        checkbox.closest('.filter-checkbox').classList.remove('active');
-      });
-      
-      // Reset deployment filters to show all deployments
+      // Uncheck all checkboxes
+      document.querySelectorAll('.country-checkbox, .deployment-checkbox').forEach(cb => cb.checked = false);
       updateDeploymentFilters();
-      
       applyFilters();
+      updateDropdownLabel('country');
+      updateDropdownLabel('deployment');
+    }
+
+    // --- Update dropdown button label to show selected items ---
+    function updateDropdownLabel(type) {
+      if (type === 'country') {
+        const btn = document.getElementById('countryDropdownBtn');
+        if (activeFilters.countries.length === 0) {
+          btn.textContent = 'Select Countries';
+        } else {
+          btn.textContent = activeFilters.countries.join(', ');
+        }
+      } else if (type === 'deployment') {
+        const btn = document.getElementById('deploymentDropdownBtn');
+        if (activeFilters.deployments.length === 0) {
+          btn.textContent = 'Select Deployments';
+        } else {
+          btn.textContent = activeFilters.deployments.join(', ');
+        }
+      }
     }
 
     // --- Update results info ---
@@ -504,16 +422,76 @@
 
       data.forEach((m) => {
         const a = document.createElement('a');
-        a.href = m.image;
+        // Determine if this is a Google Drive file link
+        let videoUrl = m.image;
+        let isGoogleDrive = false;
+        let drivePreviewUrl = '';
+        if (typeof videoUrl === 'string') {
+          // Google Drive share or direct link
+          const driveMatch = videoUrl.match(/drive\.google\.com\/(?:file\/d\/|open\?id=)([\w-]+)/);
+          if (driveMatch) {
+            isGoogleDrive = true;
+            const fileId = driveMatch[1];
+            drivePreviewUrl = `https://drive.google.com/file/d/${fileId}/preview`;
+            videoUrl = drivePreviewUrl;
+          } else if (videoUrl.endsWith('.gif')) {
+            videoUrl = videoUrl.replace('.gif', '.mp4');
+          }
+        }
+        a.href = videoUrl;
         a.className = 'gallery-card glightbox';
         a.setAttribute('data-gallery', 'moths');
-        a.setAttribute('data-glightbox', `title: ${m.species}; description: ${m.location} • ${m.date} • ${m.credit}`);
+        // For Google Drive, set the lightbox to the preview URL as well
+        if (isGoogleDrive) {
+          a.setAttribute('data-glightbox', `iframe: true; width: 900px; height: 506px; title: ${m.species}; description: ${m.location} • ${m.date} • ${m.credit}`);
+        } else {
+          a.setAttribute('data-glightbox', `title: ${m.species}; description: ${m.location} • ${m.date} • ${m.credit}`);
+        }
         a.id = `card-${m.id}`;
 
-        const img = document.createElement('img');
-        img.src = m.thumb || m.image;
-        img.alt = `${m.species} at ${m.location}`;
-        img.loading = 'lazy';
+        let mediaElem;
+        if (isGoogleDrive) {
+          // Use Google Drive preview embed in an iframe
+          mediaElem = document.createElement('iframe');
+          mediaElem.src = drivePreviewUrl;
+          mediaElem.width = '100%';
+          mediaElem.height = '280';
+          mediaElem.allow = 'autoplay';
+          mediaElem.style.border = 'none';
+          mediaElem.setAttribute('title', `${m.species} at ${m.location}`);
+
+          // Try to auto-loop the video in the iframe (works if Google allows postMessage API)
+          mediaElem.onload = function() {
+            try {
+              mediaElem.contentWindow.postMessage('{"event":"command","func":"loop","args":[true],"id":""}', '*');
+            } catch (e) {}
+          };
+        } else {
+          // Use <video> for all other entries
+          mediaElem = document.createElement('video');
+          mediaElem.src = videoUrl;
+          mediaElem.autoplay = true;
+          mediaElem.loop = true;
+          mediaElem.muted = true;
+          mediaElem.playsInline = true;
+          mediaElem.style.width = '100%';
+          mediaElem.style.height = '280px';
+          mediaElem.style.objectFit = 'cover';
+          mediaElem.setAttribute('title', `${m.species} at ${m.location}`);
+
+          // Fallback: show a message and link if video fails to load
+          mediaElem.onerror = function() {
+            if (!mediaElem.parentNode) return;
+            const fallback = document.createElement('div');
+            fallback.className = 'text-center p-3';
+            fallback.style.background = '#f8d7da';
+            fallback.style.color = '#721c24';
+            fallback.innerHTML =
+              `Video could not be loaded. ${videoUrl}<br>` +
+              `<a href="${videoUrl}" target="_blank" rel="noopener">Open in Google Drive</a>`;
+            mediaElem.replaceWith(fallback);
+          };
+        }
 
         const meta = document.createElement('div');
         meta.className = 'gallery-meta';
@@ -529,7 +507,7 @@
           </div>
         `;
 
-        a.appendChild(img);
+        a.appendChild(mediaElem);
         a.appendChild(meta);
         frag.appendChild(a);
       });
@@ -547,11 +525,7 @@
     }
 
     // --- Init ---
-    document.addEventListener('DOMContentLoaded', () => {
-      buildFilterControls();
-      buildGallery(moths);
-      updateResultsInfo();
-    });
+  // Only run filter controls and gallery after data is loaded
   </script>
 </body>
 </html>

@@ -1,0 +1,58 @@
+[
+  {
+    "image_path": "https://drive.google.com/file/d/17X6c99xBDoL97_TnZ_p331vfuh2zz1nN/view?usp=drive_link",
+    "deployment": "dep000051",
+    "image_root": "01-20240525011230",
+    "deployment_name": "W02",
+    "country": "singapore",
+    "description": ""
+  },
+  {
+    "image_path": "https://drive.google.com/file/d/15r_P29HIMJh0Rc4PL-YwzNFjmeXmu5Tc/view?usp=drive_link",
+    "deployment": "dep000045",
+    "image_root": "01-20240525032819",
+    "deployment_name": "Nanyang Technological University",
+    "country": "singapore",
+    "description": "Large Swallowtail moth (Lyssa zampa)"
+  },
+  {
+    "image_path": "https://drive.google.com/file/d/1f9LPE1FMUpI3AqMi1momXQ1vul76jUb-/view?usp=drive_link",
+    "deployment": "dep000096",
+    "image_root": "20241002223300",
+    "deployment_name": "AMI-EMBU",
+    "country": "kenya",
+    "description": "Unknown large moth"
+  },
+  {
+    "image_path": "https://drive.google.com/file/d/1uQjeCKJDxVj4pld7CYCBwHwAMWxKQVZA/view?usp=drive_link",
+    "deployment": "dep000096",
+    "image_root": "20241015230620",
+    "deployment_name": "AMI-EMBU",
+    "country": "kenya",
+    "description": "Unknown large orange moth with eyes on hindwing"
+  },
+  {
+    "image_path": "https://drive.google.com/file/d/1RO-Ttz7ZPiVB8Ig_eWGAXbW4Dv_M7JZg/view?usp=drive_link",
+    "deployment": "dep000096",
+    "image_root": "20241009211140",
+    "deployment_name": "AMI-EMBU",
+    "country": "kenya",
+    "description": "Pseudobunaea irius (African Emperor Moth)"
+  },
+  {
+    "image_path": "https://drive.google.com/file/d/1P6kxciIeH66VI7J32lrU-h67GbzPt2DB/view?usp=drive_link",
+    "deployment": "dep000096",
+    "image_root": "20241005032739",
+    "deployment_name": "AMI-EMBU",
+    "country": "kenya",
+    "description": "Similar in appearance to Bunaeopsis aurantiaca, next to an orange-black striped Amphicallia bellatrix beside it"
+  },
+  {
+    "image_path": "https://drive.google.com/file/d/1RBoqClxzXugM_2tVBjw8hhbjGNTQP-0o/view?usp=drive_link",
+    "deployment": "dep000096",
+    "image_root": "20241019220540",
+    "deployment_name": "AMI-EMBU",
+    "country": "kenya",
+    "description": "Bunaea alcinoe (African Emperor Moth)"
+  }
+]
