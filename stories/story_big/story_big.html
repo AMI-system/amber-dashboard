@@ -426,143 +426,118 @@
     }
 
     // --- Build Gallery ---
-    function buildGallery(data) {
-      const gallery = document.getElementById('gallery');
-      gallery.innerHTML = '';
+    // --- Build Gallery ---
+function buildGallery(data) {
+  const gallery = document.getElementById('gallery');
+  gallery.innerHTML = '';
 
-      if (data.length === 0) {
-        gallery.innerHTML = '<div class="col-12 text-center text-muted py-5"><h4>No moths match your filters</h4><p>Try adjusting your filter criteria</p></div>';
-        return;
+  if (data.length === 0) {
+    gallery.innerHTML = '<div class="col-12 text-center text-muted py-5"><h4>No moths match your filters</h4><p>Try adjusting your filter criteria</p></div>';
+    return;
+  }
+
+  const frag = document.createDocumentFragment();
+
+  data.forEach((m) => {
+    let videoUrl = m.image;
+    let isGoogleDrive = false;
+    let drivePreviewUrl = '';
+    if (typeof videoUrl === 'string') {
+      const driveMatch = videoUrl.match(/drive\.google\.com\/(?:file\/d\/|open\?id=)([\w-]+)/);
+      if (driveMatch) {
+        isGoogleDrive = true;
+        const fileId = driveMatch[1];
+        drivePreviewUrl = `https://drive.google.com/file/d/${fileId}/preview`;
+        videoUrl = drivePreviewUrl;
       }
-
-      const frag = document.createDocumentFragment();
-
-      data.forEach((m) => {
-        const a = document.createElement('a');
-        // Determine if this is a Google Drive file link
-        let videoUrl = m.image;
-        let isGoogleDrive = false;
-        let drivePreviewUrl = '';
-        if (typeof videoUrl === 'string') {
-          // Google Drive share or direct link
-          const driveMatch = videoUrl.match(/drive\.google\.com\/(?:file\/d\/|open\?id=)([\w-]+)/);
-          if (driveMatch) {
-            isGoogleDrive = true;
-            const fileId = driveMatch[1];
-            drivePreviewUrl = `https://drive.google.com/file/d/${fileId}/preview`;
-            videoUrl = drivePreviewUrl;
-          } else if (videoUrl.endsWith('.gif')) {
-            videoUrl = videoUrl.replace('.gif', '.mp4');
-          }
-        }
-        a.href = videoUrl;
-        a.className = 'gallery-card glightbox';
-        a.setAttribute('data-gallery', 'moths');
-        // For Google Drive, set the lightbox to the preview URL as well
-        if (isGoogleDrive) {
-          a.setAttribute('data-glightbox', `iframe: true; width: 900px; height: 506px; title: ${m.species}; description: ${m.region} • ${m.location} • ${m.date} • ${m.credit}`);
-        } else {
-          a.setAttribute('data-glightbox', `title: ${m.species}; description: ${m.region} • ${m.location} • ${m.date} • ${m.credit}`);
-        }
-        a.id = `card-${m.id}`;
-
-        let mediaElem;
-        // If file_type is gif, show as <img> (GIFs loop by default)
-        if (m.file_type && m.file_type.toLowerCase() === 'gif') {
-          mediaElem = document.createElement('img');
-          mediaElem.src = m.image;
-          mediaElem.alt = m.species + ' at ' + m.location;
-          mediaElem.style.width = '100%';
-          mediaElem.style.height = '280px';
-          mediaElem.style.objectFit = 'cover';
-          mediaElem.setAttribute('title', `${m.species} at ${m.location}`);
-        } else if (isGoogleDrive) {
-          // Use Google Drive preview embed in an iframe
-          mediaElem = document.createElement('iframe');
-          mediaElem.src = drivePreviewUrl;
-          mediaElem.width = '100%';
-          mediaElem.height = '280';
-          mediaElem.allow = 'autoplay';
-          mediaElem.style.border = 'none';
-          mediaElem.setAttribute('title', `${m.species} at ${m.location}`);
-
-          // Try to auto-loop the video in the iframe (works if Google allows postMessage API)
-          mediaElem.onload = function() {
-            try {
-              mediaElem.contentWindow.postMessage('{"event":"command","func":"loop","args":[true],"id":""}', '*');
-            } catch (e) {}
-          };
-        } else {
-          // Use <video> for all other entries
-          mediaElem = document.createElement('video');
-          mediaElem.src = videoUrl;
-          mediaElem.autoplay = true;
-          mediaElem.loop = true;
-          mediaElem.muted = true;
-          mediaElem.playsInline = true;
-          mediaElem.style.width = '100%';
-          mediaElem.style.height = '280px';
-          mediaElem.style.objectFit = 'cover';
-          mediaElem.setAttribute('title', `${m.species} at ${m.location}`);
-
-          // Fallback: show a message and link if video fails to load
-          mediaElem.onerror = function() {
-            if (!mediaElem.parentNode) return;
-            const fallback = document.createElement('div');
-            fallback.className = 'text-center p-3';
-            fallback.style.background = '#f8d7da';
-            fallback.style.color = '#721c24';
-            fallback.innerHTML =
-              `Video could not be loaded. ${videoUrl}<br>` +
-              `<a href="${videoUrl}" target="_blank" rel="noopener">Open in Google Drive</a>`;
-            mediaElem.replaceWith(fallback);
-          };
-        }
-
-        a.appendChild(mediaElem);
-
-
-        // Add capture time info as a separate div below the media
-        if (m.capture_time) {
-          const timeDiv = document.createElement('div');
-          timeDiv.className = 'small text-center text-muted';
-          timeDiv.style.marginTop = '4px';
-          timeDiv.textContent = `Captured: ${m.capture_time}`;
-          a.appendChild(timeDiv);
-        }
-        const meta = document.createElement('div');
-        meta.className = 'gallery-meta';
-        meta.style.position = 'static'; // Remove absolute positioning
-        meta.style.background = 'none'; // Remove background gradient
-        meta.style.color = '#333'; // Use dark text for below image
-        meta.innerHTML = `
-          <div class="d-flex align-items-center justify-content-between mb-2">
-            <strong>${m.species}</strong>
-            <span class="badge rounded-pill badge-region">${m.region}</span>
-          </div>
-          <div class="small mb-1">${m.location}</div>
-          <div class="d-flex justify-content-between align-items-center">
-            <span class="small">${m.date ? 'Captured: ' + m.date : ''}</span>
-            <span class="small"></span>
-          </div>
-        `;
-        a.appendChild(meta);
-        frag.appendChild(a);
-      });
-
-      gallery.appendChild(frag);
-
-      // init / refresh lightbox
-      if (window.mothLightbox) { window.mothLightbox.destroy(); }
-      window.mothLightbox = GLightbox({
-        selector: '.glightbox',
-        touchNavigation: true,
-        loop: true,
-        autoplayVideos: false
-      });
+      // else if (videoUrl.endsWith('.gif')) {
+      //   videoUrl = videoUrl.replace('.gif', '.mp4');
+      // }
     }
 
-    // --- Init ---
+    // Create the clickable card wrapper (lightbox trigger)
+    const a = document.createElement('a');
+    a.href = videoUrl;
+    a.className = 'gallery-card glightbox';
+    a.setAttribute('data-gallery', 'moths');
+
+    if (isGoogleDrive) {
+      a.setAttribute('data-glightbox', `iframe: true; width: 900px; height: 506px; title: ${m.species}; description: ${m.region} • ${m.location} • ${m.date} • ${m.credit}`);
+    } else if (m.file_type && ['gif','jpg','jpeg','png'].includes(m.file_type.toLowerCase())) {
+      a.setAttribute('data-glightbox', `type: image; title: ${m.species}; description: ${m.region} • ${m.location} • ${m.date} • ${m.credit}`);
+    } else {
+      a.setAttribute('data-glightbox', `title: ${m.species}; description: ${m.region} • ${m.location} • ${m.date} • ${m.credit}`);
+    }
+
+
+
+    a.id = `card-${m.id}`;
+
+    // Add media element
+    let mediaElem;
+    if (m.file_type && m.file_type.toLowerCase() === 'gif') {
+      mediaElem = document.createElement('img');
+      mediaElem.src = m.image;   // keep the GIF!
+      mediaElem.alt = m.species + ' at ' + m.location;
+      mediaElem.style.width = '100%';
+      mediaElem.style.height = '280px';
+      mediaElem.style.objectFit = 'cover';
+    } else if (isGoogleDrive) {
+      mediaElem = document.createElement('iframe');
+      mediaElem.src = drivePreviewUrl;
+      mediaElem.width = '100%';
+      mediaElem.height = '280';
+      mediaElem.allow = 'autoplay';
+      mediaElem.style.border = 'none';
+    } else {
+      mediaElem = document.createElement('video');
+      mediaElem.src = videoUrl;
+      mediaElem.autoplay = true;
+      mediaElem.loop = true;
+      mediaElem.muted = true;
+      mediaElem.playsInline = true;
+      mediaElem.style.width = '100%';
+      mediaElem.style.height = '280px';
+      mediaElem.style.objectFit = 'cover';
+    }
+
+    a.appendChild(mediaElem);
+
+    // Text/meta block (inside the <a>, so clicking it opens the lightbox too)
+    const meta = document.createElement('div');
+    meta.className = 'gallery-meta';
+    meta.style.position = 'static';
+    meta.style.background = 'none';
+    meta.style.color = '#333';
+    meta.innerHTML = `
+      <div class="d-flex align-items-center justify-content-between mb-2">
+        <strong>${m.species}</strong>
+        <span class="badge rounded-pill badge-region">${m.region}</span>
+      </div>
+      <div class="small mb-1">${m.location}</div>
+      <div class="d-flex justify-content-between align-items-center">
+        <span class="small">${m.date ? 'Captured: ' + m.date : ''}</span>
+      </div>
+    `;
+    a.appendChild(meta);
+
+    frag.appendChild(a);
+  });
+
+  gallery.appendChild(frag);
+
+  // init / refresh lightbox
+  if (window.mothLightbox) { window.mothLightbox.destroy(); }
+  window.mothLightbox = GLightbox({
+    selector: '.glightbox',
+    touchNavigation: true,
+    loop: true,
+    autoplayVideos: false
+  });
+}
+
+
+  // --- Init ---
   // Only run filter controls and gallery after data is loaded
   </script>
 </body>
