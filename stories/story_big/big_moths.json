@@ -1,13 +1,53 @@
 [
   {
-    "image_path": "https://drive.google.com/file/d/1060XzmUoDM9UFNiAdaq8ei36cJqfpnsV/view?usp=drive_link",
-    "file_type": "jpg",
-    "deployment": "dep000051",
-    "image_root": "01-20240413005640-snapshot.jpg",
-    "deployment_name": "W02",
-    "country": "singapore",
-    "description": "Sphingognatha moth",
-    "capture_time": "00:46 on 13/4/2024"
+    "image_path": "https://drive.google.com/open?id=1CmJo5i3ozH_BoL7G9GS---PYIqHuVb0I&usp=drive_fs",
+    "deployment": "dep000038",
+    "deployment_name": "Pre-montane forest",
+    "country": "costa rica",
+    "file_type": "gif",
+    "image_root": "large-cri-3_20240727003709_timelapse",
+    "description": "The largest moth we have spotted: the White Witch (Thysania agrippina)",
+    "capture_time": "00:37 on 27/7/2024"
+  },
+  {
+    "image_path": "https://drive.google.com/open?id=1VRhqkTXYIGEypSzBFbyY7NokwKvBtzuY&usp=drive_fs",
+    "deployment": "dep000096",
+    "deployment_name": "AMI-EMBU",
+    "country": "kenya",
+    "file_type": "gif",
+    "image_root": "20241019220540",
+    "description": "A Cabbage Tree Emperor moth (Bunaea alcinoe)",
+    "capture_time": "22:05 on 10/19/2024"
+  },
+  {
+    "image_path": "https://drive.google.com/open?id=1Mk7OJFaNgeoxLGM2yzfPFa02nmSq0Njl&usp=drive_fs",
+    "deployment": "dep000033",
+    "deployment_name": "Swamp",
+    "country": "costa rica",
+    "file_type": "gif",
+    "image_root": "atlas_moth_01-20240213024750_timelapse",
+    "description": "Large Lebeau's Silk Moth (Rothschildia lebeau)",
+    "capture_time": "02:47 on 13/2/2024"
+  },
+  {
+    "image_path": "https://drive.google.com/open?id=1pgZec-Sq3aOwMkx1LyVFzATQ61R45Z7C&usp=drive_fs",
+    "deployment": "dep000077",
+    "deployment_name": "Sakaerat (car graveyard)",
+    "country": "thailand",
+    "file_type": "gif",
+    "image_root": "-large-tha-big_orange_20250329004340_timelapse",
+    "description": "An Atlas with freyed wings (left) and Gliding Hawkmoth (right)",
+    "capture_time": "00:43 on 29/3/2025"
+  },
+  {
+    "image_path": "  https://drive.google.com/open?id=1wvIC8hDSyHNj-wE7wpGwE4zYKvT2zsLe&usp=drive_fs",
+    "deployment": "dep000077",
+    "deployment_name": "Sakaerat (car graveyard)",
+    "country": "thailand",
+    "file_type": "gif",
+    "image_root": "-large-tha-spiral_eyes_blue_wing_20240914021929_timelapse",
+    "description": "Spirama moth with spiral eyes (left) and a moth of the Ischyja genus displaying its beutiful blue hind wings.",
+    "capture_time": "02:19 on 14/9/2024"
   },
   {
     "image_path": "https://drive.google.com/file/d/1hayWry3Gy1u62jqw8m3SzatWMzbNHaTu/view?usp=drive_link",
@@ -18,16 +58,6 @@
     "description": "Large Swallowtail moth (Lyssa zampa)",
     "file_type": "gif",
     "capture_time": "03:28 on 25/5/2024"
-  },
-  {
-    "image_path": "https://drive.google.com/file/d/1aa3mG0M5JBZRPEFw_V6t11XPerMnXQne/view?usp=drive_link",
-    "deployment": "dep000096",
-    "image_root": "20241015230620",
-    "deployment_name": "AMI-EMBU",
-    "country": "kenya",
-    "description": "Unknown large Kenyan moth",
-    "file_type": "jpg",
-    "capture_time": "23:06 on 10/15/2024"
   },
   {
     "image_path": "https://drive.google.com/open?id=1eQd9Pkdz-IKYrxHKisx4A7Dhd-52qD9H&usp=drive_fs",
@@ -60,16 +90,6 @@
     "capture_time": "03:27 on 5/10/2024"
   },
   {
-    "image_path": "https://drive.google.com/open?id=1VRhqkTXYIGEypSzBFbyY7NokwKvBtzuY&usp=drive_fs",
-    "deployment": "dep000096",
-    "deployment_name": "AMI-EMBU",
-    "country": "kenya",
-    "file_type": "gif",
-    "image_root": "20241019220540",
-    "description": "A Cabbage Tree Emperor moth (Bunaea alcinoe)",
-    "capture_time": "22:05 on 10/19/2024"
-  },
-  {
     "image_path": "https://drive.google.com/open?id=1O4D1WTbtN34PC7nmYBhVq6O53e0j4NUZ&usp=drive_fs",
     "deployment": "dep000032",
     "deployment_name": "Forest Edge",
@@ -78,16 +98,6 @@
     "image_root": "large-cri-1_01-20241224032859_timelapse",
     "description": "Rhescyntis hippodamia",
     "capture_time": "03:28 on 24/12/2024"
-  },
-  {
-    "image_path": "https://drive.google.com/open?id=1Mk7OJFaNgeoxLGM2yzfPFa02nmSq0Njl&usp=drive_fs",
-    "deployment": "dep000033",
-    "deployment_name": "Swamp",
-    "country": "costa rica",
-    "file_type": "gif",
-    "image_root": "atlas_moth_01-20240213024750_timelapse",
-    "description": "Large Lebeau's Silk Moth (Rothschildia lebeau)",
-    "capture_time": "02:47 on 13/2/2024"
   },
   {
     "image_path": "https://drive.google.com/open?id=15eF45_nBy6GFt6DcVG9Ugc_Hh1FC2jae&usp=drive_fs",
@@ -119,16 +129,7 @@
     "description": "Another Rhescyntis hippodamia swooping into shot",
     "capture_time": "02:09 on 30/4/2024"
   },
-  {
-    "image_path": "https://drive.google.com/open?id=1CmJo5i3ozH_BoL7G9GS---PYIqHuVb0I&usp=drive_fs",
-    "deployment": "dep000038",
-    "deployment_name": "Pre-montane forest",
-    "country": "costa rica",
-    "file_type": "gif",
-    "image_root": "large-cri-3_20240727003709_timelapse",
-    "description": "The largest moth we have spotted: the White Witch (Thysania agrippina)",
-    "capture_time": "00:37 on 27/7/2024"
-  },
+
   {
     "image_path": "https://drive.google.com/open?id=1FyrZH7T93gUHLaMQpXd4gXOrXYt5Ooz4&usp=drive_fs",
     "deployment": "dep000077",
@@ -180,23 +181,23 @@
     "capture_time": "00:43 on 29/3/2025"
   },
   {
-    "image_path": "https://drive.google.com/open?id=1pgZec-Sq3aOwMkx1LyVFzATQ61R45Z7C&usp=drive_fs",
-    "deployment": "dep000077",
-    "deployment_name": "Sakaerat (car graveyard)",
-    "country": "thailand",
-    "file_type": "gif",
-    "image_root": "-large-tha-big_orange_20250329004340_timelapse",
-    "description": "An Atlas with freyed wings (left) and Gliding Hawkmoth (right)",
-    "capture_time": "00:43 on 29/3/2025"
+    "image_path": "https://drive.google.com/file/d/1060XzmUoDM9UFNiAdaq8ei36cJqfpnsV/view?usp=drive_link",
+    "file_type": "jpg",
+    "deployment": "dep000051",
+    "image_root": "01-20240413005640-snapshot.jpg",
+    "deployment_name": "W02",
+    "country": "singapore",
+    "description": "Sphingognatha moth",
+    "capture_time": "00:46 on 13/4/2024"
   },
   {
-    "image_path": "  https://drive.google.com/open?id=1wvIC8hDSyHNj-wE7wpGwE4zYKvT2zsLe&usp=drive_fs",
-    "deployment": "dep000077",
-    "deployment_name": "Sakaerat (car graveyard)",
-    "country": "thailand",
-    "file_type": "gif",
-    "image_root": "-large-tha-spiral_eyes_blue_wing_20240914021929_timelapse",
-    "description": "Spirama moth with spiral eyes (left) and a moth of the Ischyja genus displaying its beutiful blue hind wings.",
-    "capture_time": "02:19 on 14/9/2024"
+    "image_path": "https://drive.google.com/file/d/1aa3mG0M5JBZRPEFw_V6t11XPerMnXQne/view?usp=drive_link",
+    "deployment": "dep000096",
+    "image_root": "20241015230620",
+    "deployment_name": "AMI-EMBU",
+    "country": "kenya",
+    "description": "Unknown large Kenyan moth",
+    "file_type": "jpg",
+    "capture_time": "23:06 on 10/15/2024"
   }
 ]

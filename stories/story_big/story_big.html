@@ -64,6 +64,24 @@
       color: #fff;
       font-size: 0.9rem;
     }
+
+    /* Remove underline from all links in gallery meta/info */
+    .gallery-meta a,
+    .gallery-meta a:visited,
+    .gallery-meta a:active,
+    .gallery-meta a:hover {
+      text-decoration: none !important;
+      border-bottom: none !important;
+    }
+
+    /* Remove underline from all links in gallery cards */
+    .gallery-card a,
+    .gallery-card a:visited,
+    .gallery-card a:active,
+    .gallery-card a:hover {
+      text-decoration: none !important;
+      border-bottom: none !important;
+    }
     .badge-region {
       background: rgba(220,53,69,0.9);
       color: white;
@@ -142,14 +160,14 @@
   <!-- NAVBAR (optional placeholder; hook into your existing navbar include if you have one) -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-      <a class="navbar-brand" href="../index.html">AMBER</a>
+  <a class="navbar-brand" href="../../index.html">AMBER</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
-          <li class="nav-item"><a class="nav-link" href="../stories/stories.html">Stories</a></li>
-          <li class="nav-item"><a class="nav-link" href="../about/about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="../stories.html">Stories</a></li>
+          <li class="nav-item"><a class="nav-link" href="../../about/about.html">About</a></li>
         </ul>
       </div>
     </div>
@@ -160,8 +178,8 @@
     <div class="container">
       <h1 class="display-5 mb-3">Big Beautiful Moths</h1>
       <p class="lead mb-0">
-        Explore the dazzling diversity of moths captured by the AMBER network. These nocturnal pollinators reveal
-        patterns, textures, and colors that rival any butterfly — and help us understand ecosystem health across the globe.
+        Explore the dazzling diversity of some of the largest moths captured by the AMBER network.
+        These images reveal vibrant patterns, textures, and colors.
       </p>
     </div>
   </header>
@@ -223,7 +241,7 @@
           location: m.deployment_name || '',
           region: m.country || '',
           deployment: m.deployment_name || '',
-          date: '',
+          date: m.capture_time || '',
           lat: null,
           lng: null,
           image: convertDriveLink(m.image_path),
@@ -442,9 +460,9 @@
         a.setAttribute('data-gallery', 'moths');
         // For Google Drive, set the lightbox to the preview URL as well
         if (isGoogleDrive) {
-          a.setAttribute('data-glightbox', `iframe: true; width: 900px; height: 506px; title: ${m.species}; description: ${m.location} • ${m.date} • ${m.credit}`);
+          a.setAttribute('data-glightbox', `iframe: true; width: 900px; height: 506px; title: ${m.species}; description: ${m.region} • ${m.location} • ${m.date} • ${m.credit}`);
         } else {
-          a.setAttribute('data-glightbox', `title: ${m.species}; description: ${m.location} • ${m.date} • ${m.credit}`);
+          a.setAttribute('data-glightbox', `title: ${m.species}; description: ${m.region} • ${m.location} • ${m.date} • ${m.credit}`);
         }
         a.id = `card-${m.id}`;
 
@@ -502,29 +520,14 @@
         }
 
         a.appendChild(mediaElem);
-        // Extract date and time from image_root if possible
-        let captureDate = '';
-        let captureTime = '';
-        if (m.image_root) {
-          // Try to extract YYYYMMDD or YYYYMMDDHHMMSS from image_root
-          const dateMatch = m.image_root.match(/(\d{8,14})/);
-          if (dateMatch) {
-            const raw = dateMatch[1];
-            // Format as YYYY-MM-DD or YYYY-MM-DD HH:MM:SS
-            if (raw.length === 8) {
-              captureDate = `${raw.slice(0,4)}-${raw.slice(4,6)}-${raw.slice(6,8)}`;
-            } else if (raw.length === 14) {
-              captureDate = `${raw.slice(0,4)}-${raw.slice(4,6)}-${raw.slice(6,8)}`;
-              captureTime = `${raw.slice(8,10)}:${raw.slice(10,12)}:${raw.slice(12,14)}`;
-            }
-          }
-        }
+
+
         // Add capture time info as a separate div below the media
         if (m.capture_time) {
           const timeDiv = document.createElement('div');
           timeDiv.className = 'small text-center text-muted';
           timeDiv.style.marginTop = '4px';
-          timeDiv.textContent = `Capture time: ${m.capture_time}`;
+          timeDiv.textContent = `Captured: ${m.capture_time}`;
           a.appendChild(timeDiv);
         }
         const meta = document.createElement('div');
@@ -539,7 +542,7 @@
           </div>
           <div class="small mb-1">${m.location}</div>
           <div class="d-flex justify-content-between align-items-center">
-            <span class="small">${captureDate ? 'Captured: ' + captureDate : ''}</span>
+            <span class="small">${m.date ? 'Captured: ' + m.date : ''}</span>
             <span class="small"></span>
           </div>
         `;
