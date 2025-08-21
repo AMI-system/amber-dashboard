@@ -30,6 +30,7 @@
     .hero h1 { font-weight: 600; }
     .hero p { max-width: 820px; }
 
+
     /* Gallery */
     .gallery {
       display: grid;
@@ -159,6 +160,17 @@
       color: var(--text-muted);
       font-size: 0.9rem;
     }
+
+    .glightbox-container .gslide img {
+      width: 768px !important;     /* stretch to 70% of viewport width */
+      height: auto !important;    /* keep aspect ratio */
+      max-width: 768px !important; /* allow scaling beyond natural size */
+      max-height: 90vh !important;/* prevent overflowing vertically */
+      margin: 0 auto;
+      display: block;
+    }
+
+
 
     /* Section headings */
     .section-title { color: var(--amber-primary); font-weight: 600; }
@@ -472,8 +484,24 @@ function buildGallery(data) {
     a.className = 'gallery-card glightbox';
     a.setAttribute('data-gallery', 'moths');
 
-    const localImgTag = `<img src='${convertDriveLink(m.image_path)}' alt='Big Beautiful Moths' style='max-width:100%;max-height:220px;display:block;margin-top:10px;' loading='lazy'/>`;
-    a.setAttribute('data-glightbox', `title: ${m.species}; description: ${m.region} • ${m.location} • ${m.date} • ${m.credit}${localImgTag}`);
+    // let localImgTag;
+    // if (m.file_type && m.file_type.toLowerCase() === 'gif') {
+    //   localImgTag = `<img src='${convertDriveLink(m.image_path)}' alt='Big Beautiful Moths' style='width:70vw;max-width:70vw;display:block;margin:20px auto 0 auto;' loading='lazy'/>`;
+    // } else {
+    //   localImgTag = `<img src='${convertDriveLink(m.image_path)}' alt='Big Beautiful Moths' style='max-width:100%;display:block;margin-top:10px;' loading='lazy'/>`;
+    // }
+    // a.setAttribute('data-glightbox', `title: ${m.species}; description: ${m.region} • ${m.location} • ${m.date} • ${m.credit}${localImgTag}`);
+
+
+
+    // Configure GLightbox to show the large image only in the popup
+    if (m.file_type && ['gif','jpg','jpeg','png'].includes(m.file_type.toLowerCase())) {
+      a.setAttribute('data-glightbox', `type: image; href: ${convertDriveLink(m.image_path)}; title: ${m.species}; description: ${m.region} • ${m.location} • ${m.date} • ${m.credit}`);
+    } else if (isGoogleDrive) {
+      a.setAttribute('data-glightbox', `iframe: true; width: 900px; height: 506px; title: ${m.species}; description: ${m.region} • ${m.location} • ${m.date} • ${m.credit}`);
+    } else {
+      a.setAttribute('data-glightbox', `title: ${m.species}; description: ${m.region} • ${m.location} • ${m.date} • ${m.credit}`);
+    }
 
 
 
