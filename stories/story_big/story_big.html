@@ -50,10 +50,21 @@
     }
     .gallery-card img {
       width: 100%;
-      height: 280px;
-      object-fit: cover;
+      max-width: 100%;
+      height: auto;
+      max-height: 280px;
+      object-fit: contain;
       display: block;
       transition: transform .35s ease;
+    }
+    .gallery-card iframe {
+      width: 100% !important;
+      max-width: 100%;
+      min-width: 0;
+      height: 280px !important;
+      display: block;
+      border: none;
+      background: #000;
     }
     .gallery-card:hover img { transform: scale(1.04); }
     .gallery-meta {
@@ -265,7 +276,7 @@
       const match = link.match(/https:\/\/drive\.google\.com\/file\/d\/([\w-]+)\//);
       if (match) {
         // return `https://drive.google.com/uc?export=download&id=${match[1]}`;
-        return `https://drive.google.com/file/d/${match[1]}/preview`;
+        return `https://drive.google.com/uc?export=view&id=${match[1]}`;
       }
       // Otherwise, treat as relative path
       return link;
@@ -461,13 +472,9 @@ function buildGallery(data) {
     a.className = 'gallery-card glightbox';
     a.setAttribute('data-gallery', 'moths');
 
-    if (isGoogleDrive) {
-      a.setAttribute('data-glightbox', `iframe: true; width: 900px; height: 506px; title: ${m.species}; description: ${m.region} • ${m.location} • ${m.date} • ${m.credit}`);
-    } else if (m.file_type && ['gif','jpg','jpeg','png'].includes(m.file_type.toLowerCase())) {
-      a.setAttribute('data-glightbox', `type: image; title: ${m.species}; description: ${m.region} • ${m.location} • ${m.date} • ${m.credit}`);
-    } else {
-      a.setAttribute('data-glightbox', `title: ${m.species}; description: ${m.region} • ${m.location} • ${m.date} • ${m.credit}`);
-    }
+    const localImgTag = `<img src='${convertDriveLink(m.image_path)}' alt='Big Beautiful Moths' style='max-width:100%;max-height:220px;display:block;margin-top:10px;' loading='lazy'/>`;
+    a.setAttribute('data-glightbox', `title: ${m.species}; description: ${m.region} • ${m.location} • ${m.date} • ${m.credit}${localImgTag}`);
+
 
 
 
@@ -477,8 +484,9 @@ function buildGallery(data) {
     let mediaElem;
     if (m.file_type && m.file_type.toLowerCase() === 'gif') {
       mediaElem = document.createElement('img');
-      mediaElem.src = m.image;   // keep the GIF!
+      mediaElem.src = m.image;   // keep the GIF as <img>
       mediaElem.alt = m.species + ' at ' + m.location;
+      mediaElem.loading = 'lazy';
       mediaElem.style.width = '100%';
       mediaElem.style.height = '280px';
       mediaElem.style.objectFit = 'cover';
