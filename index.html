@@ -8,6 +8,41 @@
   <link rel="stylesheet" href="css/styles.css"/>
 
   <style>
+    /* Make carousel cards half width and half height */
+    .story-carousel-card {
+      width: 270px !important;
+      min-width: 270px !important;
+      max-width: 270px !important;
+      height: 180px !important;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      margin-right: 1rem;
+      overflow: hidden;
+    }
+    .story-carousel-img {
+      width: 100% !important;
+      height: 110px !important;
+      object-fit: cover;
+      display: block;
+    }
+    .story-carousel-content {
+      font-size: 0.7rem;
+      padding: 0.2rem 0.3rem 0 0.3rem;
+      text-align: left;
+    }
+    @media (max-width: 600px) {
+      .story-carousel-card {
+        width: 230px !important;
+        min-width: 230px !important;
+        max-width: 230px !important;
+        height: 200px !important;
+      }
+      .story-carousel-img {
+        height: 90px !important;
+      }
+    }
     /* Responsive layout for landing-container */
     .landing-container {
       display: flex;
@@ -114,7 +149,7 @@
 
 
   </div>
-  <div class="mb-3" style="padding-top: 25px;">
+  <div class="mb-3 d-flex justify-content-center" style="padding-top: 25px;">
     <a href="stories/story_map/story_map.html" class="btn btn-primary btn-sm me-2">Explore Deployments</a>
     <a href="stories/stories.html" class="btn btn-outline-primary btn-sm me-2">Read Stories</a>
     <a href="about/about.html" class="btn btn-outline-primary btn-sm">About AMBER</a>
@@ -160,7 +195,9 @@
                 </div>
               </a>
               <a href="stories/story_fieldwork/story_fieldwork.html" class="story-carousel-card text-decoration-none">
-                <img src="stories/story_fieldwork/story_fieldwork.jpg" class="story-carousel-img" alt="Fieldwork Diaries" />
+                <!-- <span style="display:block; aspect-ratio: 1/1; overflow:hidden; background:#eee;"> -->
+                  <img src="stories/story_fieldwork/story_fieldwork.jpg" class="story-carousel-img" alt="Fieldwork Diaries" style="width:100%; height:100%; object-fit:cover; aspect-ratio:8/9; display:block;" />
+                <!-- </span> -->
                 <div class="story-carousel-content">
                   <h3>Fieldwork Diaries</h3>
                   <p>Join Dr Jenna Lawson behind the scenes of AMBER deployments. She provides stories from the field, challenges overcome, and the dedicated researchers making biodiversity monitoring possible.</p>
