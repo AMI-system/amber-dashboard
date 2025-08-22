@@ -7,6 +7,43 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css"/>
   <link rel="stylesheet" href="css/styles.css"/>
 
+  <style>
+    /* Responsive layout for landing-container */
+    .landing-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0;
+    }
+    .landing-container .video-col, .landing-container .text-col {
+      flex: 1 1 50%;
+      min-width: 320px;
+      box-sizing: border-box;
+    }
+    .landing-container .video-col {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .landing-container img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+    @media (max-width: 900px) {
+      .landing-container {
+        flex-direction: column;
+      }
+      .landing-container .video-col, .landing-container .text-col {
+        flex: 1 1 100%;
+        max-width: 100%;
+      }
+      .landing-container .text-col {
+        text-align: center;
+        padding-top: 1rem;
+      }
+    }
+  </style>
+
   <!-- Google Analytics 4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-YXQJJLD55E"></script>
   <script>
@@ -43,17 +80,28 @@
 
 <!-- Main Content -->
 <div class="container text-center mt-4">
-      <h1 style="padding-bottom: 0px;">Welcome to AMBER</h1>
-      <h5 class="mb-3" style="color: #6c757d; padding-top: 0px;">
-        Automated Monitoring of Biodiversity with Edge Processing and Remote Sensing.
-      </h5>
-  <div class="landing-container">
-    <img src="stories/story_ml/ami-system.gif" alt="AMI system deployed in the field" style="border-radius: 15px; max-height: 300px;" />
-    <div class="text-content">
+  <h1 style="padding-bottom: 0px;">Welcome to AMBER</h1>
+  <h5 class="mb-3" style="color: #6c757d; padding-top: 0px;">
+    Automated Monitoring of Biodiversity with Edge Processing and Remote Sensing.
+  </h5>
 
-      <p>AMBER is a cutting-edge collaboration between UKCEH and The Alan Turing Institute, exploring wildlife conservation through AI-powered camera trap networks. Our intelligent monitoring systems are deployed worldwide, from the rainforests of Costa Rica to the deserts of Namibia, providing unprecedented insights into ecosystem health and wildlife behavior patterns.</p>
-
+  <!-- Landing Container with Bootstrap Grid -->
+  <div class="landing-container bg-light p-4 rounded shadow-sm">
+    <div class="video-col">
+      <img src="stories/story_ml/ami-system.gif"
+           alt="AMI system deployed in the field"
+           class="img-fluid rounded" />
     </div>
+    <div class="text-col">
+      <p class="mb-0">
+        AMBER is a cutting-edge collaboration between UKCEH and The Alan Turing Institute,
+        sponsored by the Aberdeen Charitable Foundation. It explores wildlife conservation
+        through AI-powered camera trap networks. Our intelligent monitoring systems are deployed
+        worldwide, from the rainforests of Costa Rica to the deserts of Namibia, providing
+        unprecedented insights into ecosystem health and wildlife behavior patterns.
+      </p>
+    </div>
+  </div>
 
 
 
@@ -183,4 +231,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 </body>
+
+<!-- Footer with Partner Logos -->
+<footer class="bg-light py-4 mt-5 border-top">
+  <div class="container d-flex flex-column flex-md-row align-items-center justify-content-center">
+    <span class="me-md-4 mb-3 mb-md-0" style="font-size: 1rem; color: #6c757d;">AMBER Partners:</span>
+    <a href="https://www.turing.ac.uk/" target="_blank" rel="noopener" class="mx-2" title="The Alan Turing Institute">
+      <img src="about/partner_logos/ATI_logo.png" alt="Alan Turing Institute Logo" style="height: 40px; width: auto;" />
+    </a>
+    <a href="https://www.ceh.ac.uk/" target="_blank" rel="noopener" class="mx-2" title="UKCEH">
+      <img src="about/partner_logos/UKCEH_logo.png" alt="UKCEH Logo" style="height: 40px; width: auto;" />
+    </a>
+    <a href="https://www.aberdeenplc.com/en-gb/corporate-sustainability/abrdn-charitable-foundation" target="_blank" rel="noopener" class="mx-2" title="Aberdeen">
+      <img src="about/partner_logos/aberdeen_logo.png" alt="Aberdeen Logo" style="height: 40px; width: auto;" />
+    </a>
+  </div>
+</footer>
 </html>
