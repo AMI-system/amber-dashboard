@@ -25,8 +25,12 @@
   <div id="navbar"></div>
   <script>
     fetch('/navbar.html')
-      .then(res => res.text())
-      .then(html => { document.getElementById('navbar').innerHTML = html; });
+      .then(res => {
+        if (!res.ok) throw new Error('Navbar not found');
+        return res.text();
+      })
+      .then(html => { document.getElementById('navbar').innerHTML = html; })
+      .catch(e => { document.getElementById('navbar').innerHTML = '<div style="color:red;text-align:center">Navbar failed to load</div>'; });
   </script>
 
   <div class="container-fluid mt-2">
@@ -270,8 +274,12 @@
 <div id="footer"></div>
 <script>
   fetch('/footer.html')
-    .then(res => res.text())
-    .then(html => { document.getElementById('footer').innerHTML = html; });
+    .then(res => {
+      if (!res.ok) throw new Error('Footer not found');
+      return res.text();
+    })
+    .then(html => { document.getElementById('footer').innerHTML = html; })
+    .catch(e => { document.getElementById('footer').innerHTML = '<div style="color:red;text-align:center">Footer failed to load</div>'; });
 </script>
 </body>
 </html>
