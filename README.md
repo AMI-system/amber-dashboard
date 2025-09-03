@@ -15,6 +15,8 @@ python -m http.server 8000
 ```
 ami-dashboard/
 ├── index.html          # Main file containing the tab layout
+├── navbar.html          # Navigation bar for the dashboard
+├── footer.html          # Footer for the dashboard
 ├── map/
 │   ├── map.html        # Map-specific HTML
 │   ├── map.js          # JavaScript for map rendering
@@ -46,3 +48,13 @@ ami-dashboard/
     ├── favicon.ico     # Favicon
     └── logo.png        # Shared images or assets
 ```
+
+## New Stories
+
+To add a new story, follow the instructions in `README_ADD_STORY.md`.
+
+## Analytics
+
+The AMBER Dashboard uses Google Analytics 4 for tracking user interactions. The tracking code is included in the `<head>` section of each HTML file.
+
+To view the metrics, you will need access to the Google Analytics account associated with the AMBER project. Contact Kat, Tom or David.
