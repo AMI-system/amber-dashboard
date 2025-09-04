@@ -8,7 +8,6 @@
   <link rel="stylesheet" href="css/styles.css"/>
 
   <style>
-    /* Make carousel cards half width and half height */
     .story-carousel-card {
       width: 270px !important;
       min-width: 270px !important;
@@ -43,7 +42,6 @@
         height: 90px !important;
       }
     }
-    /* Responsive layout for landing-container */
     .landing-container {
       display: flex;
       flex-wrap: wrap;
@@ -66,12 +64,21 @@
       align-items: center;
     }
     .landing-container img {
-    <div id="footer"></div>
-    <script>
-      fetch('/footer.html')
-        .then(res => res.text())
-        .then(html => { document.getElementById('footer').innerHTML = html; });
-    </script>
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+    @media (max-width: 900px) {
+      .landing-container {
+        flex-direction: column;
+      }
+      .landing-container .video-col, .landing-container .text-col {
+        flex: 1 1 100%;
+        max-width: 100%;
+        padding-right: 0;
+        padding-left: 0;
+      }
+      .landing-container .text-col {
         text-align: center;
         padding-top: 1.5rem;
       }
@@ -145,7 +152,7 @@
             <div class="stories-row d-flex flex-nowrap" id="storiesRow">
 
 
-              /* ML story */
+              <!-- ML story -->
               <a href="stories/story_ml/story_ml.html" class="story-carousel-card text-decoration-none">
                 <img src="stories/story_ml/ml_snapshot.jpg" class="story-carousel-img" alt="Machine Learning Analysis" />
                 <div class="story-carousel-content">
@@ -154,7 +161,7 @@
                 </div>
               </a>
 
-              /* Deployment Map */
+              <!-- Deployment Map -->
               <a href="stories/story_map/story_map.html" class="story-carousel-card text-decoration-none">
                 <img src="stories/story_map/story_map.jpg" class="story-carousel-img" alt="Global Deployment Map" />
                 <div class="story-carousel-content">
@@ -163,7 +170,7 @@
                 </div>
               </a>
 
-              /* Wildlife Encounters */
+              <!-- Wildlife Encounters -->
               <a href="stories/story_encounters/story_encounters.html" class="story-carousel-card text-decoration-none">
                 <img src="stories/story_encounters/thailand/civet_cat.jpg" class="story-carousel-img" alt="Wildlife Encounters" />
                 <div class="story-carousel-content">
@@ -172,7 +179,7 @@
                 </div>
               </a>
 
-              /* Big moths */
+              <!-- Big moths -->
               <a href="stories/story_big/story_big.html" class="story-carousel-card text-decoration-none">
                 <img src="stories/story_big/story_big.png" class="story-carousel-img" alt="Big Beautiful Moths" />
                 <div class="story-carousel-content">
@@ -181,7 +188,7 @@
                 </div>
               </a>
 
-              /* Fieldwork diaries */
+              <!-- Fieldwork diaries -->
               <a href="stories/story_fieldwork/story_fieldwork.html" class="story-carousel-card text-decoration-none">
                 <!-- <span style="display:block; aspect-ratio: 1/1; overflow:hidden; background:#eee;"> -->
                   <img src="stories/story_fieldwork/story_fieldwork.jpg" class="story-carousel-img" alt="Fieldwork Diaries" style="width:100%; height:100%; object-fit:cover; aspect-ratio:8/9; display:block;" />
@@ -192,7 +199,7 @@
                 </div>
               </a>
 
-              /* place for a new story */
+              <!-- place for a new story -->
 
 
             </div>
