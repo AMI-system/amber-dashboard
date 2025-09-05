@@ -1,5 +1,4 @@
-
-  :root {
+:root {
     --amber-primary: #dc3545; /* matches your Stories accent */
     --text-muted: #6c757d;
   }
@@ -147,12 +146,14 @@
   }
 
   .glightbox-container .gslide img {
-    width: 768px !important;     /* stretch to 70% of viewport width */
+    width: 90vw !important;     /* stretch to 90% of viewport width for large GIFs */
     height: auto !important;    /* keep aspect ratio */
-    max-width: 768px !important; /* allow scaling beyond natural size */
+    max-width: 90vw !important; /* allow scaling beyond natural size */
     max-height: 90vh !important;/* prevent overflowing vertically */
     margin: 0 auto;
     display: block;
+    z-index: 9999 !important;   /* ensure image is in the foreground */
+    background: #000 !important;/* optional: black background for GIFs */
   }
 
 

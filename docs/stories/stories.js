@@ -67,6 +67,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   }
 });
 
+// Scrollytelling
 document.addEventListener("DOMContentLoaded", () => {
   fetch("story_text.json")
     .then(response => response.json())

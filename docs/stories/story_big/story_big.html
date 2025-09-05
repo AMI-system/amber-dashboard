@@ -314,6 +314,7 @@ function buildGallery(data) {
     // Configure GLightbox to show the large image only in the popup
     if (m.file_type && ['gif','jpg','jpeg','png'].includes(m.file_type.toLowerCase())) {
       a.setAttribute('data-glightbox', `type: image; href: ${convertDriveLink(m.image_path)}; title: ${m.species}; description: ${m.region} • ${m.location} • ${m.date} • ${m.credit}`);
+      a.setAttribute('data-type', 'image');
     } else if (isGoogleDrive) {
       a.setAttribute('data-glightbox', `iframe: true; width: 900px; height: 506px; title: ${m.species}; description: ${m.region} • ${m.location} • ${m.date} • ${m.credit}`);
     } else {
