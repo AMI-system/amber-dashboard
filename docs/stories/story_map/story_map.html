@@ -1,85 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AMBER Deployment Map - Interactive Global Monitoring Network</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css">
-  <link rel="stylesheet" href="../stories.css">
-  <link rel="stylesheet" href="../../map/map.css">
+---
+title: Deployment Map
+layout: amber
+css:
+  - /stories/stories.css
+  - /map/map.css
+---
 
-  <style>
-    /* Custom styles for the story page map */
-    #map {
-      height: 600px;
-      width: 100%;
-      border-radius: 15px;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-      margin: 30px 0;
-    }
-
-    .story-intro {
-      background: linear-gradient(135deg, rgba(220, 53, 69, 0.1), rgba(248, 249, 250, 0.3));
-      padding: 40px;
-      border-radius: 15px;
-      margin-bottom: 30px;
-      border: 1px solid rgba(220, 53, 69, 0.2);
-    }
-
-    .deployment-stats {
-      background: white;
-      padding: 30px;
-      border-radius: 15px;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-      margin: 30px 0;
-    }
-
-    .stat-item {
-      text-align: center;
-      padding: 20px;
-    }
-
-    .stat-number {
-      font-size: 3rem;
-      font-weight: bold;
-      color: #dc3545;
-      margin-bottom: 10px;
-    }
-
-    .stat-label {
-      color: #495057;
-      font-size: 1.1rem;
-      font-weight: 500;
-    }
-
-    .info-card {
-      background: white;
-      padding: 30px;
-      border-radius: 15px;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-      margin-bottom: 30px;
-      height: 100%;
-    }
-
-    .info-card h3 {
-      color: #dc3545;
-      margin-bottom: 20px;
-      font-size: 1.5rem;
-      font-weight: bold;
-    }
-
-    .map-section {
-      background: white;
-      padding: 40px;
-      border-radius: 15px;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-      margin: 30px 0;
-    }
-  </style>
-</head>
-<body>
-
+<!-- Main content for Deployment Map goes here. -->
 <div class="container mt-5">
   <div class="row">
     <div class="col-12">
@@ -166,9 +93,6 @@
   </div>
 </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
 <script src="story_map-map.js"></script>
-
-</body>
-</html>

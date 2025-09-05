@@ -1,451 +1,272 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Big Beautiful Moths — AMBER</title>
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YXQJJLD55E"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-G-YXQJJLD55E');
-    </script>
-    <script src="/js/analytics.js"></script>
+---
+title: Big, Beautiful Moths
+layout: amber
+css:
+  - /stories/story_big/story_big.css
+---
 
+<!-- GLightbox (for lightbox gallery) -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
 
-  <!-- Bootstrap 5 -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" />
-
-  <!-- GLightbox (for lightbox gallery) -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
-  <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
-
-  <style>
-    :root {
-      --amber-primary: #dc3545; /* matches your Stories accent */
-      --text-muted: #6c757d;
-    }
-
-    body { background: #fff; }
-
-    /* Hero */
-    .hero {
-      background: linear-gradient(135deg, rgba(220,53,69,0.85), rgba(200,35,51,0.85)),
-                  url('images/moths/hero.jpg') center/cover no-repeat;
-      color: #fff;
-      padding: 80px 0;
-    }
-    .hero h1 { font-weight: 600; }
-    .hero p { max-width: 820px; }
-
-
-    /* Gallery */
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 20px;
-    }
-    .gallery-card {
-      position: relative;
-      overflow: hidden;
-      border-radius: 16px;
-      box-shadow: 0 10px 24px rgba(0,0,0,0.08);
-      background: #f8f9fa;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .gallery-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 15px 35px rgba(0,0,0,0.15);
-    }
-    .gallery-card img {
-      width: 100%;
-      max-width: 100%;
-      height: auto;
-      max-height: 280px;
-      object-fit: contain;
-      display: block;
-      transition: transform .35s ease;
-    }
-    .gallery-card iframe {
-      width: 100% !important;
-      max-width: 100%;
-      min-width: 0;
-      height: 280px !important;
-      display: block;
-      border: none;
-      background: #000;
-    }
-    .gallery-card:hover img { transform: scale(1.04); }
-    .gallery-meta {
-      position: absolute;
-      inset: auto 0 0 0;
-      padding: 15px;
-      background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.75) 90%);
-      color: #fff;
-      font-size: 0.9rem;
-    }
-
-    /* Remove underline from all links in gallery meta/info */
-    .gallery-meta a,
-    .gallery-meta a:visited,
-    .gallery-meta a:active,
-    .gallery-meta a:hover {
-      text-decoration: none !important;
-      border-bottom: none !important;
-    }
-
-    /* Remove underline from all links in gallery cards */
-    .gallery-card a,
-    .gallery-card a:visited,
-    .gallery-card a:active,
-    .gallery-card a:hover {
-      text-decoration: none !important;
-      border-bottom: none !important;
-    }
-    .badge-region {
-      background: rgba(220,53,69,0.9);
-      color: white;
-      font-size: 0.75rem;
-    }
-
-    /* Filter Controls */
-    .filter-section {
-      background: #f8f9fa;
-      border-radius: 12px;
-      padding: 20px;
-      margin-bottom: 30px;
-    }
-    .filter-group {
-      margin-bottom: 15px;
-    }
-    .filter-group:last-child {
-      margin-bottom: 0;
-    }
-    .filter-label {
-      font-weight: 600;
-      color: var(--amber-primary);
-      margin-bottom: 8px;
-      display: block;
-    }
-    .filter-checkboxes {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-    .filter-checkbox {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      padding: 6px 12px;
-      background: white;
-      border: 2px solid #e9ecef;
-      border-radius: 20px;
-      cursor: pointer;
-      transition: all 0.2s ease;
-      font-size: 0.9rem;
-    }
-    .filter-checkbox:hover {
-      border-color: var(--amber-primary);
-      background: rgba(220,53,69,0.05);
-    }
-    .filter-checkbox.active {
-      background: var(--amber-primary);
-      border-color: var(--amber-primary);
-      color: white;
-    }
-    .filter-checkbox input[type="checkbox"] {
-      margin: 0;
-    }
-
-    /* Gallery navigation */
-    .gallery-navigation {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 20px;
-    }
-    .results-info {
-      color: var(--text-muted);
-      font-size: 0.9rem;
-    }
-
-    .glightbox-container .gslide img {
-      width: 768px !important;     /* stretch to 70% of viewport width */
-      height: auto !important;    /* keep aspect ratio */
-      max-width: 768px !important; /* allow scaling beyond natural size */
-      max-height: 90vh !important;/* prevent overflowing vertically */
-      margin: 0 auto;
-      display: block;
-    }
-
-
-
-    /* Section headings */
-    .section-title { color: var(--amber-primary); font-weight: 600; }
-
-    /* Small utility */
-    .muted { color: var(--text-muted); }
-  </style>
 </head>
 <body>
-
-
-  <!-- HERO -->
-  <header class="hero text-center">
-    <div class="container">
-      <h1 class="display-5 mb-3">Big Beautiful Moths</h1>
-      <p class="lead mb-0">
-        Explore the dazzling diversity of some of the largest moths captured by the AMBER network.
-        These images reveal vibrant patterns, textures, and colors.
-      </p>
-    </div>
-  </header>
-
-  <main class="container my-5">
-    <!-- FILTER SECTION -->
-    <div class="filter-section">
-      <h3 class="section-title mb-3">Filter Gallery</h3>
-
-
-      <div class="filter-group">
-        <label class="filter-label" for="countryDropdown">Countries</label>
-        <div class="dropdown" id="countryDropdown" style="min-width:200px;">
-          <button class="btn btn-outline-secondary dropdown-toggle w-100 text-start" type="button" id="countryDropdownBtn" data-bs-toggle="dropdown" aria-expanded="false">
-            Select Countries
-          </button>
-          <ul class="dropdown-menu w-100" aria-labelledby="countryDropdownBtn" id="countryDropdownMenu"></ul>
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-12">
+        <!-- Hero Section -->
+        <div class="hero-section">
+          <h1 class="display-3 fw-bold mb-4">Big Beautiful Moths</h1>
+          <p class="lead mb-4">
+            Explore the dazzling diversity of some of the largest moths captured by the AMBER network.
+            These images reveal vibrant patterns, textures, and colors.
+          </p>
         </div>
       </div>
+    </div>
+  </div>
 
-      <div class="filter-group">
-        <label class="filter-label" for="deploymentDropdown">Deployments</label>
-        <div class="dropdown" id="deploymentDropdown" style="min-width:200px;">
-          <button class="btn btn-outline-secondary dropdown-toggle w-100 text-start" type="button" id="deploymentDropdownBtn" data-bs-toggle="dropdown" aria-expanded="false">
-            Select Deployments
-          </button>
-          <ul class="dropdown-menu w-100" aria-labelledby="deploymentDropdownBtn" id="deploymentDropdownMenu"></ul>
-        </div>
-      </div>
 
-      <div class="mt-3">
-        <button class="btn btn-outline-secondary btn-sm" id="clearFilters">Clear All Filters</button>
+<main class="container my-5">
+  <!-- FILTER SECTION -->
+  <div class="filter-section">
+    <h3 class="section-title mb-3">Filter Gallery</h3>
+
+
+    <div class="filter-group">
+      <label class="filter-label" for="countryDropdown">Countries</label>
+      <div class="dropdown" id="countryDropdown" style="min-width:200px;">
+        <button class="btn btn-outline-secondary dropdown-toggle w-100 text-start" type="button" id="countryDropdownBtn" data-bs-toggle="dropdown" aria-expanded="false">
+          Select Countries
+        </button>
+        <ul class="dropdown-menu w-100" aria-labelledby="countryDropdownBtn" id="countryDropdownMenu"></ul>
       </div>
     </div>
 
-    <!-- GALLERY SECTION -->
-    <div class="gallery-navigation">
-      <h2 class="section-title mb-0">Moth Gallery</h2>
-      <div class="results-info" id="resultsInfo">
-        <!-- Populated by JavaScript -->
+    <div class="filter-group">
+      <label class="filter-label" for="deploymentDropdown">Deployments</label>
+      <div class="dropdown" id="deploymentDropdown" style="min-width:200px;">
+        <button class="btn btn-outline-secondary dropdown-toggle w-100 text-start" type="button" id="deploymentDropdownBtn" data-bs-toggle="dropdown" aria-expanded="false">
+          Select Deployments
+        </button>
+        <ul class="dropdown-menu w-100" aria-labelledby="deploymentDropdownBtn" id="deploymentDropdownMenu"></ul>
       </div>
     </div>
-    <div id="gallery" class="gallery" aria-live="polite"></div>
-  </main>
 
-  <!-- Bootstrap JS -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    <div class="mt-3">
+      <button class="btn btn-outline-secondary btn-sm" id="clearFilters">Clear All Filters</button>
+    </div>
+  </div>
 
-  <script>
-    // --- Load moth data from big_moths.json ---
-    let moths = [];
-    fetch('big_moths.json')
-      .then(response => response.json())
-      .then(data => {
-        // Add an id and default fields for each entry
-        moths = data.map((m, i) => ({
-          id: 'bm' + i,
-          species: m.description || 'Big Moth',
-          location: m.deployment_name || '',
-          region: m.country || '',
-          deployment: m.deployment_name || '',
-          date: m.capture_time || '',
-          lat: null,
-          lng: null,
-          image: convertDriveLink(m.image_path),
-          thumb: convertDriveLink(m.image_path),
-          credit: 'Google Drive'
-        }));
-        filteredMoths = [...moths];
-        buildFilterControls();
-        buildGallery(moths);
-        updateResultsInfo();
-        updateDropdownLabel('country');
-        updateDropdownLabel('deployment');
-      });
+  <!-- GALLERY SECTION -->
+  <div class="gallery-navigation">
+    <h2 class="section-title mb-0">Moth Gallery</h2>
+    <div class="results-info" id="resultsInfo">
+      <!-- Populated by JavaScript -->
+    </div>
+  </div>
+  <div id="gallery" class="gallery" aria-live="polite"></div>
+</main>
 
-    // Convert Google Drive share link to direct image link if needed
-    function convertDriveLink(link) {
-      if (typeof link !== 'string') return link;
-      // If already a direct link, return as is
-      if (link.startsWith('http') && link.includes('/uc?')) return link;
-      // If it's a Google Drive share link, convert to direct
-      const match = link.match(/https:\/\/drive\.google\.com\/file\/d\/([\w-]+)\//);
-      if (match) {
-        // return `https://drive.google.com/uc?export=download&id=${match[1]}`;
-        return `https://drive.google.com/uc?export=view&id=${match[1]}`;
-      }
-      // Otherwise, treat as relative path
-      return link;
+<script>
+  // --- Load moth data from big_moths.json ---
+  let moths = [];
+  fetch('big_moths.json')
+    .then(response => response.json())
+    .then(data => {
+      // Add an id and default fields for each entry
+      moths = data.map((m, i) => ({
+        id: 'bm' + i,
+        species: m.description || 'Big Moth',
+        location: m.deployment_name || '',
+        region: m.country || '',
+        deployment: m.deployment_name || '',
+        date: m.capture_time || '',
+        lat: null,
+        lng: null,
+        image: convertDriveLink(m.image_path),
+        thumb: convertDriveLink(m.image_path),
+        credit: 'Google Drive'
+      }));
+      filteredMoths = [...moths];
+      buildFilterControls();
+      buildGallery(moths);
+      updateResultsInfo();
+      updateDropdownLabel('country');
+      updateDropdownLabel('deployment');
+    });
+
+  // Convert Google Drive share link to direct image link if needed
+  function convertDriveLink(link) {
+    if (typeof link !== 'string') return link;
+    // If already a direct link, return as is
+    if (link.startsWith('http') && link.includes('/uc?')) return link;
+    // If it's a Google Drive share link, convert to direct
+    const match = link.match(/https:\/\/drive\.google\.com\/file\/d\/([\w-]+)\//);
+    if (match) {
+      // return `https://drive.google.com/uc?export=download&id=${match[1]}`;
+      return `https://drive.google.com/uc?export=view&id=${match[1]}`;
     }
+    // Otherwise, treat as relative path
+    return link;
+  }
 
   // --- Global state ---
   let filteredMoths = [];
   let activeFilters = { countries: [], deployments: [] };
 
-    // --- Get unique values for filters ---
-    function getUniqueValues(data, key) {
-      return [...new Set(data.map(item => item[key]))].sort();
+  // --- Get unique values for filters ---
+  function getUniqueValues(data, key) {
+    return [...new Set(data.map(item => item[key]))].sort();
+  }
+
+  // --- Build filter controls ---
+  function buildFilterControls() {
+    const countries = getUniqueValues(moths, 'region');
+    const countryMenu = document.getElementById('countryDropdownMenu');
+    countryMenu.innerHTML = '';
+    countries.forEach(country => {
+      const li = document.createElement('li');
+      li.innerHTML = `<label class="dropdown-item"><input type="checkbox" class="country-checkbox me-2" value="${country}"> ${country}</label>`;
+      countryMenu.appendChild(li);
+    });
+
+    // Build initial deployment filters (all deployments)
+    updateDeploymentFilters();
+
+    // Add event listeners
+    countryMenu.addEventListener('change', handleCountryChange);
+    document.getElementById('deploymentDropdownMenu').addEventListener('change', handleDeploymentChange);
+    document.getElementById('clearFilters').addEventListener('click', clearAllFilters);
+  }
+
+  // --- Update deployment filters based on selected countries ---
+  function updateDeploymentFilters() {
+    // Group deployments by country (using deployment_name)
+    let deploymentsByCountry = {};
+    let countriesToShow;
+    if (activeFilters.countries.length === 0) {
+      countriesToShow = getUniqueValues(moths, 'region');
+    } else {
+      countriesToShow = activeFilters.countries;
     }
 
-    // --- Build filter controls ---
-    function buildFilterControls() {
-      const countries = getUniqueValues(moths, 'region');
-      const countryMenu = document.getElementById('countryDropdownMenu');
-      countryMenu.innerHTML = '';
-      countries.forEach(country => {
-        const li = document.createElement('li');
-        li.innerHTML = `<label class="dropdown-item"><input type="checkbox" class="country-checkbox me-2" value="${country}"> ${country}</label>`;
-        countryMenu.appendChild(li);
-      });
-
-  // Build initial deployment filters (all deployments)
-  updateDeploymentFilters();
-
-      // Add event listeners
-      countryMenu.addEventListener('change', handleCountryChange);
-      document.getElementById('deploymentDropdownMenu').addEventListener('change', handleDeploymentChange);
-      document.getElementById('clearFilters').addEventListener('click', clearAllFilters);
-    }
-
-    // --- Update deployment filters based on selected countries ---
-    function updateDeploymentFilters() {
-      // Group deployments by country (using deployment_name)
-      let deploymentsByCountry = {};
-      let countriesToShow;
-      if (activeFilters.countries.length === 0) {
-        countriesToShow = getUniqueValues(moths, 'region');
-      } else {
-        countriesToShow = activeFilters.countries;
-      }
-
-      // Build a mapping: country -> [deployment_name]
-      countriesToShow.forEach(country => {
-        const deployments = getUniqueValues(
-          moths.filter(m => m.region === country),
-          'deployment'
-        );
-        deploymentsByCountry[country] = deployments;
-      });
-
-      // Flatten all available deployments for filter logic
-      let availableDeployments = Object.values(deploymentsByCountry).flat();
-
-      // Clear any deployment filters that are no longer available
-      activeFilters.deployments = activeFilters.deployments.filter(deployment =>
-        availableDeployments.includes(deployment)
+    // Build a mapping: country -> [deployment_name]
+    countriesToShow.forEach(country => {
+      const deployments = getUniqueValues(
+        moths.filter(m => m.region === country),
+        'deployment'
       );
+      deploymentsByCountry[country] = deployments;
+    });
 
-      // Rebuild deployment filter UI as a custom dropdown with checkboxes
-      const deploymentMenu = document.getElementById('deploymentDropdownMenu');
-      deploymentMenu.innerHTML = '';
-      countriesToShow.forEach(country => {
-        const deployments = deploymentsByCountry[country];
-        if (deployments.length === 0) return;
-        const liHeader = document.createElement('li');
-        liHeader.innerHTML = `<h6 class='dropdown-header'>${country}</h6>`;
-        deploymentMenu.appendChild(liHeader);
-        deployments.forEach(deployment => {
-          const li = document.createElement('li');
-          li.innerHTML = `<label class="dropdown-item"><input type="checkbox" class="deployment-checkbox me-2" value="${deployment}"> ${deployment}</label>`;
-          deploymentMenu.appendChild(li);
-        });
+    // Flatten all available deployments for filter logic
+    let availableDeployments = Object.values(deploymentsByCountry).flat();
+
+    // Clear any deployment filters that are no longer available
+    activeFilters.deployments = activeFilters.deployments.filter(deployment =>
+      availableDeployments.includes(deployment)
+    );
+
+    // Rebuild deployment filter UI as a custom dropdown with checkboxes
+    const deploymentMenu = document.getElementById('deploymentDropdownMenu');
+    deploymentMenu.innerHTML = '';
+    countriesToShow.forEach(country => {
+      const deployments = deploymentsByCountry[country];
+      if (deployments.length === 0) return;
+      const liHeader = document.createElement('li');
+      liHeader.innerHTML = `<h6 class='dropdown-header'>${country}</h6>`;
+      deploymentMenu.appendChild(liHeader);
+      deployments.forEach(deployment => {
+        const li = document.createElement('li');
+        li.innerHTML = `<label class="dropdown-item"><input type="checkbox" class="deployment-checkbox me-2" value="${deployment}"> ${deployment}</label>`;
+        deploymentMenu.appendChild(li);
       });
+    });
 
-      // Set checked state for deployments
-      Array.from(deploymentMenu.querySelectorAll('input[type="checkbox"]')).forEach(cb => {
-        cb.checked = activeFilters.deployments.includes(cb.value);
-      });
-    }
+    // Set checked state for deployments
+    Array.from(deploymentMenu.querySelectorAll('input[type="checkbox"]')).forEach(cb => {
+      cb.checked = activeFilters.deployments.includes(cb.value);
+    });
+  }
 
 
-    // --- Handle country dropdown changes ---
-    function handleCountryChange(event) {
-      if (!event.target.classList.contains('country-checkbox')) return;
-      const checkboxes = document.querySelectorAll('.country-checkbox');
-      activeFilters.countries = Array.from(checkboxes).filter(cb => cb.checked).map(cb => cb.value);
-      updateDeploymentFilters();
-      applyFilters();
-      updateDropdownLabel('country');
-    }
+  // --- Handle country dropdown changes ---
+  function handleCountryChange(event) {
+    if (!event.target.classList.contains('country-checkbox')) return;
+    const checkboxes = document.querySelectorAll('.country-checkbox');
+    activeFilters.countries = Array.from(checkboxes).filter(cb => cb.checked).map(cb => cb.value);
+    updateDeploymentFilters();
+    applyFilters();
+    updateDropdownLabel('country');
+  }
 
-    // --- Handle deployment dropdown changes ---
-    function handleDeploymentChange(event) {
-      if (!event.target.classList.contains('deployment-checkbox')) return;
-      const checkboxes = document.querySelectorAll('.deployment-checkbox');
-      activeFilters.deployments = Array.from(checkboxes).filter(cb => cb.checked).map(cb => cb.value);
-      applyFilters();
-      updateDropdownLabel('deployment');
-    }
+  // --- Handle deployment dropdown changes ---
+  function handleDeploymentChange(event) {
+    if (!event.target.classList.contains('deployment-checkbox')) return;
+    const checkboxes = document.querySelectorAll('.deployment-checkbox');
+    activeFilters.deployments = Array.from(checkboxes).filter(cb => cb.checked).map(cb => cb.value);
+    applyFilters();
+    updateDropdownLabel('deployment');
+  }
 
-    // --- Apply filters ---
-    function applyFilters() {
-      filteredMoths = moths.filter(moth => {
-        const countryMatch = activeFilters.countries.length === 0 || activeFilters.countries.includes(moth.region);
-        const deploymentMatch = activeFilters.deployments.length === 0 || activeFilters.deployments.includes(moth.deployment);
-        return countryMatch && deploymentMatch;
-      });
+  // --- Apply filters ---
+  function applyFilters() {
+    filteredMoths = moths.filter(moth => {
+      const countryMatch = activeFilters.countries.length === 0 || activeFilters.countries.includes(moth.region);
+      const deploymentMatch = activeFilters.deployments.length === 0 || activeFilters.deployments.includes(moth.deployment);
+      return countryMatch && deploymentMatch;
+    });
 
-      buildGallery(filteredMoths);
-      updateResultsInfo();
-    }
+    buildGallery(filteredMoths);
+    updateResultsInfo();
+  }
 
-    // --- Clear all filters ---
-    function clearAllFilters() {
-      activeFilters = { countries: [], deployments: [] };
-      // Uncheck all checkboxes
-      document.querySelectorAll('.country-checkbox, .deployment-checkbox').forEach(cb => cb.checked = false);
-      updateDeploymentFilters();
-      applyFilters();
-      updateDropdownLabel('country');
-      updateDropdownLabel('deployment');
-    }
+  // --- Clear all filters ---
+  function clearAllFilters() {
+    activeFilters = { countries: [], deployments: [] };
+    // Uncheck all checkboxes
+    document.querySelectorAll('.country-checkbox, .deployment-checkbox').forEach(cb => cb.checked = false);
+    updateDeploymentFilters();
+    applyFilters();
+    updateDropdownLabel('country');
+    updateDropdownLabel('deployment');
+  }
 
-    // --- Update dropdown button label to show selected items ---
-    function updateDropdownLabel(type) {
-      if (type === 'country') {
-        const btn = document.getElementById('countryDropdownBtn');
-        if (activeFilters.countries.length === 0) {
-          btn.textContent = 'Select Countries';
-        } else {
-          btn.textContent = activeFilters.countries.join(', ');
-        }
-      } else if (type === 'deployment') {
-        const btn = document.getElementById('deploymentDropdownBtn');
-        if (activeFilters.deployments.length === 0) {
-          btn.textContent = 'Select Deployments';
-        } else {
-          btn.textContent = activeFilters.deployments.join(', ');
-        }
-      }
-    }
-
-    // --- Update results info ---
-    function updateResultsInfo() {
-      const total = filteredMoths.length;
-      const totalMoth = moths.length;
-      const resultsInfo = document.getElementById('resultsInfo');
-
-      if (total === totalMoth) {
-        resultsInfo.textContent = `Showing all ${total} moths`;
+  // --- Update dropdown button label to show selected items ---
+  function updateDropdownLabel(type) {
+    if (type === 'country') {
+      const btn = document.getElementById('countryDropdownBtn');
+      if (activeFilters.countries.length === 0) {
+        btn.textContent = 'Select Countries';
       } else {
-        resultsInfo.textContent = `Showing ${total} of ${totalMoth} moths`;
+        btn.textContent = activeFilters.countries.join(', ');
+      }
+    } else if (type === 'deployment') {
+      const btn = document.getElementById('deploymentDropdownBtn');
+      if (activeFilters.deployments.length === 0) {
+        btn.textContent = 'Select Deployments';
+      } else {
+        btn.textContent = activeFilters.deployments.join(', ');
       }
     }
+  }
 
-    // --- Build Gallery ---
-    // --- Build Gallery ---
+  // --- Update results info ---
+  function updateResultsInfo() {
+    const total = filteredMoths.length;
+    const totalMoth = moths.length;
+    const resultsInfo = document.getElementById('resultsInfo');
+
+    if (total === totalMoth) {
+      resultsInfo.textContent = `Showing all ${total} moths`;
+    } else {
+      resultsInfo.textContent = `Showing ${total} of ${totalMoth} moths`;
+    }
+  }
+
+  // --- Build Gallery ---
+  // --- Build Gallery ---
 function buildGallery(data) {
   const gallery = document.getElementById('gallery');
   gallery.innerHTML = '';
@@ -571,15 +392,14 @@ function buildGallery(data) {
 
   // --- Init ---
   // Only run filter controls and gallery after data is loaded
-  </script>
-      <!-- Back to Stories & Next Story -->
-      <div class="text-center mt-5 mb-4">
-        <a href="../stories.html" class="btn btn-outline-primary btn-lg me-3">
-          &#8592; Back to All Stories
-        </a>
-        <a href="../story_fieldwork/story_fieldwork.html" class="btn btn-primary btn-lg">
-          Fieldwork Diaries &#8594;
-        </a>
-      </div>
-</body>
-</html>
+</script>
+
+<!-- Back to Stories & Next Story -->
+<div class="text-center mt-5 mb-4">
+  <a href="../stories.html" class="btn btn-outline-primary btn-lg me-3">
+    &#8592; Back to All Stories
+  </a>
+  <a href="../story_fieldwork/story_fieldwork.html" class="btn btn-primary btn-lg">
+    Fieldwork Diaries &#8594;
+  </a>
+</div>
