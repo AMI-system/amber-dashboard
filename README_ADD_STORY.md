@@ -4,8 +4,9 @@ Follow these step-by-step instructions to add a new story page to the AMBER Dash
 
 ## 1. Create a New Story Folder
 - In the `stories/` directory, create a new folder for your story (e.g., `story_new`).
-- **Recommended:** Use `stories/story_template` as a starting point for your new story. Copy this folder and rename it, along with the main HTML file (e.g., `stories/story_new/`  and `story_new.html`).
-- **👀 Test**: You should now be able to view the story by running `python3 -m http.server` then navigating to `http://localhost:8000/stories/story_new/story_new.html` in your browser.
+- **Recommended:** Use `stories/story_template` as a starting point for your new story. Copy this folder and rename it, along with the main HTML or markdown file (e.g., `stories/story_new/`, `story_new.md` and `story_new.html`).
+- Remove either the html or markdown file - you will only need one. If your story is fairly simple (just text and images or videos) we recommend you use markdown. However, for more complex stories, HTML may be more suitable, for example if you want clickable elements.
+- **👀 Test**: You should now be able to view the story by running `bundle exec jekyll serve` then navigating to `http://127.0.0.1:4000/stories/story_new/story_new.html` in your browser.
 
 ## 2. Prepare Your Content
 - Collect all media files (images, gifs, videos) and place them in an appropriate subfolder.
@@ -22,7 +23,7 @@ Follow these step-by-step instructions to add a new story page to the AMBER Dash
 - Update the Stories dropdown in the navbar. Add a new: `<li><a class="dropdown-item" href="../story_new/story_new.html">Your Story Title</a></li>` in the dropdown menu in `navbar.html`.
 
 ## 5. Add to Story to the Overview Page
-- Edit `stories/stories.html` to add a card or link for your new story, so it appears in the main stories list. Replace `/* place for a new story */` with:
+- Edit `stories/stories.html` to add a card or link for your new story, so it appears in the main stories list. Replace `<!-- place for a new story -->` with:
     ```html
     <a href="story_new/story_new.html" class="story-card">
     <div class="story-image">
