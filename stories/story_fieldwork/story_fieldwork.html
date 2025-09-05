@@ -189,12 +189,12 @@
   <script>
     // Simplified video carousel with arrow navigation and clickable items
     document.addEventListener('DOMContentLoaded', function() {
-      const carousel = document.getElementById('fieldworkCarousel');
+      const carouselElem = document.getElementById('fieldworkCarousel');
+      const carousel = new bootstrap.Carousel(carouselElem, { interval: false, ride: false });
       let currentVideoIndex = 0;
       const totalVideos = 5;
 
       function updateVideoIndicators(index) {
-        // Update video guide active state
         const videoItems = document.querySelectorAll('.video-item');
         videoItems.forEach((item, i) => {
           item.classList.remove('active');
@@ -207,14 +207,17 @@
       }
 
       function setupVideoEvents() {
-        // Add click handlers to video guide items
         const videoItems = document.querySelectorAll('.video-item');
         videoItems.forEach((item, index) => {
-          item.addEventListener('click', () => {
-            bootstrap.Carousel.getInstance(carousel).to(index);
+          item.addEventListener('click', function() {
+            const videoNum = parseInt(item.getAttribute('data-video'), 10);
+            if (!isNaN(videoNum)) {
+              carousel.to(videoNum - 1);
+              currentVideoIndex = videoNum - 1;
+              updateVideoIndicators(currentVideoIndex);
+            }
           });
 
-          // Add hover effects
           item.addEventListener('mouseenter', () => {
             if (!item.classList.contains('active')) {
               item.style.backgroundColor = 'rgba(220, 53, 69, 0.05)';
@@ -230,63 +233,40 @@
 
       function goToNextVideo() {
         if (currentVideoIndex < totalVideos - 1) {
-          bootstrap.Carousel.getInstance(carousel).next();
+          carousel.next();
         }
       }
 
       function stopCurrentVideo() {
-        // Find the currently active video and stop it
         const activeCarouselItem = document.querySelector('#fieldworkCarousel .carousel-item.active');
         if (!activeCarouselItem) return;
-
-        // Handle HTML5 video (Video 5)
         const video = activeCarouselItem.querySelector('video');
         if (video) {
           video.pause();
           video.currentTime = 0;
           return;
         }
-
-        // Handle iframes (Facebook and YouTube videos)
         const iframe = activeCarouselItem.querySelector('iframe');
         if (iframe) {
-        <!-- Footer with Partner Logos -->
-        <footer class="bg-light py-4 mt-5 border-top">
-          <div class="container d-flex flex-column flex-md-row align-items-center justify-content-center">
-            <div class="d-flex flex-row align-items-center" style="gap: 2rem;">
-              <a href="../../about/partner_logos/ATI_logo.png" target="_blank" rel="noopener" title="The Alan Turing Institute">
-                <img src="../../about/partner_logos/ATI_logo.png" alt="Alan Turing Institute Logo" style="height: 40px; width: auto; display: block;" />
-              </a>
-              <a href="../../about/partner_logos/UKCEH_logo.png" target="_blank" rel="noopener" title="UKCEH">
-                <img src="../../about/partner_logos/UKCEH_logo.png" alt="UKCEH Logo" style="height: 40px; width: auto; display: block;" />
-              </a>
-              <a href="https://www.aberdeenplc.com/en-gb/corporate-sustainability/abrdn-charitable-foundation" target="_blank" rel="noopener" title="Aberdeen">
-                <img src="../../about/partner_logos/aberdeen_logo.png" alt="Aberdeen Logo" style="height: 40px; width: auto; display: block;" />
-              </a>
-            </div>
-          </div>
-        </footer>
-          }, 100);
+          const src = iframe.src;
+          iframe.src = src;
         }
       }
 
-      // Initialize
       setupVideoEvents();
       updateVideoIndicators(0);
 
-      carousel.addEventListener('slide.bs.carousel', function(event) {
-        // Stop the current video before transitioning
+      carouselElem.addEventListener('slide.bs.carousel', function(event) {
         stopCurrentVideo();
         currentVideoIndex = event.to;
         updateVideoIndicators(currentVideoIndex);
       });
 
-      // Add keyboard navigation
       document.addEventListener('keydown', function(event) {
         if (event.key === 'ArrowLeft' && currentVideoIndex > 0) {
-          bootstrap.Carousel.getInstance(carousel).prev();
+          carousel.prev();
         } else if (event.key === 'ArrowRight' && currentVideoIndex < totalVideos - 1) {
-          bootstrap.Carousel.getInstance(carousel).next();
+          carousel.next();
         }
       });
     });
@@ -300,15 +280,21 @@
            Insights from AI &#8594;
         </a>
       </div>
-<div id="footer"></div>
-<script>
-  fetch('/footer.html')
-    .then(res => {
-      if (!res.ok) throw new Error('Footer not found');
-      return res.text();
-    })
-    .then(html => { document.getElementById('footer').innerHTML = html; })
-    .catch(e => { document.getElementById('footer').innerHTML = '<div style="color:red;text-align:center">Footer failed to load</div>'; });
-</script>
+<!-- Footer with Partner Logos -->
+<footer class="bg-light py-4 mt-5 border-top">
+  <div class="container d-flex flex-column flex-md-row align-items-center justify-content-center">
+    <div class="d-flex flex-row align-items-center" style="gap: 2rem;">
+      <a href="../../about/partner_logos/ATI_logo.png" target="_blank" rel="noopener" title="The Alan Turing Institute">
+        <img src="../../about/partner_logos/ATI_logo.png" alt="Alan Turing Institute Logo" style="height: 40px; width: auto; display: block;" />
+      </a>
+      <a href="../../about/partner_logos/UKCEH_logo.png" target="_blank" rel="noopener" title="UKCEH">
+        <img src="../../about/partner_logos/UKCEH_logo.png" alt="UKCEH Logo" style="height: 40px; width: auto; display: block;" />
+      </a>
+      <a href="https://www.aberdeenplc.com/en-gb/corporate-sustainability/abrdn-charitable-foundation" target="_blank" rel="noopener" title="Aberdeen">
+        <img src="../../about/partner_logos/aberdeen_logo.png" alt="Aberdeen Logo" style="height: 40px; width: auto; display: block;" />
+      </a>
+    </div>
+  </div>
+</footer>
 </body>
 </html>
