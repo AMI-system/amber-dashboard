@@ -53,6 +53,10 @@ ami-dashboard/
 
 To add a new story, follow the instructions in `README_ADD_STORY.md`.
 
+## New Deployments
+
+To add a new deployment to the map story, simply update the `points_of_interest.json` file in the `map` directory with the new deployment details.
+
 ## Analytics
 
 The AMBER Dashboard uses Google Analytics 4 for tracking user interactions. The tracking code is included in the `<head>` section of each HTML file.
