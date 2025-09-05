@@ -18,6 +18,9 @@ To add a new story, follow the instructions in `README_ADD_STORY.md`.
 
 To add a new deployment to the map story, simply update the `points_of_interest.json` file in the `map` directory with the new deployment details.
 
+## Adding Media
+
+If you are loading in large videos, images or gifs, we recommend you source them from elsewhere. We have been using Google Drive and then sourcing them using the share links, making sure 'Anyone with the link' can view. You will also need to make sure the link follows the format `https://drive.google.com/file/d/FILE_ID/preview`, instead of the default `https://drive.google.com/file/d/FILE_ID/view?usp=drive_link`.
 
 ## Analytics
 
